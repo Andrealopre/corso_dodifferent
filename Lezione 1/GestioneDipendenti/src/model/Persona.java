@@ -11,6 +11,24 @@ public class Persona {
 	private String sesso;
 	private String codiceFiscale;
 	
+	public Persona() {}
+	
+	
+	
+	public Persona(int id, String nome, String cognome, String luogoDiNascita, String dataDiNascita, String sesso,
+			String codiceFiscale) {
+		super(); //Il metodo super() serve ad alimentare il costruttore della classe padre con la stessa firma del super
+		this.id = id;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.luogoDiNascita = luogoDiNascita;
+		this.dataDiNascita = dataDiNascita;
+		this.sesso = sesso;
+		this.codiceFiscale = codiceFiscale;
+	}
+
+
+
 	public void setId(int id) {
 		this.id = id;
 	}

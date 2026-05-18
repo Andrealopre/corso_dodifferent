@@ -4,3 +4,7 @@ Voglio una gestione dipendenti
             Sovrascrivere i metodi toString(), Equals() e HashCode() (ereditati da Object)
     -Model: Dipendente(titoloDiStudio:string, ruoloAziendale:string, stipendio:float):Persona
             Sovrascrivere i metodi toString(), Equals() e HashCode()
+    -View:  Vista()
+            Ipoteticamente ogni classe view potrebbe diventare una pagina html
+Lavorare su una classe significa implementare codice. Noi possiamo istanziare tutti gli oggetti. Ma il metodo di avvio
+non può essere istanziato da nessuna classe. Serve creare una classe con il metodo main, un metodo static. Un metodo static esiste a prescindere dall'istanziamento. main() si autoistanzia e java lo esegue. 
