@@ -1,0 +1,6 @@
+Voglio una gestione dipendenti
+  - Applicare ereditarietà e polimorfismo
+    -Model: Persona(id:int, nome:string, cognome:string, luogoDiNascita:string, dataDiNascita:string, sesso:string, codiceFiscale:string)
+            Sovrascrivere i metodi toString(), Equals() e HashCode() (ereditati da Object)
+    -Model: Dipendente(titoloDiStudio:string, ruoloAziendale:string, stipendio:float):Persona
+            Sovrascrivere i metodi toString(), Equals() e HashCode()
