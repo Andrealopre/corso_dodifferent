@@ -1,0 +1,4 @@
+CRUD (Create Read Update Delete)
+Il read si divide in read di entità, e in read set ovvero una ricerca per insieme
+Il metodo remove permette di rimuovere un'entità
+Costruttore di copia che riceve l'indirizzo di un oggetto.
