@@ -70,7 +70,6 @@ public class Vista {
 	public void elencoDipendente(ArrayList<Dipendente> repositoryDipendenti) {
 		String[] campi;
 		String riga;
-		String dataStringa;
 		int i;
 		
 		if(repositoryDipendenti.size() > 0) {
@@ -111,9 +110,9 @@ public class Vista {
 		if(!appValore.equals("")) {
 			dipCopy.setLuogoDiNascita(appValore);
 		}
-		data = leggiData("Data di nascita[" + dipCopy.getDataDiNascita() + "]: ");
+		appValore = leggiStringa("Data di nascita[" + dipCopy.getDataDiNascita() + "]: ");
 		if(!appValore.equals("")) {
-			dipCopy.setDataDiNascita(data);
+			dipCopy.setDataDiNascita(Date.valueOf(appValore));
 		}
 		appValore = leggiStringa("Sesso[" + dipCopy.getSesso() + "]: ");
 		if(!appValore.equals("")) {

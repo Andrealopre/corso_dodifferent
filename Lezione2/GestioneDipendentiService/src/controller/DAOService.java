@@ -1,12 +1,20 @@
 package controller;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import model.Dipendente;
+import model.Persona;
 
 public class DAOService { //Data Access Object, classe specializzata a gestire il CRUD del repository
 	private ArrayList<Dipendente> repositoryDipendente = new ArrayList<>();
+	private final String FILE_PATH = "src/resource/dipendenti.csv";
 	
 	public ArrayList<Dipendente> getRepositoryDipendente() {
 		return repositoryDipendente;
@@ -53,5 +61,68 @@ public class DAOService { //Data Access Object, classe specializzata a gestire i
 				&& p.getCognome().equals(cognome))
 				.collect(Collectors.toCollection(ArrayList::new));
 		return dipendentiTrovati;
+	}
+	
+	public boolean salva() {
+		try(BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
+			for (Dipendente dip : this.repositoryDipendente) {
+
+				bw.write(
+						/*
+						dip.getId() + ";" +
+						dip.getNome() + ";" +
+						dip.getCognome() + ";" +
+						dip.getLuogoDiNascita() + ";" +
+						dip.getDataDiNascita() + ";" +
+						dip.getSesso() + ";" +
+						dip.getCodiceFiscale() + ";" +
+						dip.getTitoloDiStudio() + ";" +
+						dip.getRuoloAziendale() + ";" +
+						dip.getStipendio()
+						*/
+						dip.toString()
+					);
+
+				bw.newLine();
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean carica() {
+		try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
+			String riga;
+
+			while ((riga = br.readLine()) != null) {
+
+				String[] dati = riga.split(";");
+				Dipendente dip = new Dipendente();
+
+				dip.setId(Integer.parseInt(dati[0]));
+				dip.setNome(dati[1]);
+				dip.setCognome(dati[2]);
+				dip.setLuogoDiNascita(dati[3]);
+				dip.setDataDiNascita(Date.valueOf(dati[4]));
+				dip.setSesso(dati[5]);
+				dip.setCodiceFiscale(dati[6]);
+				dip.setTitoloDiStudio(dati[7]);
+				dip.setRuoloAziendale(dati[8]);
+				dip.setStipendio(Double.valueOf(dati[9]));
+			
+				this.inserimento(dip);
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+	}
+	
+	public DAOService() {
+		this.carica();
 	}
 }
