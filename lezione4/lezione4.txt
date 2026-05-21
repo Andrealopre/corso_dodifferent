@@ -42,3 +42,23 @@ Soggetti db relazionale:
 - Record
 - Tabella
 Una relazione è un'associazione logica che si può implementare tra due entità attraverso l'uso di una chiave primaria e una chiave esterna.
+
+REGOLE BASE DELLA NORMALIZZAZIONE
+La normalizzazione si basa su 3 cose:
+- 1° Regola: un'entità deve avere uno o più campi che garantiscono l'unicità.
+- 2° Regola: non ci devono essere dati ridondanti. Le colonne ridondanti devono diventare tabelle tipizzate. Al posto della colonna ridondante bisogna inserire una chiave esterna (relazione uno a molti).
+- 3° Regola: se ci sono colonne che si possono ricavare attraverso un calcolo, basato sui dati di altre colonne, non vanno mai inserite nelle entità.
+In poche parole: UNICITA', NO RIDONDANZA, EVITARE RIDONDANZA QUANDO CALCOLABILE.
+Nei db relazionali, a livello naturale, esiste solo la relazione uno a molti (associazione con un'unica chiave primaria che indica l'entità, e una chiave esterna che permette di associare tale entità a)
+molte entità.
+Esempio
+Tabella: Titolo di studio
+Tabella: Dipendenti
+
+L'id del diploma viene ripetuto molte volte per tanti dipendenti (molti)
+Lato dipendente, guardando gli id dei titoli di studio, si vede un solo id per volta.
+
+TIPO DI RELAZIONE
+- 1:N (uno a molti): unica relazione naturale
+- N:N (molti a molti): si implementa attraverso la tecnica
+- 1:1 (uno a uno): una relazione 1:N mascherata, che non accetta duplicati.
