@@ -48,3 +48,14 @@ DQL
 DCL
 - GRANT
 - REVOKE
+
+Non confondere il DBMS con il database. Il dbms è il servizio che permette di gestire il linguaggio sql e il database. Il database è l'artefatto.
+Differenza tra client e server. Il dbms è il server, che opera in background. 
+Il client è un'applicazione già esistente (o che è possibile creare con un qualsiasi applicativo).
+In commercio esistono tanti dbms: mysql, postgresql, oracle, sql server (ambito microsoft).
+
+Come client mysql usa PHPADMIN per eseguire le sue query. Quando si lavora in rete
+CLIENT <-----> SERVER
+Il cliente, per comunicare, deve avere l'IP e la porta del server. L'ip indica la rete/dispositvo dove gira il dbms, la porta identifica il dbms in esecuzione.
+IP: localhost(127.0.0.1)
+Porta: porta di mysql(3306)
