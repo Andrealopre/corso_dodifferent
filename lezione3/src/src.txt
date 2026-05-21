@@ -1,0 +1,20 @@
+src/
+│
+├── model/
+│ ├── FiguraGeometrica.java
+│ ├── Quadrato.java
+│ ├── Rettangolo.java
+│ ├── Triangolo.java
+│ ├── Cerchio.java
+│ └── Poligono.java
+│
+├── repository/
+│ └── RepositoryFigureGeometriche.java
+│
+├── service/
+│ └── Geometria.java
+│
+├── interfaces/
+│ └── ICalcoli.java
+│
+└── Main.java

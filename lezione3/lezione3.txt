@@ -1,0 +1,15 @@
+Il test fatto dallo sviluppatore è un'attività di pretest, chiamato smoke testing. Dopo si possono scrivere i test veri e propri. Lo smoke testing semplifica il lavoro dei tester.
+Nei metodi del DAOService, di solito si usano metodi che ritornano true o false.
+
+ESERCIZIO FIGURE GEOMETRICE
+Ogni figura geometrica dovrà avere un metodo che restituisce il tipo di figura (getTipoFigura). Tutte le figure geometriche implementeranno lo stesso metodo, ovvero getTipoFigura().
+
+Quando le figure verranno create ci sarà un costruttore parametrizzato, dove sarà possibile definire il tipo di figura. Tutte le figure hanno un perimetro, tranne il cerchio che ha una circonferenza.
+L'interfaccia servirà per obbligare il programmatore ad inserire i metodi fondamentali nella classe FiguraGeometrica.
+Geometria sarà la classe di servizio che permetterà di implementare il CRUD nel repository.
+Il repository è un singleton, quindi deve esserci un'unica ricorrenza.
+
+Tutte le figure geometriche, oltre alle loro caratteristiche fondamentali (il triangolo ha 3 lati)
+Tutte le figure geometiche implmentano i metodi getArea e getPerimetro.
+L'interfaccia calcoli viene implementata dalla superclasse figurageometrica.
+E poi la classe main.
