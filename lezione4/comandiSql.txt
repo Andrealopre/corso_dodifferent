@@ -1,0 +1,50 @@
+Structure Query Language
+
+I comandi sql si dividono in 4 gruppi:
+- DDL: Data Definition Language
+- DML: Data Manipulation Language
+- DQL: Data Query Language
+- DCL: Data Control Language
+
+DDL
+I DDL sono i comandi amministrativi. Si dividono in:
+- create: si usa per creare qualunque tipo di oggetto che crea il db, incluso il db stesso (oggeti del database: database, table, view, index, user, role)
+          L'oggetto database è il contenitore. Le view sono select complesse, da alcuni chiamati tabelle virtuali. L'indice è una chiave che si associa a una colonna di una tabella per rendere più
+          performanti le ricerche. Da usare con parsimonia, perché abbassano le prestazioni del database dato che la gestione degli indici costa molto al db. Si creano solo gli indici che servono.
+          I database sono caratterizzati dalla sicurezza. Gli utenti rappresentano coloro che accedono al db e ricevono delle autorizzazioni.
+          I ruoli sono gruppi in cui si inseriscono gli utenti, in modo che per evitare di dare autorizzazioni per ogni singolo utente, ogni utente può essere inserito nel gruppo a cui vengono dati i 
+          ruoli.
+- alter: permette di cambiare la struttura di qualunque oggetto creato
+- drop: permette di eliminare qualunque oggetto del database.
+
+
+DML e DQL Permettono di implementare il crud.
+DML:
+- Create = insert into <tabella> ...
+- Update = update <tabell> ...
+- Delete = delete from <tabella> ...
+DQL:
+- Read = select ...(from where order by join group by)
+- count (*) sum(<colonna>) avg(<colonna>) min(<colonna>) max(<colonna>)
+
+
+DCL
+grant e revoke servono a concedere e a revocare autorizzazioni a utenti.
+
+SQL(STRUCTURE QUERY LANGUAGE)
+
+DDL (Amministrativi)
+- CREATE (DATABASE, TABLE (Record), VIEW (Select), INDEX (Chiave),
+USER, ROLE(Gruppi))
+- ALTER
+- DROP
+DML
+- C=INSERT INTO <TABELLA> ...
+- U=UPDATE <TABELLA> ...
+- D=DELETE FROM <TABELLA> ...
+DQL
+- R=SELECT ... (FROM WHERE ORDER BY JOIN GROUP BY)
+- COUNT(*) SUM(<COLONNA>) AVG(<COLONNA>) MIN(<COLONNA>) MAX(<COLONNA>)
+DCL
+- GRANT
+- REVOKE
