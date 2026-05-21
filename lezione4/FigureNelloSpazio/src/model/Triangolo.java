@@ -65,8 +65,8 @@ public class Triangolo extends FiguraGeometrica {
 				+ this.getLatoB() + ";"
 				+ this.getLatoC(); 
 	}
-	public Triangolo(double latoA, double latoB, double latoC) {
-		super("Triangolo");
+	public Triangolo(double latoA, double latoB, double latoC, int id) {
+		super("Triangolo", id);
 		this.latoA = latoA;
 		this.latoB = latoB;
 		this.latoC = latoC;

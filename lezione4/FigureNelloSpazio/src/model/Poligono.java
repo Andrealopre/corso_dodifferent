@@ -75,8 +75,8 @@ public class Poligono extends FiguraGeometrica {
 				+ this.getLato();
 				
 	}
-	public Poligono(int numeroLati, double lato) {
-		super(nomiPoligoni[numeroLati - 3]);
+	public Poligono(int numeroLati, double lato, int id) {
+		super(nomiPoligoni[numeroLati - 3], id);
 		
 		this.numeroLati = numeroLati;
 		this.lato = lato;

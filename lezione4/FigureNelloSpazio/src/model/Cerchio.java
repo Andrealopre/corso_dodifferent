@@ -40,8 +40,8 @@ public class Cerchio extends FiguraGeometrica {
 		return super.toString() + ";" 
 				+ this.getRaggio(); 
 	}
-	public Cerchio(double raggio) {
-		super("Cerchio");
+	public Cerchio(double raggio, int id) {
+		super("Cerchio", id);
 		this.raggio = raggio;
 	}
 	

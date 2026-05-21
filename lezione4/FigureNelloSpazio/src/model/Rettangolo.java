@@ -51,8 +51,8 @@ public class Rettangolo extends FiguraGeometrica {
 				+ this.getLatoMinore() + ";"
 				+ this.getLatoMaggiore();
 	}
-	public Rettangolo(double latoMinore, double latoMaggiore) {
-		super("Rettangolo");
+	public Rettangolo(double latoMinore, double latoMaggiore, int id) {
+		super("Rettangolo", id);
 		this.latoMinore = latoMinore;
 		this.latoMaggiore = latoMaggiore;
 	}

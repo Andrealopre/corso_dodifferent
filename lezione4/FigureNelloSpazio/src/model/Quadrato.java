@@ -41,8 +41,8 @@ public class Quadrato extends FiguraGeometrica {
 		return super.toString() + ";"
 				+ this.getLato();
 	}
-	public Quadrato(double lato) {
-		super("Quadrato");
+	public Quadrato(double lato, int id) {
+		super("Quadrato", id);
 		this.lato = lato;
 	}
 }

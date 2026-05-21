@@ -9,6 +9,7 @@ import model.Poligono;
 import model.Quadrato;
 import model.Rettangolo;
 import model.Triangolo;
+import repository.Dati;
 
 public class Vista {
 
@@ -16,7 +17,12 @@ public class Vista {
 		System.out.println("*** Menu Principale ***");
 		System.out.println("1) Inserimento figura");
 		System.out.println("2) Visualizza figura");
-		System.out.println("3) Esci");
+		System.out.println("3) Lista ordinata");
+		System.out.println("4) Lista senza duplicati");
+		System.out.println("5) Lista ordinata senza duplicati");
+		System.out.println("6) Statistiche");
+		System.out.println("7) Cerca");
+		System.out.println("8) Esci");
 	}
 
 	public void menuFigureGeometriche() {
@@ -117,12 +123,20 @@ public class Vista {
 			this.mascheraFiguraGeometrica(fig);
 		}
 	}
+	
+	public void visualizzaReport(List<Dati> dati) {
+		System.out.println("*** Report Statistiche ***");
+		for(Dati dato : dati) {
+			System.out.println("Tipo Figura: " + dato.getTipo());
+			System.out.println("Occorrenze: " + dato.getContatore());
+		}
+	}
 
 	public void mascheraFiguraGeometrica(FiguraGeometrica figura) {
+		System.out.println("Id: " + figura.getId());
 		System.out.println("Tipo figura geometrica: " + figura.getTipoFigura());
 		System.out.println("Perimetro: " + figura.getPerimetro());
 		System.out.println("Area: " + figura.getArea());
-		System.out.println("Id: " + figura.getId());
 		this.tipoFigura(figura);
 		System.out.println("-----------------------------------------------");
 	}

@@ -1,1 +1,44 @@
+HashSet è un insieme non ordinato
+treeSet è un insieme ordinato
+Entrambi prendono in input una ArrayList. La difficoltà di ciò si trova nell'equals, l'elemento che regola gli insiemi.
+L'equals va quindi riscritto, in modo che agisca sul tipo di figura e sull'area
 
+Algoritmo della rottura di codice
+- Regola 1: ordinare in base alla chiave di rottura
+- Regola 2: una volta ordinato, in base alla chiave di rottura, bisogna copiare la prima chiave (ad esempio esagono), e cominciare a scorrere l'array.
+- Regola 3: mano a mano che si trovano chiavi uguali, si aumenta il rispettivo contatore.
+La rottura avviene quando la chiave corrente non corrisponde più al tipo di figura. Bisogna memorizzare il risultato, in una lista dove si aggiunge il tipo di figura e il conteggio.
+Dopo la memorizzazione si azzera il contatore e si prende la nuova chiave, e cominciare a scorrere l'array.
+La rottura avviene quando la chiave corrente non corrisponde più al tipo di figura. Bisogna memorizzare il risultato, in una lista dove si aggiunge il tipo di figura e il conteggio.
+Dopo la memorizzazione si azzera il contatore e si prende la nuova chiave.
+
+DATABASE
+I database sono raccolte di dati organizzati in modo logico per permettere interrogazioni e analisi
+I database si dividono in 3 categorie (ordine storico):
+- Gerarchico: il file system è un esempio di database gerarchico. E' a forma di albero rovesciato e ci sono dei percorsi rigidi definiti.
+- Relazionale: servono per gestire le entità
+- Reticolare: internet e siti web (ipertesti) sono esempi di database reticolari. A differenza dei database gerarchici i percorsi sono dinamici e non rigidi come dei gerarchici.
+
+Database gerarchici e reticolari servono per gestire documenti.
+Le entità identificano una cosa e sono strutturati.
+Il documento è un'informazione non strutturata o semi strutturata. NoSql fa parte del mondo non strutturate e le entità sono strutturate.
+Un'informazione è un insieme di dati di senso compiuto, nel caso dei db relazionali sono anche univoche.
+Un'entità è una "cosa" che rappresenta un insieme di dati di senso compiuto e univoco.
+Una persona, un ordine, una fattura sono entità.
+Un file su disco, un cv sono documenti.
+Un documento per essere inserito in un db relazionale deve essere strutturato.
+Alla domanda db relazione si può dire che un db relazionale è un contenitore di entità organizzate in tabelle che possono essere messe in relazione tra loro.
+Un database relazionale nasce prima di tutto individuando le entità che lo caratterizzano. Le entità si esprimono sempre al singolare, le tabelle si esprimono sempre al plurale.
+Dipendente - Entità/Dipendenti - Tabelle.
+Un'entità oltre a rappresentare un'informazione finita, con un senso, deve anche garantire l'unicità. 
+Un'entità è corretta se attraverso uno, o più, campi garantisce l'unicità dell'informazione. In passato non si usava l'id per identificare univocamente un'entità, ma bisognava che ci fosse uno o più 
+campi che potessero identificare l'entità.
+Il modo più semplice per garantire l'unicità è l'id. Poi viene il codice fiscale e poi si possono unire data di nascita, età, luogo di nascita etc. L'id NON è un progressivo.
+L'entità in SQL assume un nome tecnico: record. Il record è composto da campi che contengono dati che garantiscono l'unicità dell'entità e danno un senso compiuto all'informazione.
+Con i dbms di tipo oracle si chiama tupla. 
+Le tabelle sono quindi insiemi di record.
+Soggetti db relazionale:
+- Campo
+- Record
+- Tabella
+Una relazione è un'associazione logica che si può implementare tra due entità attraverso l'uso di una chiave primaria e una chiave esterna.
