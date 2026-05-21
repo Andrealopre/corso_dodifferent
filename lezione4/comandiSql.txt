@@ -59,3 +59,8 @@ CLIENT <-----> SERVER
 Il cliente, per comunicare, deve avere l'IP e la porta del server. L'ip indica la rete/dispositvo dove gira il dbms, la porta identifica il dbms in esecuzione.
 IP: localhost(127.0.0.1)
 Porta: porta di mysql(3306)
+Client: PHPMYADMIN
+Server Web: apache
+PHPMYADMIN è un'applicazione web, per lavorare ha bisogno del bisogno HTTP, e verrà caricato apache come server web.
+Anche apache fa gestito con ip e client. 127.0.0.1:8080
+Tutto ciò si trova nel pacchetto mamp. Se non dovesse funzionare è a causa dei conflitti delle porte: si cambiano o le porte del server web o le porte del dbms mysql.
