@@ -1,0 +1,45 @@
+1) Creare un database db_dipendenti
+2) Il database dovrà permettere di gestire l'entità dipendente, con le seguenti informazioni non normalizzate:
+    - nome
+    - cognome
+    - luogo_di_nascita
+    - codice_fiscale
+    - sesso
+    - titoli_di_studio
+    - ruolo_aziendale
+    - stipendio
+    - contatti (telefono/i, cellulare/i, la/le mail, facebook/instagram/linkedin)
+    - account (nome_utente, password)
+
+Entità: dipendente
+        -primary key: id
+        - codice_fiscale
+        - nome
+        - cognome
+        - luogo_di_nascita
+        - sesso
+        - ruolo_aziendale
+        - stipendio
+        - foreign key: titoli_di_studio
+
+Entità: titoli_di_studio
+        - key: titoli di studio:
+        - key (dipendente): codice fiscale
+
+Entità: contatti
+        - key: telefono
+        - key: cellulare
+        - key: mail
+        - key: social
+        - key (dipendente): codice fiscale
+
+Entità: account
+        - key: nome_utente
+        - key: password
+        - key (dipendente): codice fiscale
+
+dipendente --> titoli_di_studio (1:N)
+dipendente --> contatti (1:N)
+dipendente --> account (1:1)
+
+la keyword auto_increment fa aumentare di 1 un id in automatico quando viene aggiunto

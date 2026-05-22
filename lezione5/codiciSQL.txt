@@ -1,0 +1,61 @@
+create database nome_db
+use nome_db
+
+create table ruoli_aziendali(
+    id int primary key AUTO_INCREMENT,
+    ruolo_aziendale varchar(100) not null,
+    mansione varchar(500)
+);
+
+create TABLE dipendenti(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(100) not null,
+    cognome varchar(100) not null,
+    luogo_di_nascita varchar(100) not null,
+    data_di_nascita date not null,
+    codice_fiscale char(16) UNIQUE,
+    sesso char(1) not null,
+    stipendio int(10),
+    CONSTRAINT fk_dipendenti_ruolo_aziendale FOREIGN KEY (id_ruolo_aziendale) REFERENCES ruoli_aziendali(id_ruoli_aziendali)
+);
+
+alter table dipendenti
+add constraint fk_dipendenti_account
+foreign key (id_account)
+references account(id_account)
+
+
+POPOLARE UN DATABASE
+Si parte sempre dalle tabelle tipizzate
+
+Dopo i nomi della tabella vanno inseriti i nomi delle colonne così come assegnati nel value, perché l'id è automatico
+insert into titoli_di_studio (titolo_di_studio) values ('Diploma tecnico';)
+
+Insert comando DML, corrisponde al create del crud
+Per leggere bisogna usare un comando dql, il read del crud, ovvero select
+
+La select è algebra lineare. Subito dopo la select si scrive la proiezione, ovvero ciò che voglio vedere e l'ordine in cui lo voglio vedere
+SELECT * from titoli_di_studio order by titolo;
+select * from titoli_di_studio order by titolo desc;
+
+L'update serve per modificare i valori dentro i record
+UPDATE titoli_di_studio SET titolo='Diploma Tecnico'; //questo fa diventare tutti i record di titolo studio, bisogna indicare quale record
+DELETE from titoli_di_studio where id=7;
+L'id è un numero unico crescente
+INSERT INTO dipendenti (nome, cognome, data_di_nascita, luogo_di_nascita, sesso, stipendio)
+id 	nome 	cognome 	luogo_di_nascita 	data_di_nascita 	codice_fiscale 	sesso 	stipendio 	id_ruolo_aziendale 	id_account
+
+CREATE INDEX index_name
+ON table_name (column1, column2, ...);
+
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+
+Gli indici vengono utilizzati per la ricerca dei record
+
+Si vuole visualizzare il cognome, il nome e lo stipendio di tutti i dipendenti
+Si vuole visualizzare lo stesso risultato ma ordinato per cognome e nome
+l'alias è il tipo di una colonna
+
+DATE_FORMAT(data_campo, '%d/%m/%Y') AS data_europea un esempio di funzione
+il not inverte il significato di una condizione.
