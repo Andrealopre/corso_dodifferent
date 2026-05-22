@@ -20,5 +20,35 @@ alle tabelle per evitare errori.
 
 - NOT NULL: il sistema inserisce automaticamente il codice ascii null(#0) se un campo non contiene un informazione. I campi sono obbligatori nelle colonne di questo tipo.
 
-- CHECK: questo controllo permette di applicare una condizione ad una colonna e il dato inserito viene accettato solo se la condizione è soddisfatta (è un vincolo di consistenza). Si usa per controlli di 
-valori non negativi, per numeri di parole, tipi di parole etc.
+- CHECK: questo controllo permette di applicare una condizione ad una colonna e il dato inserito viene accettato solo se la condizione è soddisfatta (è un vincolo di consistenza). Si usa per controlli 
+di valori non negativi, per numeri di parole, tipi di parole etc.
+
+Questo sono i vincoli fondamentali, ma ne esistono due associati alle relazioni i VINCOLI DI INTEGRITA' REFERENZIALE. Sono dei controlli che si applicano solo alle relazioni).
+
+- PRIMARY KEY: questo controllo può essere applicato ad una sola colonna della tabella che è considerata la chiave primaria logica (di solito id). 
+Nella progettazione moderna dei database si usa questa tecnica. Fa due cose importanti:
+1) Non accetta duplicati;
+2) La colonna di tipo primary key viene testata dalle foreign key per verificare la validità della chiave data. Si evitano errori associando i vincoli della primary key sempre alla chiave primaria. 
+Associando il vincolo foreign key alla chiave esterna che si riferirà alla primary key per le relazioni.
+
+- FOREIGN KEY: questo controllo si associa alle chiavi esterne, serve ad evitare che nella colonna vengano inseriti valori non corrisopondenti alla chiave primaria.
+
+--- ATTENZIONE ---------> UN VINCOLO DI FOREIGN KEY PUO' ESSERE AGGIUNTO SOLO SE ESISTE GIA' IL VINCOLO DI PRIMARY KEY CORRISPONDENTE. 
+Non si può associare ad una chiave esterna il vincolo di foreign key se non viene assegnata la primary key corrispondente.
+Se si è obbligati a creare prima la tabella con la chiave esterna, all'inizio non si aggiunge il vincolo di foreign key. Si può fare successivamente, con il comando alter table, dopo la creazione della
+tabella con la chiave primaria.
+
+TIPI DI DATI PER I RECORD (mysql)
+I tipi di dati possono cambiare da dbms a dbms. Alcuni sono universali, altri potrebbe essere comuni solo a determinati tipi di dbms.
+- int: intero
+- decimal(s, p): rappresenta il double ed un tipo di dato comune a tutti i dbms. 
+    - s è il numero di cifre totali, incluse le decimali.
+    - p è il numero di cifre decimali
+-varchar(n): sono stringhe variabili, ovvero delle stringhe in cui non si riempie tutto il cambio. 
+    -n è il numero di caratteri massimo
+    la loro dimensione può compattarsi in caso di stringhe più lunghe di n
+- char(n): sono stringhe a lunghezza fissa, si usa quando il campo è sempre pieno e non bisogna compattare. (p.iva, codice fiscale, CAP)
+Il varchar per tempo nel compattare il dato, quindi si usa un insieme dei due tipi di dato.
+- date: valori di tipo data (in mysql vengono forniti come stringhe in formato usa: es '2000-05-30').
+In sql le stringhe si scrivono con ''.
+- boolean: valori booleani
