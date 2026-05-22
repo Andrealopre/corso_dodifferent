@@ -1,0 +1,24 @@
+RELAZIONI
+- 1:N
+La relazione naturale di tutti i db è quella 1:N. Questa relazione si implementa sempre attraverso una chiave primaria (id), presente nella tabella tipizzata o master, e una chiave esterna presente nella
+tabella di dettaglio o di movimentazione, con il nome id_nome_colonna. La precedente è una nominazione di convenzione. Fisicamente la chiave esterna è nella colonna molti. L'id nella colonna uno.
+
+- N:N
+Questo tipo di relazione non è naturale nei database. Quando bisogna implementare una relazione di questo tipo, bisogna creare una cross-table, una terza tabella. Questa tabella, oltre al suo id, dovrà
+contenere sottoforma di chiavi esterne i riferimenti alle chiavi primarie (id) delle due tabelle messe in relazione tra loro. Ciascuna tabella avrà il proprio id, ma le chiavi esterne di entrambe le
+tabelle sono della cross-table. Quindi si usano le chiavi esterne invece di quelle interne. Se richiesto le cross-table possono avere anche altre informazioni.
+
+- 1:1
+Questo tipo di relazione è semplicemente una relazione uno a molti. Si implementa allo stesso modo di 1:N, con la differenza che la chiave esterna non accetta duplicati. Una chiave che non accetta
+duplicati si dice (unique).
+
+VINCOLI
+Posso mettere in relazione due tabelle semplicemente con id e chiave esterna, i vincoli non sono nel campo delle relazioni, ma sono importanti per esse. I vincoli sono controlli che si possono applicare
+alle tabelle per evitare errori.
+
+- UNIQUE: è un indice che assegnato ad una colonna non accetta duplicati. (codice fiscale, partita IVA etc...)
+
+- NOT NULL: il sistema inserisce automaticamente il codice ascii null(#0) se un campo non contiene un informazione. I campi sono obbligatori nelle colonne di questo tipo.
+
+- CHECK: questo controllo permette di applicare una condizione ad una colonna e il dato inserito viene accettato solo se la condizione è soddisfatta (è un vincolo di consistenza). Si usa per controlli di 
+valori non negativi, per numeri di parole, tipi di parole etc.
