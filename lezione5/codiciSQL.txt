@@ -59,3 +59,10 @@ l'alias è il tipo di una colonna
 
 DATE_FORMAT(data_campo, '%d/%m/%Y') AS data_europea un esempio di funzione
 il not inverte il significato di una condizione.
+
+select distinct cognome from dipendenti order by cognome; serve per eliminare i duplicati da una vista
+limit limita il numero di record che possono apparire dopo l'esecuzione di una query
+
+max è una funzione scalare che rifornisce il valore più alto
+algoritmo rottura di codice.
+HAVING è un where ma applicato ad un group by.
