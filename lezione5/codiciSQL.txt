@@ -66,3 +66,13 @@ limit limita il numero di record che possono apparire dopo l'esecuzione di una q
 max è una funzione scalare che rifornisce il valore più alto
 algoritmo rottura di codice.
 HAVING è un where ma applicato ad un group by.
+
+Si definisce proiezione quello che si definisce dopo select. Nella join non basta mettere i nomi delle colonne nella proiezione. Lavorando con più tabelle potrebbero esserci colonne con gli stessi 
+nomi. Nelle join i nomi delle colonne sono sempre preceduti dal nome della tabella. Poi si fa il from con: tabella1 join tabella 2 join ... join tabella n.
+
+select dipendenti.cognome, dipendenti.nome, ruoli_aziendali.ruolo_aziendale
+from dipendenti join ruoli_aziendali
+on ruoli_aziendali.id_ruolo_aziendale = dipendenti.id_ruolo_aziendale;
+
+Così si fa una join. Si eguagliano gli id delle parti condivise. Con create view nome...view as select ... si possono creare delle ricerche istantanee.
+I nomi asseganti come titoli alle colonne nella select originale, nella view diventano i nuovi nomi delle colonne
