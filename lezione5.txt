@@ -41,6 +41,7 @@ tabella con la chiave primaria.
 TIPI DI DATI PER I RECORD (mysql)
 I tipi di dati possono cambiare da dbms a dbms. Alcuni sono universali, altri potrebbe essere comuni solo a determinati tipi di dbms.
 - int: intero
+- number(n): tipo interno universale per i dbms.
 - decimal(s, p): rappresenta il double ed un tipo di dato comune a tutti i dbms. 
     - s è il numero di cifre totali, incluse le decimali.
     - p è il numero di cifre decimali
@@ -51,4 +52,4 @@ I tipi di dati possono cambiare da dbms a dbms. Alcuni sono universali, altri po
 Il varchar per tempo nel compattare il dato, quindi si usa un insieme dei due tipi di dato.
 - date: valori di tipo data (in mysql vengono forniti come stringhe in formato usa: es '2000-05-30').
 In sql le stringhe si scrivono con ''.
-- boolean: valori booleani
+- boolean: valori booleani. Vengono indicati con la forma true/false
