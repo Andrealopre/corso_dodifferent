@@ -1,7 +1,7 @@
-0;Quadrato;5.0
-0;Rettangolo;5.0;10.0
-0;Triangolo;6.0;6.0;6.0
-0;Triangolo;3;7.0
-0;Quadrilatero;4;10.0
-0;Ottagono;8;8.0
-0;Cerchio;10.0
+0;Quadrato;10.0
+1;Rettangolo;5.0;15.0
+2;Triangolo;10.0;10.0;5.0
+3;Ottagono;8;12.0
+4;Cerchio;10.0
+5;Triangolo;3;25.0
+6;Rettangolo;20.0;40.0
