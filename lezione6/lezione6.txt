@@ -1,0 +1,18 @@
+Avere sempre lo schema del database quando si fanno le query, in modo da essere sicuri sul corretto funzionamento delle join
+SELECT dipendenti.nome, dipendenti.cognome, dipendenti.stipendio,
+account.nome_utente,
+ruoli_aziendali.ruolo_aziendale,
+dipendenti_titoli_di_studio.descrizione, dipendenti_titoli_di_studio.voto,
+dipendenti_contatti.contatto, tipi_contatti.tipo_contatto
+	from dipendenti JOIN account 
+		on dipendenti.id_account = account.id_account
+	join ruoli_aziendali
+		on ruoli_aziendali.id = dipendenti.id_ruolo_aziendale,
+    join dipendenti_titoli_di_studio
+    	on dipendenti_titoli_di_studio.id = dipendenti.id
+    join titoli_di_studio
+    	on titoli_di_studio.id = dipendenti_titoli_di_studio.id
+    JOIN dipendenti_contatti
+    	on dipendenti_contatti.id_dipendente = dipendenti.id
+    join tipi_contatti
+    	on tipi_contatti.id_contatto = dipendenti.id

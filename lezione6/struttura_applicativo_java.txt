@@ -1,0 +1,46 @@
+Obiettivo: connettere un'app java ad un DBMS (MySql) (un db è il prodotto di un dbms)
+
+1) Concetto di interfaccia (Tipo referenziale)
+2) Polimorfismo per interfaccia
+3) List<E> e Map<K,V>
+4) Eccezioni
+------------------------------------------------
+5) JDBC
+
+Un'interfaccia è un elenco di metodi astratti. Ovvero, un elenco di metodi non implementati (senza corpo senza logica)
+Le classi concrete sono le classi di default e non possiedono metodi astratti.
+Le interfacce non hanno costruttori
+
+package controller;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedList;
+import java.util.List;
+
+import repository.CrudService;
+import repository.ICrudService;
+
+public class Avvio {
+
+	public static void main(String[] args) {
+		// polimorfismo per interfaccia
+		ICrudService crud = new CrudService();
+		
+		//Le liste si dovrebbero inizalizzare a null e in base alle necessità si aggiorna il tipo
+		List<String> nominativi = null; 
+		nominativi = new LinkedList<>();
+		
+		// vorrei dichiarare una variabile che accetti sia liste che set, si usa collection
+		Collection<String> collezione = new ArrayList<>();
+	}
+
+}
+
+JDBC usa le seguenti interfacce:
+Connection conn = null;
+PreparedStatement ps = null;
+ResultSet rs = null;
+
+Queste sono delle interfacce per sql in java
+
