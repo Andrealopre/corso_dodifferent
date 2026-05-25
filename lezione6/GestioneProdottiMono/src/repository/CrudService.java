@@ -78,10 +78,41 @@ public class CrudService implements ICrudService {
 		}
 		return prodotti;
 	}
-
+	
+	//Read One - leggi tramite ricerca per id
 	@Override
-	public String leggi(int id) {
-		// TODO Auto-generated method stub
+	public Prodotto leggi(int id) {
+		Connettore connettore = new Connettore();
+		Connection conn = connettore.apriConnessione();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String comandoSql = "select * from prodotti where id=?";
+		Prodotto prodotto = new Prodotto();
+		
+		try {
+			ps = conn.prepareStatement(comandoSql);
+			ps.setInt(1, id);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				prodotto.setId(rs.getInt("id"));
+				prodotto.setNomeProdotto(rs.getString("nome_prodotto"));
+				prodotto.setPrezzo(rs.getDouble("prezzo"));
+				prodotto.setQuantita(rs.getInt("quantita"));
+				prodotto.setMarca(rs.getString("marca"));
+				prodotto.setCategoria(rs.getString("categoria"));
+				return prodotto;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 

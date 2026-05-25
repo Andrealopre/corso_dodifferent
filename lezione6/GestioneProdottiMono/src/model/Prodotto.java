@@ -44,4 +44,9 @@ public class Prodotto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+	@Override
+	public String toString() {
+		return id + ";" + nomeProdotto + ";" + prezzo + ";" + quantita + ";" + marca + ";" + categoria;
+	}
+	
 }

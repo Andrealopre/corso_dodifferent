@@ -1,6 +1,7 @@
 package controller;
 
 import java.sql.Connection;
+import java.util.List;
 
 import connettore.Connettore;
 import model.Prodotto;
@@ -20,6 +21,7 @@ public class Avvio {
 		
 		Prodotto prodotto = new Prodotto();
 		ICrudService crud = new CrudService();
+		int scelta = 0;
 		
 //		prodotto.setNomeProdotto("Maglia Barcellona");
 //		prodotto.setPrezzo(100.99);
@@ -41,7 +43,20 @@ public class Avvio {
 //			System.out.println("Rimozione avvenuta con successo");
 //		} else {
 //			System.err.println("Rimozione fallita");
-		}
-	
-
+//		List<Prodotto> prodotti = crud.leggi();
+//		System.out.println("SCHEDA PRODOTTO");
+//		for(Prodotto p : prodotti) {
+//			System.out.println("Id: " + p.getId());
+//			System.out.println("Nome prodotto: " + p.getNomeProdotto());
+//			System.out.println("Prezzo: " + p.getPrezzo());
+//			System.out.println("Quantita: " + p.getQuantita());
+//			System.out.println("Marca: " + p.getMarca());
+//			System.out.println("Categoria: " + p.getCategoria());
+//			System.out.println("-------------------------------------");
+//			System.out.println();
+//		}
+		prodotto = crud.leggi(4);
+		System.out.println(prodotto.toString());
+		
+	}
 }
