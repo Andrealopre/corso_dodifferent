@@ -8,3 +8,21 @@ JDBC:
     - ResultSet: è il lettore dei risultati ottenuti da una query/interrogazione a DB
 Senza Connection non posso raggiungere MySql e stabilire un contatto con il database. Dopo aver stabilito la connessione bisogna scrivere i comandi. A catena, dopo il Connection, deve subentrare il
 PreparedStatement che deve compilare un comando sql ed eseguire il comando stesso. Qualora le operazioni crud da fare sono inserimento, modifica e rimozione si usa il PreparedStatement.
+Il ResultSet è usato se il comando sql preparato è una select. Solo di fronte ad una select deve subentrare ResultSet, in quanto rappresenta il set di risultati. Permette di leggere le righe di una
+select dal PreparedStatement che permette di collegarsi al db tramite la Connection.
+
+Connection --> PreparedStatement --> ResultSet
+Connection <-- PreparedStatement <-- ResultSet
+
+polimorfismo per interfaccia
+Per ottenere una Connection:
+
+Connection conn = DriverManager.getConnection(URLDB, USERDB, PWDDBMS);
+
+DriverManager è una classe fornita da JDBC, così come Connection.
+getConnection() deve dare un indirizzo di memoria. Deve avere 3 argomenti:
+    - URLDB
+    - USERDB
+    - PWDDBMS
+
+PreparedStatement ps = conn.prepareStatement("Comando sql");
