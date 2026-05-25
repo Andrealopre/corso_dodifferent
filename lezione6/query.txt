@@ -1,0 +1,8 @@
+CREATE TABLE prodotti(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    nome_prodotto varchar(30),
+    prezzo decimal(6,2), -- max 9999.99
+    quantita int,
+    marca varchar(10),
+    cateogoria varchar(20)
+);
