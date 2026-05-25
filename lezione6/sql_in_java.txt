@@ -1,0 +1,10 @@
+JDBC - Java DataBase Connectivity
+E' una libreria java utile a stabilire una connessione tra l'app java ed un DBMS.
+
+JDBC: 
+    - Connection: è l'interfaccia responsabile della connessione
+    - Statement
+    - PreparedStatement (extends Statement): è una misura di sicurezza in più rispetto a Statement. E' il preparatore/compilatore di comandi SQL
+    - ResultSet: è il lettore dei risultati ottenuti da una query/interrogazione a DB
+Senza Connection non posso raggiungere MySql e stabilire un contatto con il database. Dopo aver stabilito la connessione bisogna scrivere i comandi. A catena, dopo il Connection, deve subentrare il
+PreparedStatement che deve compilare un comando sql ed eseguire il comando stesso. Qualora le operazioni crud da fare sono inserimento, modifica e rimozione si usa il PreparedStatement.
