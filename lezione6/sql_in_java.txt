@@ -26,3 +26,12 @@ getConnection() deve dare un indirizzo di memoria. Deve avere 3 argomenti:
     - PWDDBMS
 
 PreparedStatement ps = conn.prepareStatement("Comando sql");
+//ps.execute si fa se il comando sql appartiene alla categoria DML
+ps.execute();
+
+Connessione alla mano posso chiamare il metodo che compila il comando, prepareStatement controlla che non ci siano errori nel comando.
+
+Se il comando sql è una select non mi basta fermarmi alla connessione e al PreparedStatement
+
+//se il comando appartiene alla categoria DQL (select) non si usa execute, si usa executeQuery();
+ResultSet rs = ps.executeQuery();
