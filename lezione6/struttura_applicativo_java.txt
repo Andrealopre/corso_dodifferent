@@ -44,3 +44,8 @@ ResultSet rs = null;
 
 Queste sono delle interfacce per sql in java
 
+I try catch verranno usati per gestire le connessioni, qualora ci fossero dei problemi di sintassi in sql 
+In un try catch si mettono prima i catch più specifici e in fondo a tutto si mette Exception
+Il finally rappresenta il blocco di istruzioni che devono avvenire indipendentemente dall'accadimento dell'eccezione
+Le connessione a db vanno moderate, basta un calo di tensione per corrompere un database. Per sicurezza, al di la di un'eccezione, con il finally si garantirebbe a prescindere la chiusura di 
+connessione a db, e tutti gli oggetti coinvolti.
