@@ -6,3 +6,13 @@ Importante ricordare perché il pattern singleton può essere usato (sopratutto 
 SQLException si verifica quando si sbagliano le credenziali, l'errore viene trattato come una eccezione sql
 Ricordarsi anche classNotFound
 Un metodo statico può lavorare solo su attributi statici
+
+DTO: Data Transfer Object
+Oggetto concepito per trasferire i dati del db nel programma Java
+DTO nasce come oggetto di sola lettura
+
+package dto;
+public class DtoProdottoMarche {
+    private int id;
+    private 
+}

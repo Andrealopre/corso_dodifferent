@@ -1,0 +1,15 @@
+account - dipendenti (1:1)
+ruoli_aziendali - dipendenti (1:M)
+dipendenti - titoli_di_studio (M:M)
+
+si creano account, dipendente e ruolo aziendale
+e poi lavorare su database, assicurandoci il crud
+
+Fare un menu per le operazioni da svolgere
+Infine implementare i titoli di studio
+
+Quando inserisco un dipendente, devo prima fare la insert dell'account e subito dopo fare il dipendente
+In generale si preferisce non fare più le 1:1, perché di solito sono rigide.
+
+Inserire un account
+Fare una select per prendere l'id dell'account inserito e poi inserire il dipendente
