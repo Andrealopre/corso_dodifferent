@@ -1,3 +1,8 @@
 prodotti - marche M-1 (main brand)
 prodotti - categorie M-1
 prodotti - prodotti_ordini - ordini M-M
+
+Importante ricordare perché il pattern singleton può essere usato (sopratutto per il connettore)
+SQLException si verifica quando si sbagliano le credenziali, l'errore viene trattato come una eccezione sql
+Ricordarsi anche classNotFound
+Un metodo statico può lavorare solo su attributi statici
