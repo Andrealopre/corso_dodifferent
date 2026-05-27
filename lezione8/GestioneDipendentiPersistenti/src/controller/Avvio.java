@@ -77,7 +77,7 @@ public class Avvio {
 				vista.visualizzaMessaggio("Dipendente selezionato:");
 				vista.visualizzaMessaggio(dipendente.toString());
 				confermaScelta = vista.leggiStringa("Confermi di voler eliminare il dipendente " + 
-				dipendente.getNome() + " " + dipendente.getCognome() + " (s/n)?");
+				dipendente.getNome() + " " + dipendente.getCognome() + " (s/n)? ");
 				if(confermaScelta.toLowerCase().equals("s")) {
 					if(crud.rimuovi(dipendente.getId())) {
 						vista.visualizzaMessaggio("Rimozione effettuata!");
@@ -110,7 +110,7 @@ public class Avvio {
 					break;
 				}
 				vista.visualizzaMessaggio("");
-				sceltaDipendente = vista.leggiIntero("Inserisci id del dipendente da modificare (o premi 7 per uscire): ");
+				sceltaDipendente = vista.leggiIntero("Inserisci id del dipendente da modificare: ");
 				dipendente = crud.leggiDipendente(sceltaDipendente);
 				while(sceltaModifica != 7) {
 					vista.visualizzaMessaggio("Dipendente selezionato");
