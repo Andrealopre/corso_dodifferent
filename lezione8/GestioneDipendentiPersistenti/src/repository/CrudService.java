@@ -350,10 +350,10 @@ public class CrudService implements ICrudService {
 	}
 
 	@Override
-	public boolean modificaStringa(int id, String colonna, String valore) {
+	public boolean modificaStringa(int id, String tabella, String colonna, String valore) {
 		Connection conn = Connettore.getInstance().apriConnessione();
 		PreparedStatement ps = null;
-		String comandoSql = "update dipendenti set " + colonna + " = ? where id=?";
+		String comandoSql = "update " + tabella + " set " + colonna + " = ? where id=?";
 		
 		try {
 			ps = conn.prepareStatement(comandoSql);
@@ -375,10 +375,10 @@ public class CrudService implements ICrudService {
 	}
 
 	@Override
-	public boolean modificaDecimale(int id, String colonna, Double valore) {
+	public boolean modificaDecimale(int id, String tabella, String colonna, Double valore) {
 		Connection conn = Connettore.getInstance().apriConnessione();
 		PreparedStatement ps = null;
-		String comandoSql = "update dipendenti set " + colonna + " = ? where id=?";
+		String comandoSql = "update " + tabella + " set " + colonna + " = ? where id=?";
 		
 		try {
 			ps = conn.prepareStatement(comandoSql);
@@ -400,10 +400,10 @@ public class CrudService implements ICrudService {
 	}
 
 	@Override
-	public boolean modificaIntero(int id, String colonna, int valore) {
+	public boolean modificaIntero(int id, String tabella, String colonna, int valore) {
 		Connection conn = Connettore.getInstance().apriConnessione();
 		PreparedStatement ps = null;
-		String comandoSql = "update dipendenti set " + colonna + " = ? where id=?";
+		String comandoSql = "update " + tabella + " set " + colonna + " = ? where id=?";
 		
 		try {
 			ps = conn.prepareStatement(comandoSql);
@@ -422,5 +422,116 @@ public class CrudService implements ICrudService {
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public Dipendente leggiDipendente(String nome, String cognome) {
+		Dipendente dipendente = null;
+		RuoloAziendale ruoloAziendale = null;
+		Account account = null;
+		Connection conn = Connettore.getInstance().apriConnessione();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String comandoSql = "select * from dipendenti where nome=? and cognome=?";
+		
+		try {
+			ps = conn.prepareStatement(comandoSql);
+			ps.setString(1, nome);
+			ps.setString(2, cognome);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				dipendente = new Dipendente();
+				dipendente.setId(rs.getInt("id"));
+				dipendente.setNome(rs.getString("nome"));
+				dipendente.setCognome(rs.getString("cognome"));
+				dipendente.setLuogoDiNascista(rs.getString("luogo_di_nascita"));
+				dipendente.setDataDiNascita(rs.getDate("data_di_nascita"));
+				dipendente.setCodiceFiscale(rs.getString("codice_fiscale"));
+				dipendente.setSesso(rs.getString("sesso"));
+				dipendente.setStipendio(rs.getDouble("stipendio"));
+				ruoloAziendale = this.leggiRuoloAziendale(rs.getInt("id_ruolo_aziendale"));
+				account = this.leggiAccount(rs.getInt("id_account"));
+				dipendente.setAccount(account);
+				dipendente.setRuoloAziendale(ruoloAziendale);
+				return dipendente;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public List<Account> leggiAccount() {
+		Connection conn = Connettore.getInstance().apriConnessione();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Account account = null;
+		List<Account> repoAccount = new ArrayList<>();
+		String comandoSql = "select * from account";
+		
+		try {
+			ps = conn.prepareStatement(comandoSql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				account = new Account();
+				account.setId_account(rs.getInt("id_account"));
+				account.setNomeUtente(rs.getString("nome_utente"));
+				account.setPassword(rs.getString("password"));
+				repoAccount.add(account);
+			}
+			return repoAccount;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public Account leggiAccount(String username) {
+		Connection conn = Connettore.getInstance().apriConnessione();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		Account account = null;
+		String comandoSql = "select * from account where nome_utente=?";
+		
+		try {
+			ps = conn.prepareStatement(comandoSql);
+			ps.setString(1, username);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				account = new Account();
+				account.setId_account(rs.getInt("id_account"));
+				account.setNomeUtente(rs.getString("nome_utente"));
+				account.setPassword(rs.getString("password"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				rs.close();
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
 	}
 }

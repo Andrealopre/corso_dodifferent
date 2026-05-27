@@ -14,11 +14,35 @@ public class Vista {
 		// nextInt() non legge l'invio, usare nextLine() e poi parseInt()
 		System.out.println("*** MENU PRINCIPALE ***");
 		System.out.println("1) Inserisci un dipendente");
-		System.out.println("2) Visualizza i dipendenti");
-		System.out.println("3) Rimuovi Dipendente");
-		System.out.println("4) Modifica Dipendente");
-		System.out.println("5) Cerca dipendente per id");
+		System.out.println("2) Menu dipendente");
+		System.out.println("3) Menu account");
+		System.out.println("4) Menu ruoli aziendali");
+		System.out.println("5) Esci");
+	}
+	
+	public void menuDipendente() {
+		System.out.println("*** MENU DIPENDENTE ***");
+		System.out.println("1) Visualizza i dipendenti");
+		System.out.println("2) Cerca dipendente per id");
+		System.out.println("3) Cerca dipendente per nome e cognome");
+		System.out.println("4) Rimuovi dipendente");
+		System.out.println("5) Modifica dipendente");
 		System.out.println("6) Esci");
+	}
+	
+	public void menuAccount() {
+		System.out.println("*** MENU ACCOUNT ***");
+		System.out.println("1) Visualizza gli account");
+		System.out.println("2) Cerca account per id");
+		System.out.println("3) Cerca account per username");
+		System.out.println("4) Modifica account");
+		System.out.println("5) Esci");
+	}
+	
+	public void menuModificaAccount() {
+		System.out.println("1) Cambia username");
+		System.out.println("2) Cambia password");
+		System.out.println("3) Esci");
 	}
 	
 	public int leggiIntero(String messaggio) {
