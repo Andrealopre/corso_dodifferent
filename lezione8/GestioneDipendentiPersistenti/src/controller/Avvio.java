@@ -110,74 +110,96 @@ public class Avvio {
 					break;
 				}
 				vista.visualizzaMessaggio("");
-				sceltaDipendente = vista.leggiIntero("Inserisci id del dipendente da modificare: ");
+				sceltaDipendente = vista.leggiIntero("Inserisci id del dipendente da modificare (o premi 7 per uscire): ");
 				dipendente = crud.leggiDipendente(sceltaDipendente);
-				vista.visualizzaMessaggio("Dipendente selezionato");
-				vista.visualizzaMessaggio(dipendente.toString());
-				vista.visualizzaMessaggio("");
-				vista.visualizzaMessaggio("1. Nome");
-				vista.visualizzaMessaggio("2. Cognome");
-				vista.visualizzaMessaggio("3. Sesso");
-				vista.visualizzaMessaggio("4. Stipendio");
-				vista.visualizzaMessaggio("5. Codice Fiscale");
-				sceltaModifica = vista.leggiIntero("Scegli il campo da modificare: ");
-				switch(sceltaModifica) {
-				case 1:
-					String nome = "";
-					vista.visualizzaMessaggio("Schermata modifica nome");
-					nome = vista.leggiStringa("Inserisci il nuovo nome: ");
-					if(crud.modificaStringa(dipendente.getId(), "nome", nome)) {
-						vista.visualizzaMessaggio("Modifica avvenuta con successo");
-					} else {
-						vista.visualizzaMessaggio("Modifica fallita");
+				while(sceltaModifica != 7) {
+					vista.visualizzaMessaggio("Dipendente selezionato");
+					vista.visualizzaMessaggio(dipendente.toString());
+					vista.visualizzaMessaggio("");
+					vista.visualizzaMessaggio("1. Nome");
+					vista.visualizzaMessaggio("2. Cognome");
+					vista.visualizzaMessaggio("3. Sesso");
+					vista.visualizzaMessaggio("4. Stipendio");
+					vista.visualizzaMessaggio("5. Codice Fiscale");
+					vista.visualizzaMessaggio("6. Ruolo Aziendale");
+					vista.visualizzaMessaggio("7. Esci");
+					
+					sceltaModifica = vista.leggiIntero("Scegli il campo da modificare: ");
+					switch(sceltaModifica) {
+					case 1:
+						String nome = "";
+						vista.visualizzaMessaggio("Schermata modifica nome");
+						nome = vista.leggiStringa("Inserisci il nuovo nome: ");
+						if(crud.modificaStringa(dipendente.getId(), "nome", nome)) {
+							vista.visualizzaMessaggio("Modifica avvenuta con successo");
+						} else {
+							vista.visualizzaMessaggio("Modifica fallita");
+							break;
+						}
+						break;
+					case 2:
+						String cognome = "";
+						vista.visualizzaMessaggio("Schermata modifica cognome");
+						cognome = vista.leggiStringa("Inserisci il nuovo cognome: ");
+						if(crud.modificaStringa(dipendente.getId(), "cognome", cognome)) {
+							vista.visualizzaMessaggio("Modifica avvenuta con successo");
+						} else {
+							vista.visualizzaMessaggio("Modifica fallita");
+							break;
+						}
+						break;
+					case 3:
+						String sesso = "";
+						vista.visualizzaMessaggio("Schermata modifica sesso");
+						sesso = vista.leggiStringa("Inserisci il nuovo sesso: ");
+						if(crud.modificaStringa(dipendente.getId(), "sesso", sesso)) {
+							vista.visualizzaMessaggio("Modifica avvenuta con successo");
+						} else {
+							vista.visualizzaMessaggio("Modifica fallita");
+							break;
+						}
+						break;
+					case 4:
+						Double stipendio = 0.0;
+						vista.visualizzaMessaggio("Schermata modifica stipendio");
+						stipendio = vista.leggiDecimale("Inserisci il nuovo stipendio: ");
+						if(crud.modificaDecimale(dipendente.getId(), "stipendio", stipendio)) {
+							vista.visualizzaMessaggio("Modifica avvenuta con successo");
+						} else {
+							vista.visualizzaMessaggio("Modifica fallita");
+							break;
+						}
+						break;
+					case 5:
+						String codiceFiscale = "";
+						vista.visualizzaMessaggio("Schermata modifica codice fiscale");
+						codiceFiscale = vista.leggiStringa("Inserisci il nuovo codice fiscale: ");
+						if(crud.modificaStringa(dipendente.getId(), "codice_fiscale", codiceFiscale)) {
+							vista.visualizzaMessaggio("Modifica avvenuta con successo");
+						} else {
+							vista.visualizzaMessaggio("Modifica fallita");
+							break;
+						}
+						break;
+					case 6:
+						int ruoloScelto = 0;
+						vista.visualizzaMessaggio("Schermata modifica ruolo aziendale");
+						vista.visualizzaMessaggio("Ruoli disponibili:");
+						for(RuoloAziendale ruolo : listRuoliAziendali) {
+							vista.visualizzaMessaggio(ruolo.toString());
+						}
+						vista.visualizzaMessaggio("");
+						ruoloScelto = vista.leggiIntero("Inserisci il nuovo ruolo aziendale: ");
+						if(crud.modificaIntero(dipendente.getId(), "id_ruolo_aziendale", ruoloScelto)) {
+							vista.visualizzaMessaggio("Modifica avvenuta con successo");
+						} else {
+							vista.visualizzaMessaggio("Modifica fallita");
+							break;
+						}
 						break;
 					}
-					break;
-				case 2:
-					String cognome = "";
-					vista.visualizzaMessaggio("Schermata modifica cognome");
-					cognome = vista.leggiStringa("Inserisci il nuovo cognome: ");
-					if(crud.modificaStringa(dipendente.getId(), "cognome", cognome)) {
-						vista.visualizzaMessaggio("Modifica avvenuta con successo");
-					} else {
-						vista.visualizzaMessaggio("Modifica fallita");
-						break;
-					}
-					break;
-				case 3:
-					String sesso = "";
-					vista.visualizzaMessaggio("Schermata modifica sesso");
-					nome = vista.leggiStringa("Inserisci il nuovo sesso: ");
-					if(crud.modificaStringa(dipendente.getId(), "sesso", sesso)) {
-						vista.visualizzaMessaggio("Modifica avvenuta con successo");
-					} else {
-						vista.visualizzaMessaggio("Modifica fallita");
-						break;
-					}
-					break;
-				case 4:
-					Double stipendio = 0.0;
-					vista.visualizzaMessaggio("Schermata modifica stipendio");
-					stipendio = vista.leggiDecimale("Inserisci il nuovo stipendio: ");
-					if(crud.modificaNumero(dipendente.getId(), "stipendio", stipendio)) {
-						vista.visualizzaMessaggio("Modifica avvenuta con successo");
-					} else {
-						vista.visualizzaMessaggio("Modifica fallita");
-						break;
-					}
-					break;
-				case 5:
-					String codiceFiscale = "";
-					vista.visualizzaMessaggio("Schermata modifica codice fiscale");
-					codiceFiscale = vista.leggiStringa("Inserisci il nuovo codice fiscale: ");
-					if(crud.modificaStringa(dipendente.getId(), "codice_fiscale", codiceFiscale)) {
-						vista.visualizzaMessaggio("Modifica avvenuta con successo");
-					} else {
-						vista.visualizzaMessaggio("Modifica fallita");
-						break;
-					}
-					break;
 				}
+				
 				break;
 			case 5:
 				vista.visualizzaMessaggio("*** Cerca dipendente per id ***");

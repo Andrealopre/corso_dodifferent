@@ -12,7 +12,8 @@ public interface ICrudService {
 	public boolean inserisciRuoloAziendale(RuoloAziendale ruoloAziendale);
 	public boolean rimuovi(int id);
 	public boolean modificaStringa(int id, String colonna, String valore);
-	public boolean modificaNumero(int id, String colonna, Double valore);
+	public boolean modificaDecimale(int id, String colonna, Double valore);
+	public boolean modificaIntero(int id, String colonna, int valore);
 	public List<Dipendente> leggiDipendenti();
 	public Dipendente leggiDipendente(int id);
 	public List<RuoloAziendale> leggiRuoliAziendali();	

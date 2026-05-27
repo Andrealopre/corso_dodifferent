@@ -375,7 +375,7 @@ public class CrudService implements ICrudService {
 	}
 
 	@Override
-	public boolean modificaNumero(int id, String colonna, Double valore) {
+	public boolean modificaDecimale(int id, String colonna, Double valore) {
 		Connection conn = Connettore.getInstance().apriConnessione();
 		PreparedStatement ps = null;
 		String comandoSql = "update dipendenti set " + colonna + " = ? where id=?";
@@ -383,6 +383,31 @@ public class CrudService implements ICrudService {
 		try {
 			ps = conn.prepareStatement(comandoSql);
 			ps.setDouble(1, valore);
+			ps.setInt(2, id);
+			ps.execute();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				ps.close();
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean modificaIntero(int id, String colonna, int valore) {
+		Connection conn = Connettore.getInstance().apriConnessione();
+		PreparedStatement ps = null;
+		String comandoSql = "update dipendenti set " + colonna + " = ? where id=?";
+		
+		try {
+			ps = conn.prepareStatement(comandoSql);
+			ps.setInt(1, valore);
 			ps.setInt(2, id);
 			ps.execute();
 			return true;
