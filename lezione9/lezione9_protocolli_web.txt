@@ -5,5 +5,22 @@ TIPI DI ARCHITETTURE SOFTWARE
     Viene chiamata anche architettura mono-utente: risponde ad un utente per volta. Il programma non è in grado di ricevere richieste da più utenti contemporaneamente.
     - Monolite: MVC/APP che trova tutti i servizi nel suo interno. Non si interfaccia a programmi secondi, tutte le operazioni che può eseguire sono svolte al suo interno.
                 E' composto da layer logico (controller) e da layer presentazione. Il layer logico fa da punto di convergenza per tutti i model tramite il controller. Ha il compito di gestire determinate
-                richieste da parte dell'utente. Basti pensare allo switch-case usato per gestire le richieste di inserimento o modifica di un dipendente in un programma gestionale. Deve mandare le 
-                richieste al programmare di svolgere operazioni di CRUD sui dati o qualsiasi tipo di richiesta.
+                richieste da parte dell'utente. Basti pensare allo switch-case usato per gestire le richieste di inserimento o modifica di un dipendente in un programma gestionale, sostanzialemente
+                è un gestore di richieste. Deve mandare le richieste al programmare di svolgere operazioni di CRUD sui dati o qualsiasi tipo di richiesta. 
+                La presentazione è la vista del programma.
+    Richieste e risposte sono da considerare com messaggi e risposte ai messaggi. Lo switch-case si può considerare come un sistema richiesta e risposta.
+
+- Architettura a 3 livelli:
+    Tanti utenti possono interagire con il programma come se l'esperienza fosse singola. Riesce a lavorare con più utenti simultaneamente. Per le sue caratteristiche viene chiamata anche architettura
+    web.
+
+Internet è l'insieme delle infrastrutture che devono interconnettersi tra di loro. Permette di essere connessi ognuno con il proprio provider. Permette di essere connessi attraverso i router. Una rete
+è l'insieme dei router: ogni router definisce un ip pubblico, che può essere nattato su un ip privato. Il gateway è l'ip generato dal router. Viene anche assegnata una porta, in quanto più applicativi 
+possono usare più porte. 8080 mi da la certezza che il mio programma possa essere raggiunto. Ho anche la certezza dell'application server in uso. L'application server è l'applicativo che mette in
+ascolto un software su una specifica porta (8080 vuol dire "apache").
+
+- Apache server web (l'erogatore del servizio)
+- Tomcat: application server, ovvero, l'applicativo che si appoggia ad apache. Ogni web app gira attraverso un application server che ne determinerà le porte di ascolto.
+Esempio: in tomcat girano 3 applicativi, rispettivamente attraverso le porte: 8095, 8096, 8097 (le 8080 potrebbero già essere utilizzate da altri applicativi. Ad esempio skype usava la porta 8080 e la
+rubava a qualsiasi altro applicativo presente, schermando gli altri applicativi).
+
