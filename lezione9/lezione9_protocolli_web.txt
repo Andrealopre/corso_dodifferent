@@ -24,3 +24,17 @@ ascolto un software su una specifica porta (8080 vuol dire "apache").
 Esempio: in tomcat girano 3 applicativi, rispettivamente attraverso le porte: 8095, 8096, 8097 (le 8080 potrebbero già essere utilizzate da altri applicativi. Ad esempio skype usava la porta 8080 e la
 rubava a qualsiasi altro applicativo presente, schermando gli altri applicativi).
 Per essere raggiungibile, un applicativo, ha bisogno di una coppia (ip, porta) e deve essere associato alla rete. Servono un provider, un router che mappa i computer e quindi una connessione ad internet.
+
+- Modalità sviluppo: localhost= ip privato -> localhost:porta(8096)
+- Modalità produzione: bisogna nattare un localhost secondo un ip pubblico -> ip_pubblico:porta(8096)
+
+HTTP: hypertext transer protocol. Un insieme di regole che definiscono lo scambio tra utente e programma. Https usa un certificato (ssl) che assicura che i dati vengano criptati.
+
+Le view e le maschere prenderanno la forma di pagine html. Strutturalmente le classi controller assumono un nome particolare: servlet. Lato web il controller è una servlet.
+Una servlet è un controller che riceve richieste sfruttando il protocollo http. Questo tipo di controller non deve avere il metodo main: il metodo main ragiona in modalità mono-utente, lavorando con un
+utente per volta. Nasce per rispondere a chi "ha di fronte". 
+La servlet esclude quindi il main, lo sostituisce con tanti metodi. Il main verrà sostituito da tanti metodi, ogni metodo risponderà ad una specifica richiesta. La servlet permette quindi di rispondere a
+più utenti contemporaneamente.
+
+PROTOCOLLO HTTP
+
