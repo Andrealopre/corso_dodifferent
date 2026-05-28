@@ -38,3 +38,33 @@ più utenti contemporaneamente.
 
 PROTOCOLLO HTTP
 
+L'HTTP è un protocollo di rete che regola lo scambio request-response tra l'utente e l'applicativo. Per protocollo si intende un insieme di regole che usano codici di stato (codici a 3 cifre) per 
+comunicare il risultato dello scambio.
+
+Codici di stato:
+    - 200: ok, la richiesta ha trovato la destinazione (un endpoint da raggiugnere), e ottiene una risposta. 
+    - 404: not found, l'utente ha provato ad inviare una richiesta, ma per qualche motivo quella risorsa non è più reperibile
+    - 500: internal server error, si è raggiunta la destinazione, ma ci sono problemi di codice nel programma che non permettono di portare a termine lo scambio.
+    - 201 si riferisce ad una richiesta di registrazione (create)
+
+Messaggi HTTP:
+    - Request: messaggio http inviato dall'utente (Consumer/User) verso l'app (Server)
+    - Response: messaggio inviato dal server (applicativo) vero il client (utente)
+
+Un messaggio ha un testo che ha un corpo. Che si parli di richieste o risposte, i messaggi hanno un "corpo dati", dove vengono registrati i valori da inviare tra una destinazione e l'altra. Una richiesta
+Potrebbe avere, come non avere, un corpo dati. Se ha un corpo allora contiene dei dati che sono partiti da un punto A ad un punto B. 
+Per le response non c'è distinzione da messaggio con e senza corpo. Per quanto riguarda le request vale il contrario, viene fatta la distinzione tra richiesta con corpo e senza corpo.
+
+Quali sono i verbi dell'HTTP?
+
+    - POST: inviare una richiesta di inserimento
+    - GET: richiesta di una lettura (richiedo informazioni)
+    - PUT: richiesta di modifica
+    - DELETE: richiesta di rimozione
+
+L'utente può inviare, in teoria, quattro tipi diversi di richiesta (riferendosi al crud). Esistono dei verbi derivati come patch.
+Dal punto di vista nativo, HTTP conosce solo due verbi, post e get. Put deriva da post (sono della stessa natura), delete deriva da get. Con i framework si possono derivare post e get.
+
+Post: richiesta con il corpo dati (i dati vengono quindi nascosti dall'url)
+Get: richiesta senza corpo dati (richiesta che prende dati)
+NB: di default, a meno di specifiche, tutte le richieste sono del tipo get
