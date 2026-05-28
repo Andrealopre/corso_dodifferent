@@ -67,4 +67,4 @@ Dal punto di vista nativo, HTTP conosce solo due verbi, post e get. Put deriva d
 
 Post: richiesta con il corpo dati (i dati vengono quindi nascosti dall'url)
 Get: richiesta senza corpo dati (richiesta che prende dati)
-NB: di default, a meno di specifiche, tutte le richieste sono del tipo get
+NB: di default, a meno di specifiche, tutte le richieste sono del tipo get.
