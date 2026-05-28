@@ -1,0 +1,9 @@
+TIPI DI ARCHITETTURE SOFTWARE
+
+- Architettura a 2 livelli o 2 tiers:
+    Da una parte c'è il monolite, inteso come applicativo java, con una serie di componenti, e dall'altra parte il database. Viene fatta una separazione tra il monolite (l'applicativo) e il database.
+    Viene chiamata anche architettura mono-utente: risponde ad un utente per volta. Il programma non è in grado di ricevere richieste da più utenti contemporaneamente.
+    - Monolite: MVC/APP che trova tutti i servizi nel suo interno. Non si interfaccia a programmi secondi, tutte le operazioni che può eseguire sono svolte al suo interno.
+                E' composto da layer logico (controller) e da layer presentazione. Il layer logico fa da punto di convergenza per tutti i model tramite il controller. Ha il compito di gestire determinate
+                richieste da parte dell'utente. Basti pensare allo switch-case usato per gestire le richieste di inserimento o modifica di un dipendente in un programma gestionale. Deve mandare le 
+                richieste al programmare di svolgere operazioni di CRUD sui dati o qualsiasi tipo di richiesta.
