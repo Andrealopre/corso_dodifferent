@@ -23,4 +23,4 @@ ascolto un software su una specifica porta (8080 vuol dire "apache").
 - Tomcat: application server, ovvero, l'applicativo che si appoggia ad apache. Ogni web app gira attraverso un application server che ne determinerà le porte di ascolto.
 Esempio: in tomcat girano 3 applicativi, rispettivamente attraverso le porte: 8095, 8096, 8097 (le 8080 potrebbero già essere utilizzate da altri applicativi. Ad esempio skype usava la porta 8080 e la
 rubava a qualsiasi altro applicativo presente, schermando gli altri applicativi).
-
+Per essere raggiungibile, un applicativo, ha bisogno di una coppia (ip, porta) e deve essere associato alla rete. Servono un provider, un router che mappa i computer e quindi una connessione ad internet.
