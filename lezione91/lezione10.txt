@@ -38,3 +38,14 @@ Si definisce paradigma il modo in cui viene scritto un programma o un'applicazio
                             Linguaggi: Scala, Python
 
 Quindi cos'è un paradigma: un modo in cui si scrive un'applicazione. La scelta del paradigma è legata al contesto in cui si opera.
+
+MODELLO DI SVILUPPO SOFTWARE
+
+Un modello di sviluppo software caratterizza il ciclo di vita del software da sviluppare, ovvero come si svolgono le fasi fondamentali dello sviluppo software. 
+    - Analisi
+    - Progettazione
+    - Implementazione
+    - Testing
+    - Distribuzione
+    - Manutenzione
+Queste sono fasi svolte in modi diversi ma che si svolgone sempre.
