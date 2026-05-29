@@ -135,3 +135,18 @@ Il project management tradizionale è legato all'attività. E' attento alla prog
 Project Structure).
 Il project management agile si concentra sul prodotto. Nei progetti agili l'elemento che guido lo sviluppo è il prodotto. Lo strumento che viene presentato si chiama product backlog. Con un project
 management agile, lavorando per prodotto, si può dare un insieme di priorità alle richieste del cliente e produrre un prodotto secondo tali opportunità.
+I progetti sono importanti per gestire lo sviluppo e il ciclo di vita di un software.
+
+AGILE PROJECT MANAGEMENT
+
+Nei primi anni '90 vi fu la crisi di sviluppo delle applicazioni. Lo sviluppo non riusciva a stare dietro alla tecnologia. Il 13 febbraio 2001 nasce il project management agile, che prevede che lo 
+sviluppo software non debba essere gestito per attività ma per prodotto.
+
+Metodologie agili:
+    - Kanban: si adotta molto su aziende di produzione che non fanno sviluppo software nello specifico.
+    - Extreme Programming (XP): metodologia abbandonata
+    - Scrum: tipo di metodologia agile più diffusa. Lo scrum master è un esperto di metodologia scrum, e controlla che tale metodologia venga applicata correttamente all'interno dei team di sviluppo
+    software
+    - Scrambun
+
+Scrum si adatta perfettamente al modello DevOps.
