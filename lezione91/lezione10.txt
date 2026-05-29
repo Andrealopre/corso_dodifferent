@@ -95,14 +95,14 @@ essere sostituiti con requisiti nuovi e aggiornati.
 
 ******************************************************************************************************************************************************************
 *   Requisito funzionale: il requisito funzionale è una caratteristica dell'applicazione che gli permette di fare una cosa specifica (deliverable o microservizi)*
-*   Requisiti di qualità:
-*       - Affidabilità
-*       - Robustezza
-*       - Manutenibilità
-*       - Testabilità
-*       - Accessibilità
-*       - Navigabilità
-*       - Sicurezza
+*   Requisiti di qualità:                                                                                                                                        * 
+*       - Affidabilità                                                                                                                                           *
+*       - Robustezza                                                                                                                                             *
+*       - Manutenibilità                                                                                                                                         *  
+*       - Testabilità                                                                                                                                            *
+*       - Accessibilità                                                                                                                                          * 
+*       - Navigabilità                                                                                                                                           *
+*       - Sicurezza                                                                                                                                              *
 *       - Scalabilità                                                                                                                                            *
 *   La qualità deve essere garantita con dei benchmark, dei software specifici. Sono requisiti oggettivi.                                                        *
 *   Il performance tester valuta l'ottenimento dei requisiti non funzionali.                                                                                     *
@@ -133,4 +133,5 @@ parte di qualsiasi tipo di attività svolta. Ogni attività è un progetto e va 
     raggiungimento dell'obiettivo.
 Il project management tradizionale è legato all'attività. E' attento alla progressione delle attività svolte. Per capire cosa bisogna fare si presenta un piano delle attività, il WPS (presumo Work 
 Project Structure).
-Il project management agile si concentra sul prodotto.
+Il project management agile si concentra sul prodotto. Nei progetti agili l'elemento che guido lo sviluppo è il prodotto. Lo strumento che viene presentato si chiama product backlog. Con un project
+management agile, lavorando per prodotto, si può dare un insieme di priorità alle richieste del cliente e produrre un prodotto secondo tali opportunità.
