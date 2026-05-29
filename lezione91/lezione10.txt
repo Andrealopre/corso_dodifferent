@@ -117,3 +117,14 @@ all'interno dei container. Un modello DevOps è composto da due cicli, con ruoli
     continue i deliverable, e vengono continuamente testati. Se un deliverable non passa un test, torna indietro allo sviluppo. Quando il deliverable supera la fase di test va in rilascio.
     - Ciclo Operativo: distribuisce il container su server o sistemi cloud. Continuous distribution.
 Questi processi sono automatizzati. Esistono degli script sia lato operativo per distribuire i container, rendendo il processo automatizzato.
+
+PROJECT MANAGEMENT
+
+Significa in che modo si gestisce un progetto di sviluppo software.
+Progetto: l'insieme delle attività da svolgere e delle risorse impegnate per raggiungere un obiettivo.
+Le risorse sono di tre tipi:
+    - Risorse umane
+    - Risorse finanziarie
+    - Risorse di competenza o strumenti
+Lo sviluppo di un'applicazione è un progetto, oltre a pensare al paradigma e al modello di sviluppo applicato, bisogna associarvi un progetto. Il progetto non si lega solo allo sviluppo software, ma fa
+parte di qualsiasi tipo di attività svolta. Ogni attività è un progetto e va organizzato.
