@@ -36,3 +36,5 @@ Si definisce paradigma il modo in cui viene scritto un programma o un'applicazio
                             Una pipeline è una sequenza "orizzontale" di funzioni o metodi tale da permettere che l'output della funzione precedente diventa l'input della funzione successiva. Posso
                             mettere in catena gli output delle funzioni, elaborando una grossa quantità di dati.
                             Linguaggi: Scala, Python
+
+Quindi cos'è un paradigma: un modo in cui si scrive un'applicazione. La scelta del paradigma è legata al contesto in cui si opera.
