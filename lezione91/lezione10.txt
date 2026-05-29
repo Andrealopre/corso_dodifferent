@@ -58,8 +58,55 @@ Il concetto di incremento è importante perché ogni incremento rappresenta un p
 stesse operazioni.
 Questo modello è efficace nei progetti di grandi dimensioni, complessi, con requisiti non chiari o soggetti a cambiamenti frequenti dove risulta più conveniente realizzare parti fruibili del prodotto
 finale attraverso rilasci successivi.
+Alla base esiste il modello a cascata che disegna il ciclo di vita di un componente. Con il paradigma ad oggetti lo sviluppo software si è basato sullo
+sviluppo di componenti (modello iterativo incrementale), che attraverso cicli di sviluppo continui portano al rilascio dell'applicazione.
 Questo modello si è evoluto nel modello DevOps.
+Il vantaggio dei modelli iterativi incrementali sta nel test. Nel sistema a cascata il test era associato al concetto di collaudo. Nel modello a cascata l'analisi dei requisiti era l'unico momento di 
+interazione con il cliente, attraverso l'analista funzionale. E' la fase in cui si ha la minore conoscenza di quello che si deve analizzare. Richiedo quindi i requisiti funzionali e non, 
+dell'applicazione. E quindi nascevano molti problemi di mancanza di contatto con il cliente.
+
+Nel modello a cascata il test diventava il risultato finale per il cliente, e questo era un problema. L'IBM introdusse il modello RUP (Rational Unified Process). Qualunque fase del modello a cascata si
+riduceva in base ai gradi di maturità del progetto.
+
+Differenza tra il modello a cascata e il modello RUP
+Il programmatore è come una persona che deve costruire un edificio, se questo edificio lo si costruisce con il modello a cascata: si creeranno 5 piani, per ogni piano si implementano impianto elettrico,
+idraulico e ascensore. All'ultimo piano, si sarà completato l'edificio, si va a provare se funziona tutto. La probabilità che qualcosa non funzioni è altissima.
+
+RUP: creo il primo piano, testo impianto elettrico, idraulico e ascensore. Poi creo il secondo piano, e conrollo gli impianti e l'ascensore, faccio un test di unità. Controllo, contemporaneamente, se
+funzionano gli impianti tra primo e secondo piano e gli ascensori. Questo si chiama test di integrazione. Continuo così per ogni piano facendo test di unità e test di integrazione. La probabilità che
+qualcosa non funzioni è vicina allo zero, grazie a test e collaudi singoli e tra diverse componenti, applicando in contemporanea il modello a cascata.
+Il modello a cascata lo applico ad ogni piano, e nella fase di testing integro il controllo di tutti i componenti integrati tra di loro, all'ultimo colladuo, la probabilità che vada male è molto bassa.
+
+Il RUP è il modello di sviluppo software che ha segnato il passaggio da modello a cascata a modello iterativo incrementale.
+
+Il modello iterativo incrementale è diventato DevOps. RUP -> Modello Iterativo Incrementale -> DevOps.
 
 MODELLO DEVOPS
 
+Il termine DevOps nasce dall'unione di Developers e Operations (è un modello iterativo incrementale) e ne rispecchia esattamente il concetto, cioè avvicinare e far collaborare il team dei programmatori e
+il team dei sistemisi.
+La prima differenza sostanziale tra modello iterativo incrementale e devops, sta nell'artefatto prodotto durante un processo di sviluppo software. Nell'iterativo incrementale non è ben definito il 
+concetto di incremento. Potrebbe essere di qualsiasi tipo: un oggetto, un requisito implementato, un'interfaccia, qualunque step testabile che faccia evolvere il progetto. Tutto ciò che produce un
+incremento deve essere testabile.
+Nel modello DevOps, l'artefatto prodotto si chiama deliverable: l'incremento nel processo devops è un requisitvo funzionale implementato, testabile e FUNZIONANTE.
+Testabile e funzionante hanno un enorme impatto sulla qualità: non solo posso coinvolgere il cliente, in questo modo le applicazioni diventano dinamiche e flessibili. Si rompe il concetto di applicazione
+finita, se si riescono a produrre deliverable funzionanti l'applicazione può ricevere aggiornamenti continui. Teoricamente le applicazioni potrebbero diventare infinite. I requisiti funzionali possono
+essere sostituiti con requisiti nuovi e aggiornati.
 
+******************************************************************************************************************************************************************
+*   Requisito funzionale: il requisito funzionale è una caratteristica dell'applicazione che gli permette di fare una cosa specifica (deliverable o microservizi)*
+*   Requisiti di qualità:
+*       - Affidabilità
+*       - Robustezza
+*       - Manutenibilità
+*       - Testabilità
+*       - Accessibilità
+*       - Navigabilità
+*       - Sicurezza
+*       - Scalabilità                                                                                                                                            *
+*   La qualità deve essere garantita con dei benchmark, dei software specifici. Sono requisiti oggettivi.                                                        *
+*   Il performance tester valuta l'ottenimento dei requisiti non funzionali.                                                                                     *
+*   Requisito di business: se dovesse cambiare il mercato, il deriverable deve essere in grado di cambiare e implementare, o rimuovere, requisiti.               *
+******************************************************************************************************************************************************************
+
+I deliverable vivono nei container, degli ambienti di sistema che ospitano deliverable e li fanno vivere, con tutto quello che gli serve per farli funzionare, è un microambiente del sistema operativo.
