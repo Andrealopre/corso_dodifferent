@@ -1,0 +1,5 @@
+Linguaggio ad oggetti per creare applicazioni front end. Il fron end è elaborato dal client, il back end da un server. Java è un linguaggio server.
+Microsoft ha sviluppato Typescript per poter aiutare gli sviluppatori back end a lavorare front end. Typescript viene tradotto in html, css e java. E' uno strumento per creare app fron-end attraverso
+un linguaggio ad oggetti che poi viene tradotto in html e javascript.
+
+Typescript è il linguaggio usato in Angular. L'evoluzione fatta con typescript, è che sapendo lavorare sia con typescript che con angular
