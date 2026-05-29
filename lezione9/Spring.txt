@@ -1,0 +1,22 @@
+SPRING
+
+L'obiettivo di Spring è andare a fare la parte di creazione utenti e usare automazione per ridurre i tempi di sviluppo. Inoltre ha un'interfaccia web, permettendo di automatizzare i processi nella 
+creazione di un applicativo web, in particolare la parte sql e la parte crud.
+
+Gradle e Maven sono dei compilatori che prendono il sorgente di java e lo traduce in bytecode. Spring non si rivolge soltanto a java ma anche a Kotlin e Groovy, due linguaggi che possono lavorare 
+contestualmente con java. Maven e Gradle fungono anche da gestori di pacchetti, che possono essere implementate nel programma.
+Spring permette di implementare direttamente nel programma un application server embedded, con apache tomcat. 
+
+XML eXstensible Markup Language: è un linguaggio di marcatura, ovvero: usa una sintassi composta da tag <tag>...</tag>.
+L'XML è un linguaggio usato per sviluppare file di configurazione. Il file pom.xml è il file che configura le dipendenze, attraverso il quale Maven capisce quali librerie dovrà implementare nel programma.
+Spring è il framework, springboot è il configuratore di istanze.
+
+Postman si usa per ottenere le view
+
+L'utente non deve mai mettere i dati di accesso dall'url. Bisogna usare link ipertestuali, direttamente dalla pagina html.
+@RequestParam non si usa quando un oggetto viene passato come argomento.
+Se l'utente interagisce con una view (pagina html) non gestita da framework frontend (Angular, Laravel e React), invia richieste (messaggi http) in un formato text/html (la classica formattazione html). In
+questi casi, Spring recupera la richiesta attraverso il componente Data Binder; quest'ultimo prende id ati dal corpo di una richiesta post e li passa ad un oggetto model corrispondente.
+
+Jackson: recupera richieste nel formato application/json
+Di default si attiverà sempre il Data Binder. Jackson bisogna invocarlo con @RequestBody <dato> var.

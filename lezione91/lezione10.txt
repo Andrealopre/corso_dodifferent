@@ -1,0 +1,29 @@
+Si definisce paradigma il modo in cui viene scritto un programma o un'applicazione. La scelta del paradigma dipende da tanti fattori. I paradigmi sono 3:
+    - Paradigma procedurale: divide et impera, un'applicazione deve essere scritta attraverso un flusso di istruzioni logiche regolate da strutture di controllo, quali cicli e strutture condizionali.
+                             E' la traduzione di un algoritmo in un linguaggio di programmazione.
+                             Punti di debolezza:
+                                 - Complessità
+                                 - Affidabilità
+                                 - Riuso del codice
+                                 - Mantenibilità
+    - Paradigma ad oggetti: Prevede che l'applicazione sia composta da un insieme di componenti che comunicano e collaborano con loro. L'interfaccia di un oggetto
+                            è l'insieme di tutti gli elementi pubblici di una classe/oggetto, il layer di comunicazione. E' un tipo di programmazione paragonabile
+                            alla progettazione di un sistema elettrico, con componenti multiple e riusabili.
+                            Tipi fondamentali (MVC):
+                                - Model 
+                                - View
+                                - Controller (gestisce flussi logici)
+                                - Services (estensione dei controller, fornisce dei servizi/funzionalità)
+                            L'object oriented permette di progettare un'applicazione senza dover scrivere codice. Il primo processo per progettare è pensare ai 
+                            Model, disegnandoli e progettando le loro caratteristiche. Il model è disconnesso dal resto dell'applicazione.
+                            Per far interagire il Model con il mondo esterno c'è la view. Le view sono pagine HTML è la
+                            view scheda e la view. I Controller preocessano i dati e sono la parte
+                            "algoritmica", più vicina alla programmazione procedurale.
+                            Si definisce servizio qualunque cosa che ha seguito di una richiesta fornisce un risultato. La classe CRUD è un esempio di servizio. Il crud mi permette di implementare tutte le
+                            azioni per gestire la persistenza dei dati, rappresentando l'interfaccia pubblica degli oggetti. Serve a nascondere ad un utente la complessità nascosta dietro l'interfaccia.
+                            Lui vedrà solamente la funzionalità pubblica e non la complessità dietro l'operazione. Questo pattern si chiama façade. Controller e metodi sono gli unici luoghi dove trovare
+                            paradigma procedurale nella programmazione ad oggetti.
+                            Il progetto è il case. Il progetto viene istanziato nella memoria (virtual machine java). All'interno della virtual machine si possono vedere gli oggetti (istanziati fino a 
+                            quel momento, durante l'istanziazioni compariranno gli oggetti nella virtual machine java). All'interno di un oggetto si vedono attributi e metodi. Permette di trovare il codice
+                            dove viene detto di essere trovato.
+    - Paradigma funzionale: 
