@@ -150,3 +150,17 @@ Metodologie agili:
     - Scrambun
 
 Scrum si adatta perfettamente al modello DevOps.
+User Story: strumento che descrive i requisiti funzionali di un deriverable, ovvero cosa fa un requisito funzionale i criteri di accettazione di quel deliverable.
+Il wbs è una sequenza statica di attività di lavoro, il product backlog è dinamico e può essere modificato per implementare numerosi servizi nell'applicazione. Il documento che descrive quello che fa un
+deliverable è la user story. Esistono anche dei grafici che misurano la produttività.
+Sprint: nel momento in cui decido qual è il deliverable da utilizzare, devo produrlo. Sprint è la fase in cui si svolgono tutte le attività per realizzare tale deliverable.
+
+Scrum significa mischia. Si ha quando si decide il deliverable da sviluppare e si applica lo sprint, chi deve produrre tale deliverable lavora e fa tutte le attività per produrre il deliverable. Poi si
+fa un'altra riunione scegliendo un nuovo deliverable e si ricomincia di nuovo, tutto questo step by step.
+
+Scrum viene implementato come framework. Il framework indica come si lavora. Ci si concentra sul prodotto a step consecutivi.
+Framework significa avere una metodologia di lavoro, basata sui ruoli (ad esempio il product owner definisce il Product Backlog)
+Lo sprint planning è una riunione dove si decide cosa verrà fatto nel prossimo sprint (in genere uno sprint dura un mese), parte lo sprint, poi si fa una sprint review per far vedere il risultato del 
+lavoro, si fa una sprint retro per confrontarsi sull'esperienza fatta. Si fa poi uno sprint planning per decidere cosa fare di nuovo.
+
+Scrum significa mischia. Tolti i preliminari, quando parte lo sprint si fa tutto quello che è necessario per realizzare in quel mese il o i deliverable.
