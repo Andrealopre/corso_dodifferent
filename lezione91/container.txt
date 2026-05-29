@@ -3,3 +3,5 @@ CONTAINER
 Oggi vedendo la ram si vedrebbero numerosi container, i quali hanno una virtual machine che permette di implementare un deliverable.
 I container si parlano tra di loro. Un requisitvo funzionale che vive in un container può scambiare informazioni con gli altri container, quindi con altri requisiti funzionali. I container comunicano
 tra di loro con indirizzo ip e porta.
+
+L'applicazione può diventare distribuita. Il container deve essere identificato da una porta.

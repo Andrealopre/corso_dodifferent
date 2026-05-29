@@ -110,3 +110,10 @@ essere sostituiti con requisiti nuovi e aggiornati.
 ******************************************************************************************************************************************************************
 
 I deliverable vivono nei container, degli ambienti di sistema che ospitano deliverable e li fanno vivere, con tutto quello che gli serve per farli funzionare, è un microambiente del sistema operativo.
+
+Si definisce DevOps il modello di sviluppo applicativo di tipo iterativo incrementale che produce deliverable, i deliverable sono incrementi applicativi testabili e funzionanti e che possono vivere
+all'interno dei container. Un modello DevOps è composto da due cicli, con ruoli specifici:
+    - Ciclo Dev (di sviluppo): è chiamato continuous integration. E' il ciclo degli sviluppatori e dei tester, è una catena di montaggio che produce deliverables. In questo ciclo nascono, a iterazioni
+    continue i deliverable, e vengono continuamente testati. Se un deliverable non passa un test, torna indietro allo sviluppo. Quando il deliverable supera la fase di test va in rilascio.
+    - Ciclo Operativo: distribuisce il container su server o sistemi cloud. Continuous distribution.
+Questi processi sono automatizzati. Esistono degli script sia lato operativo per distribuire i container, rendendo il processo automatizzato.

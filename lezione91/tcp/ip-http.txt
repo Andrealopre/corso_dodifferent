@@ -1,0 +1,13 @@
+TCP/IP è un protocollo di rete che permette il trasporto dei datagram
+Socket: ip+porta
+Datagram: procollo trasmetto dal protocollo tcp/ip
+
+Protocollo applicativo
+Il tcp/ip è il protocollo universale. Il livello applicativo fa in modo che ciò che sia dentro al datagram sia comprensibile. I protocolli più conosciuti sono il DAO, usato dai dbms. Senza applicativo 
+il protoccolo di rete non capisce i dati. Un altro applicativo è l'ftp e l'http.
+Prima si usava il soap (fino a 5-10 anni fa)
+Ci sono anche stp, pop e imap
+
+Se volessi usare il DAO, dovrei installare il DAO
+
+Per leggere la posta elettroni mi serve un servizio applicativo che mi permette di comprendere il contenuto del messaggio.
