@@ -49,3 +49,17 @@ Un modello di sviluppo software caratterizza il ciclo di vita del software da sv
     - Distribuzione
     - Manutenzione
 Queste sono fasi svolte in modi diversi ma che si svolgone sempre.
+
+MODELLO ITERATIVO INCREMENTALE
+
+Il modello iterativo incrementale è il modello che risponde nel modo più efficace al paradigma ad oggetti. E' un'estensione del ciclo iterativo. Vede il ciclo di vita come una serie di singoli cicli 
+completi di sviluppo, detti iterazioni. Ciascuna iterazione permette di sviluppare una serie di funzionalità complete da riliasciare in esercizio.
+Il concetto di incremento è importante perché ogni incremento rappresenta un passo avanti verso il completamento dell'applicazione. E' iterativo perché ad ogni ciclo di sviluppo vengono riproposte le 
+stesse operazioni.
+Questo modello è efficace nei progetti di grandi dimensioni, complessi, con requisiti non chiari o soggetti a cambiamenti frequenti dove risulta più conveniente realizzare parti fruibili del prodotto
+finale attraverso rilasci successivi.
+Questo modello si è evoluto nel modello DevOps.
+
+MODELLO DEVOPS
+
+
