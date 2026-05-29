@@ -127,4 +127,10 @@ Le risorse sono di tre tipi:
     - Risorse finanziarie
     - Risorse di competenza o strumenti
 Lo sviluppo di un'applicazione è un progetto, oltre a pensare al paradigma e al modello di sviluppo applicato, bisogna associarvi un progetto. Il progetto non si lega solo allo sviluppo software, ma fa
-parte di qualsiasi tipo di attività svolta. Ogni attività è un progetto e va organizzato.
+parte di qualsiasi tipo di attività svolta. Ogni attività è un progetto e va organizzato. Il tipo di progetto che verrà gestito può essere:
+    - Di tipo tradizionale: il modello a cascata si associa benissimo a questo tipo di modello, per un progetto che prevede un inizio e una fine.
+    - Di tipo agile: per gestire modelli di tipo incrementale. Prevede che un progetto venga gestito attraverso più cicli durante i quali vengono svolte tutte le attività previste per raggiungere il
+    raggiungimento dell'obiettivo.
+Il project management tradizionale è legato all'attività. E' attento alla progressione delle attività svolte. Per capire cosa bisogna fare si presenta un piano delle attività, il WPS (presumo Work 
+Project Structure).
+Il project management agile si concentra sul prodotto.
