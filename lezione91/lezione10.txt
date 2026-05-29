@@ -164,3 +164,5 @@ Lo sprint planning è una riunione dove si decide cosa verrà fatto nel prossimo
 lavoro, si fa una sprint retro per confrontarsi sull'esperienza fatta. Si fa poi uno sprint planning per decidere cosa fare di nuovo.
 
 Scrum significa mischia. Tolti i preliminari, quando parte lo sprint si fa tutto quello che è necessario per realizzare in quel mese il o i deliverable.
+Il daily scrum ispeziona l'avanzamento verso lo sprint goal. E' un evento di 15 minuti che coinvlge gli Sviluppatori dello scrum team, con l'obiettivo di ridurre la complessità del lavoro da fare, si
+tiene sempre alla stessa ora e nello stesso luogo ogni giorno.
