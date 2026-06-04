@@ -1,0 +1,63 @@
+FRAMEWORK
+
+Un framework è una piattaforma software che agevola lo sviluppo del programmatore. Una piattaforma è un insieme di librerie, ovvero un ecosistema di strumenti da utilizzare.
+
+IoC (Inversion of Control): pattern o principio di programmazione; significa delegare parte dei nostri compiti ad una tecnologia che li eseguirà al posto nostro. L'IoC, tuttavia, viene implementato in modo
+diverso da ogni framework.
+
+Spring Framword: implementa la IoC con la DI (Dependency Injection) o iniezione di un oggetto, detto in questi casi: "Bean".
+
+Proprietà dell'Object Oriented:
+- Incapsulamento
+- Ereditarietà
+- Polimorfismo dei metodi
+- Polimorfismo degli oggetti:
+    - per ereditarietà
+    - per interfaccia
+- Astrazione: classi astratte e interfacce
+- Coesione
+- Disaccoppiamento: che in Java nativo non esiste
+                    a livello teorico lo applico evitando gli accoppiamenti (non faccio la new del crud in vista e viceversa)
+                    a livello pratico significherebbe usare un oggetto senza dover fare new+costruttore. QUesta cosa non è possibile senza usare un framework.
+                    Vantaggi del disaccoppiamento: svincolare gli oggetti, ovvero, evitare gli accoppiamenti tra i componenti usando il new + costruttore.
+                    Se evito una dipendnenza tra componenti questi possono essere facilmente sostituibili
+                    Posso rendere più flessibili e scalabili i testi di integrazione ed i test di unità.
+
+
+Spring -> IoC -> DI 
+Spring Data:
+    Libreria di Spring
+    - Data JDBC -> FW Data Jdbc 
+    -> IoC
+    -> ORM (Object Relation Mapping)
+    Disegnare le entità come modelli per le tabelle di un DB relazione. ORM significa sviluppare un db ad oggetti, ovvero, un db che vede le classi come tabelle, gli attributi come colonne, gli oggetti
+    come righe/tuple/record. Con l'ORM potremo delegare a Data JDBC le operazioni di manipolazione e interrogazione di un db, partendo dal presupposto che le tabelle relazionali sono frutto di una 
+    modellazione fatta dalle classi model. Data jdbc, conoscendo la struttura delle classi model, saprà quale logica implementare per eseguire qualsiasi operazione crud.
+
+    - Data JPA: se si usa jdbc non si usa jpa. -> Hibernate FW -> IoC -> ORM -> auto DDL, auto DML ed auto DQL
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Lato Backend:
+    - Spring + Data JDBC
+    - Spring + Hibernate (Data JPA)
+NB: Data JDBC si basa su JDBC ma sono due cose diverse
+    - Spring Boot: non è Spring Framework ma una sua estensione. Sprint Boot è un configuratore di Bean (oggetti iniettati) e di dipendenze (moduli xml o json che definiscono i percorsi ed i nomi delle
+    librerie da usare).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Per automatizzare il recupero delle librerie possiamo utilizzare un gestore di pacchetti come: Maven e Gradle.
+Maven e gradle sono:
+    - Compilatori: traducono il codice sorgente in codice intermedio (bytecode)
+    - Gestori di pacchetti: dando loro le dipendenze cercano, scaricano e installano le librerie utili al programma
+    - Strumenti di testing: eseguo test di integrazione e di unità
+    - Esecutori di deploy/rilascio: impacchettano i programmi in .jar
+Cosa cambia tra Maven e Gradle: il file di configurazione per impostare le dipendenze: pom.xml in maven, build.gradle.kts (in json)
+    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Lato Frontend:
+    - Bootstrap 
+    - Angular
+
+Classe anonima: invece di dichiarare una classe esplicita, ne creo una anonima che permette di fare l'override senza dichiarare la classe
