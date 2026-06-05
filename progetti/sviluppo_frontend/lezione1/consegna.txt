@@ -1,0 +1,14 @@
+Collegare due pagine web collegate tra loro.
+Barra di navigazione con home.html e contatti.html
+Home:
+	Nome e cognome
+	Presentazione personale
+	Lista dei videogiochi preferiti per ordine di preferenza
+	Lista dei cibi preferiti senza ordine di preferenza
+	Tabella routine quotidiana
+	2 immagini che vi rappresentano di più
+
+Contatti:
+	Tabella con tipo contatto, per ogni contatto inserire il riferimento.
+	Un'immagine con il logo del social e l'immagine deve essere cliccabile, e porta al social di riferimento
+    Inserire una mappa con un indirizzo.

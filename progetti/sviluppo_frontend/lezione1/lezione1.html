@@ -1,12 +1,13 @@
 <!DOCTYPE html> <!-- Definisce la versione HTML ovvero HTML5 -->
-<html lang="it"> 
-    <!-- 
+<html lang="it">
+<!-- 
         Definisce il tipo di documento e la lingua. Se la lingua è diversa da quella utilizzata
         il browser mostrerà una finestra di dialogo dove chiederà all'utente se vuole tradurre la pagina nella sua
         lingua 
     -->
-    <head> 
-        <!-- 
+
+<head>
+    <!-- 
             Rappresenta la testata del documento
             Qui vengono inseriti tutti i collegamenti ipertestuali (statici) e (dinamic).
             Quelli statici vengono inseriti con il tag <link/>
@@ -15,16 +16,237 @@
             informazioni utili come la codifica dei caratteri disponibili che possiamo utilizzare e altri meta-tag
             Contiene il <title> ovvero il nome del documento
         -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <!--
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
             Il body rappresenta tutta la parte visibile del documento e può contenere tag di diverso tipo.
             Mentre l'head può contenere collegamenti ipertestuali con i tag <link>, il body può creare collegamenti ipertestuali
             con i tag <a></a> ovvero gli anchor point.
         -->
-        Ciao forciazzi
-    </body>
+    <p id="raggiungimi">
+        <b>Lorem, ipsum
+            <u>dolor sit amet</u>
+            consectetur adipisicing elit.</b>
+        <strong>Doloribus architecto velit odit quis inventore alias?</strong>
+        <i>Voluptatibus</i>
+        <mark>corporis culpa beatae molestias architecto?</mark>
+        <br />
+        <em>Ducimus delectus consectetur ea officiis? Optio totam
+            <br />
+            unde</em>
+        <br />
+        <marquee>minus.</marquee>
+    </p>
+    <!--
+        <b></b> Bold, grassetto
+        <i></i> Italic, corsivo
+        <strong></strong> grassetto
+        <em></em> corsivo
+        La differenza tra quesi due tipi non è visiva ma di interpretazione. I sintetizzatori vocali
+        sono in grado di leggere strong ed em. Per una questione di accessibilità si preferiscono questi
+        due a <b> e <i>
+        <u></u> underlined
+        <mark></mark> evidenziato
+        <del></del> deleted
+        <sup></sup> apice
+        <sub></sub> pedice
+        <marquee></marquee>
+    -->
+    <h1>Titolo</h1>
+    <h2>Titolo</h2>
+    <h3>Titolo</h3>
+    <h4>Titolo</h4>
+    <h5>Titolo</h5>
+    <h6>Titolo</h6>
+
+    <!--
+        Interruzioni di riga e spaziatura
+        &nbsp; -> la spaziatura in riga, può essere inserita in qualunque punto, rappresenta una
+        barra spaziatrice. Si utilizza per far andare forzatamente il testo a capo ma il suo utilizzo
+        è raro.
+        <br/> brak rule è un tag che crea un'interruzione di riga - autochiudente
+    -->
+    <!--
+        Liste non ordinate - <ul></ul>
+        Liste ordinate - <ol></ol>
+        Elemento della lista - <li></li>
+        si può cambiare il type dei puntini aggiungendolo in ul
+        la proprietà type consente di modificare il tipo di pallino
+        per ol
+        number (default)
+        a (ordine alfabetico minuscolo)
+        A (orinde alfabetico maiuscolo)
+        i (ordine numerico romano minuscolo)
+        I (ordine numerico romano Maiuscolo)
+    -->
+    <br />
+    <br />
+    <ul type="disc">
+        <li>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed pariatur, enim eum veritatis asperiores
+            facilis quos corporis, quas sunt reprehenderit fugiat reiciendis optio modi aliquid, aspernatur voluptatum
+            vel. Sequi, error.<br />
+            <ul type="square">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <br />
+    <ol type="I">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <br />
+    <ol type="a">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <br />
+    <ol type="A">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+    <!--
+        Anchor Point - Punti di ancoraggio
+        1 - Punti di ancoraggio interno (punti nella stessa pagina) -> puntiamo ad un elemento nella stessa
+        pagina e lo raggiungiamo
+        <a>vai su</a>
+        2 - Possiamo aggiungere un elemento interno al sito (contatti.html) e quindi creare una vera e 
+        propria navigazione interna.
+        3 - Possiamo aggiungere anche un sito esterno al nostro sito
+        per aprire il collegamento su una nuova scheda
+        -->
+    <a href="spiegazione_html.html">Guarda la spigazione</a><br />
+    <a href="contatti.html">Vai ai contatti</a><br /><br />
+    <img src="https://thumbs.dreamstime.com/b/babbuino-80417067.jpg" alt="" title="culetto" width="800"><br />
+    babbuino
+    <br /><br /><br /><br />
+    <img src="images/Lemonke.webp" alt="Uga buga basuga" title="babbuino" width="800" height=""><br />
+    Le monke
+    <!--
+        Ci sono diversi tipi di immagine 
+        JPG (JPEG) -> Raster - non ammettono la trasparenza, ma hanno un peso molto
+        leggero. Sono soggette a perdite di dati più o meno ingenti (compressione
+        lossy). 
+        Questa estensione viene utilizzata per realizzare immagini con molti effetti e filtri. 
+        Non è indicato per loghi ed icone.
+
+        PNG -> Raster
+        Ammettono trasparenza, possono essere molto pesanti
+        Compressione lossless (poca perdita di dati).
+        Sono perfette per icone, loghi e immagini con alta risoulzione
+
+        SVG -> Vettoriale (formule matematiche)
+        Ammette trasparenza, sono tipicamente molto leggeri
+        Compressione nulla = risoulzione infinita -> con zoom non c'è perdita di dati
+        Non adatto ad immagini e fotografie.
+        Utilizzato per loghi ed icone
+
+        WebP - Formato immagini Google
+        Raster
+        Compressione ridotta - peso molto leggero
+        Utilizzato per immagini come fotografie e illustrazioni. Può gestire anche la
+        trasparenza come le png
+        Fotografie e illustrazioni
+
+        Avif - Raster
+        Formato che sostituisce il JPG e ha un peso molto ridotto con poca perdita dei
+        dati.
+
+        alt è il testo alternativo se l'immagine non dovesse caricare
+        title è il testo che compare quando spostiamo e lasciamo il cursore su un
+        immagine
+        Quando specifico una sola delle dimensioni, l'altra viene calcolata in automatico
+        Le immagini così come i tag hanno una proprietà di default che è inline level
+        La maggior parte dei tag invece possiedono di default la proprietà block level
+
+        Tabel - TABELLE
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                </tr>
+            </thead>
+            <body>
+                <tr>
+                    <td></td>
+                </tr>
+            </body>
+        </table>
+        Border è una proprietà delle tabelle che consente di inserire un bordo
+        cellpadding consente di creare uno spazio nelle celle
+        cellspacing consente di creare uno spazio tra le celle
+
+        TAG SEMANTICI -> DIV E LO SPAN
+        I tag semantici occorrono per strutturare e quindi dare un nome ai singoli 
+        componenti della pagina web. Evitano i div soup e vengono utilizzati per
+        rendere altamente leggibile il codice anche per i colleghi
+        <nav></nav> -> barra di navigazione | generalmente presente una volta
+        <header></header> -> intestazione | può essere presente pià volte all'interno
+                                            della pagina
+        <main></main> rappresenta il body del body, le informazioni che gli utenti vogliono
+        effettivamente raggiungere
+        <section></section> | posizionatura della pagina
+        <article></article> | rappresenta il contenuto della porzione
+        <aside></aside> | barra laterale per racchiudere in un lato diversi tipi di
+        informazioni
+        <footer></footer> | rappresenta il piè di pagina, ovvero la parte finale. Di
+        solito contiene informazioni legali rispetto al brand/azienda, può contenere il
+        logo aziendale, una panoramica della navigazione generale del sito, le icone social,
+        la privacy e la cookie policy e il copyright.
+
+        <div></div>
+        <span></span>
+        Sono entrambi dei container generici:
+        - div ha la proprietà block level - si utilizza per racchiudere (wrappare) più elementi di tipo diverso
+                                            viene utilizzato per creare figure geometriche grazie a css.
+        - span ha la proprietà inline level - si utilizza per porzionare tag di tipo testuale
+    -->
+    <br><br><br>
+    <table border="1" cellpadding="5" cellspacing="5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Pino</td>
+                <td>Casino</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Carlo</td>
+                <td>GranCarlo</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lucas</td>
+                <td>Serralta</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <p style="color:red">Lorem ipsum dolor sit, <span style="color:blue">amet consectetur adipisicing elit</span>.
+        Laborum quam explicabo voluptatum aliquid suscipit
+        ullam ut amet non, aperiam eaque labore totam facere harum sapiente rerum. Perspiciatis possimus laborum
+        cupiditate!</p>
+</body>
+
 </html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+    textarea {
+        resize: none;
+    }
+
+    .mio_div {
+        background-color: aquamarine;
+        padding: 5px;
+        border-radius: 8px;
+        border: 5px;
+        margin: 10px;
+        display: inline-block;
+    }
+</style>
+
+<body>
+    <!--
+        Method consente di specificare con quale criterio stiamo inviando oppure ricevendo i dati, in base a
+        ciò che il form deve fare.
+        Action rappresenta il reindirizzamento quando il form è correttamente compilato
+        e quindi è avvenuto il submit.
+        Label serve a descrivere la cella di testo adiacente, è necessario per 
+        indicare a quale campo stiamo facendo riferimento.
+        input
+        text
+        number
+        checkbox
+        radio button
+        email
+        password
+        date
+
+        select sono i menu a tendina con delle option da selezionare. Dobbiamo
+        specificare il name
+        option sono le scelte possibili di una select. Deve avere un value
+        disabled select hidden crea un campo disabilitato nel menu a tendina, non
+        rendendolo cliccabile e creando un effetto di placeholder.
+        disabled -> disabilita un campo
+        selected -> imposta l'opzione come già selezionata
+        hidden -> nasconde il campo per l'utente, ma non lo elimina dal flusso, in 
+        teoria potrebbe inviare il suo value
+        required -> questo attributo rende obbligatorio l'inserimento di un valore 
+        in quel campo
+        checked -> questo attributo spunta una delle scelte possibili della checkbox 
+        o dei radio
+        textarea -> grandi caselle di testo usare per rilasciare commenti
+        maxlenght -> lunghezza massima dei caratteri
+        minlength -> lunghezza minima dei caratteri
+        cols -> larghezza della textarea
+        rows -> altezza della textarea
+    -->
+    <form action="#">
+        <div class="mio_div">
+            <label for="input_nome">Inserisci nome:</label>
+            <input id="input_nome" type="text" placeholder="Mario" name="nome" value="" required>
+        </div>
+        <br /><br />
+        <div>
+
+        </div>
+        <label for="input_cognome">Insersci cognome:</label>
+        <input id="input_cognome" type="text" placeholder="Rossi" name="nome" value="" required>
+        <br /><br />
+        <label for="data_nascita">Inserisci data di nascita:</label>
+        <input for="data_nascita" type="date" name="dataNascita" value="" required>
+        <br /><br />
+        <label for="eta">Inserisci la tua età</label>
+        <input for="eta" type="number" name="eta" value="" required>
+        <br /><br />
+        <input type="radio" name="sessoButtonM" id="sessoM" checked>
+        <label for="sesso">M</label>
+        <input type="radio" name="sessoButtonF" id="sessoF">
+        <label for="sessoF">F</label>
+        <input type="radio" name="sessoButtonA" id="sessoA">
+        <label for="sessoA">Altro</label>
+        <br /><br />
+        <label>Scegli il tuo linguaggio preferito</label><br /><br />
+        <input id="html5" type="checkbox" name="linguaggi" value="HTML5" checked>
+        <label for="html5">HTML5</label><br />
+        <input id="css3" type="checkbox" name="linguaggi" value="CSS3">
+        <label for="css3">CSS3</label><br />
+        <input id="javascript" type="checkbox" name="linguaggi" value="JavaScript">
+        <label for="javascript">JavaScript</label><br />
+        <input id="java" type="checkbox" name="linguaggi" value="Java">
+        <label for="java">Java</label>
+        <br /><br />
+        <label for="username">Inserisci Username:</label>
+        <input id="username" type="text" name="username" value="" placeholder="username" required>
+        <br /><br />
+        <label for="email">Inserisci l'email:</label>
+        <input id="email" required type="email" name="email" value="" placeholder="example@gmail.com">
+        <br /><br />
+        <label for="password">Inserisci password:</label>
+        <input id="password" required minlength="8" type="password" name="password" value="" placeholder="">
+        <br /><br />
+        <label for="titolo_studio">Scegli titolo di studio</label>
+        <select name="titoloDiStudio" id="titolo_studio" required>
+            <option value="" selected disabled hidden>---Scegli---</option>
+            <option value="licenza_media">Licenza media</option>
+            <option value="diploma">Diploma</option>
+            <option value="laurea">Laurea</option>
+        </select>
+        <br /><br />
+        <textarea name="commento" id="commento" placeholder="Scrivi un commento" cols="50" rows="10"></textarea>
+        <br /><br />
+        <!-- PARTE FINALE DEL FORM-->
+        <button type="submit">Invia</button>
+        <button type="reset">Pulisci tutto</button>
+    </form>
+</body>
+
+</html>

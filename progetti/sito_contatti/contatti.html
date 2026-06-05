@@ -1,0 +1,94 @@
+<!--
+    Inserire nella pagina di contatti un form di iscrizione ad una NewsLetter:
+    nome, cognome, datadinascita, indirizzo email, username, password, genere, titolo di studio,
+    creare una checklist dove l'utente deve spuntare obbligatoriamente i termini di utilizzo dei dati personali
+    nelle altre due scelte l'utente può lasciare la spunta vuota poichè facoltative.
+-->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti</title>
+</head>
+
+<body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="">Pagina Contatti</a>
+    </nav>
+    <h1>Contatti</h1><br />
+    <table border="1" cellpadding="5" cellspacing="5" class="tabella">
+        <thead>
+            <tr>
+                <th>Tipo contatto</th>
+                <th>Contatto</th>
+                <th>Social</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Email</td>
+                <td>lopreteandreamarco@gmail.com</td>
+                <td><a href="https://workspace.google.com/intl/it/gmail/"><img src="images/logoGmail.webp" alt="non va"
+                            width="50px"></a></td>
+            </tr>
+            <tr>
+                <td>Telefono</td>
+                <td>+39 333655877</td>
+                <td><a href="https://www.whatsapp.com/?lang=it"><img src="images/logo_zapp.avif" alt=""
+                            width="45px"></a></td>
+            </tr>
+            <tr>
+                <td>Instagram</td>
+                <td>andrea_lopre00</td>
+                <td><a href="https://www.instagram.com/"><img src="images/Instagram_logo.svg" alt="" width="45px"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/><br/>
+    <form action="#" class="selection-form">
+        <label for="input_nome">Inserisci il nome: </label>
+        <input id="input_nome" type="text" placeholder="Nome" name="nome" value="" required><br/><br/>
+        <label for="input_cognome">Inserisci il cognome: </label>
+        <input id="input_cognome" type="text" placeholder="Cognome" name="cognome" value="" required><br/><br/>
+        <label for="data_di_nascita">Inserisci la data di nascita:</label>
+        <input type="date" name="dataDiNascita" id="data_di_nascita" value="" required><br/><br/>
+        <label for="email">Indirizzo email:</label>
+        <input type="email" name="indirizzoMail" id="email" value="" placeholder="example@gmail.com"><br/><br/>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="" placeholder="Username" required minlength="3"><br/><br/>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="" required minlength="8"><br/><br/>
+        <input type="radio" name="sessoM" id="sesso_m" value="" checked>
+        <label for="sesso_m">M</label>
+        <input type="radio" name="sessoF" id="sesso_f" value="">
+        <label for="sesso_f">F</label>
+        <input type="radio" name="sessoA" id="sesso_a" value="">
+        <label for="sesso_a">Altro</label><br/><br/>
+        <label for="titolo_studio">Inserisci il titolo di studio</label>
+        <select name="titoloDiStudio" id="titolo_studio" required>
+            <option value="" selected disabled hidden>---Scegli---</option>
+            <option value="licenza_media">Licenza media</option>
+            <option value="diploma">Diploma</option>
+            <option value="laurea">Laurea</option>
+        </select><br/><br/>
+        <input type="checkbox" name="datiPersonali" id="dati_personali" value="" required>
+        <label for="dati_personali">Accetta i termini di utilizzo dei dati personali*</label><br/><br/>
+        <input type="checkbox" name="anima" id="anima" value="">
+        <label for="anima">Vendimi la tua anima per il resto della tua esistenza</label><br/><br/>
+        <input type="checkbox" name="famiglia" id="famiglia" value="">
+        <label for="famiglia">Vendimi l'anima della tua famiglia</label><br/><br/>
+        <textarea name="commento" id="commento" placeholder="Scrivi un commento" cols="50" rows="10"></textarea>
+        <br/><br/>
+        <!-- PARTE FINALE DEL FORM-->
+        <button type="submit">Invia</button>
+        <button type="reset">Pulisci tutto</button>
+    </form>
+</body>
+
+</html>

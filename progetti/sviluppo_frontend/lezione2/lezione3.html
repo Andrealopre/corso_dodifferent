@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezione 3</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <nav class="taskbar">
+        <div class="container-taskbar">
+            ciao
+        </div>
+    </nav>
+    <!--
+        CSS - Cascading Style Sheet - (fogli di Stile a cascata) ->
+        CSS3: la novità di questa versione si trova nei moduli per avere colori, font etc.
+        Personalizzazione e stilizzazione delle pagine web.
+        Cascade: come fa il browser a comprendere a chi dare cosa?
+        1 - Ereditarietà: se attribuisco ad un elemento html posto più il alto una proprietà, a cascata
+        (scendendo verso il basso), tutti gli elementi figli di quell'elemento posto in alto erediteranno 
+        tale proprietà.
+        2 - La risoluzione dei conflitti:
+            - L'importanza (origine): Browser (style nativo del browser) <- User (Style e le preferenze che uno user imposta)
+            - Fogli di Stile (Sviluppo)
+            - Specificità: a parità di proprietà vince il selettore più specifico.
+            - Ordine di lettura: a parità di selettore vince la proprietà posta più in basso (se un colore viene cambiato due volte, vince quello sotto)
+        
+        Specifitcità: 
+        1 - Criteri di implementazione del CSS
+            - Style inline: lo stile applicato direttamente nel tag di apertura con l'attributo style=""
+            - Style interno: lo stile applicato all'interno del tag head sfruttando il tag <style></style>
+            - Style esterno: lo stile incorporato in un link che fa riferimento ad un documento.css esterno alla pagina.
+            <head>
+                <link rel="stylesheet" type="text/css" href="path"/>
+            </head>
+        2 - Selettori
+            - Selettore Universale -> * -> seleziona tutto
+            - Selettore di classe -> .nomeClasse -> seleziona tutti gli elementi che possiedono
+            quel nome classe
+            La classe si usa per dare ad elementi diversi proprietà in comune
+            - Selettore di id -> #nomeId -> seleziona l'elemento con quell'id
+            Selettori combinatori:
+            Selettori di figli discendenti
+            A B -> tutti i figli di B di padre A, qualunque sia la profondità
+            Selettori di figli diretti
+            A > B - selezioniamo tutti i figli B di padre A adiacenti -> senza tenere conto della
+            profondità
+            Selettore di fratello adiacente
+            A + B - selezioniamo l'elemento B immediatamente vicino all'elemento A
+
+            Quanto attribuiamo una classe noi possiamo attribuire anche più di una.
+            <p class="paragrafi rossi"></p> (combo Class)
+        !important impone una proprietà
+
+        Proprietà CSS
+        font-size: 18px; -> dimensione carattere
+        font-family
+
+        Proprietà per la modellazione dei container
+        text-align: left | rigth | center | justify
+
+        Unità di misura
+        Dimensioni relative e dimensioni fisse/assolute
+        Unità di misura relative sono:
+        rem -> 1rem = 16px | h1 = 32px = 2rem -> viene calcolato sulla base della radice html
+        em -> viene ricalcolato in base alla dimensione del font del genitore
+        % -> viene ricalcolata in base alla dimensione del genitore. Genitore con width 1000px -- Figlio width 50% = width: 500px;
+        vh -> viewport height e viene ricalcolata in base alla finestra (viewport | altezza)
+        vw -> viewport width viene ricalcolata in base alla finestra (viewport | larghezza)
+        Unità di misura fisse e assolute
+        px -> 1 punto luminoso nello schermo
+        cm
+        mm -> fogli di stile per la stampa cartacea
+        pt
+
+        Content Box
+        Gli elementi html possiedono di default larghezza e altezza, ma anche 3 proprietà imprescindiili
+        padding, border, margin
+        Il padding è lo spazio intorno al contenuto del box. Il padding accetta valori per ogni lato
+        Il padding influenza le dimensioni originali del container
+        Border
+        Border rappresenta il bordo del content del box, quindi il bordo che racchiude il contenuto
+        Accetta proprietà e misure per tutti e quattro i lati in maniera distinta
+        Il border influenza le proporzioni e le dimensioni del content box sommandosi alle stesse
+
+        Margin
+        Rappresenta il confine del content box, tutto ciò che si trova fuori dal border
+
+        Creiamo una pagina web business dove dobbiamo mostrare i seguenti elementi:
+        barra di navigazione con i seguenti link:
+        home e contatti
+        Nella home voglio vedere:
+            barra di navigazione
+            hero section -> immagine con descrizione azienda
+            Banner dei social
+            Footer
+        Nella pagina contatti voglio vedere:
+            barra di navigazione
+            elenco dei contatti
+            tabella con resoconto dei prodotti offerti
+            footer
+    -->
+    <div class="wrapper">
+        <p class="paragrafi">
+            Ciao
+        </p>
+        <p class="paragrafi">
+            come
+        </p>
+        <p class="paragrafi">
+            stai
+        </p>
+    </div>
+
+    <audio id="suono">
+        <source src="audio/succeed.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="suono2">
+        <source src="audio/rat_dance.mp3" type="audio/mpeg">
+    </audio>
+    <div class="wrapper">
+        <div class="quadratone" id="primo_quadrato">
+            <h4 class="nel-quadratone">
+                Schiscia qui
+            </h4>
+        </div>
+        <div class="container_img" id="secondo_quadrato">
+            <h4 class="nel-quadratone">ue</h4>
+        </div>
+    </div>
+
+
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Cliccami</a>
+
+
+    <script>
+        const quadratone = document.getElementById("secondo_quadrato");
+        const audio = document.getElementById("suono");
+        const primoQuadrato = document.getElementById("primo_quadrato");
+        const audio2 = document.getElementById("suono2");
+
+        quadratone.addEventListener("click", () => {
+            audio.currentTime = 0;
+            audio.play();
+        });
+
+        primoQuadrato.addEventListener("click", () => {
+            audio2.currentTime = 0;
+            audio2.play();
+        });
+    </script>
+
+</body>
+
+</html>
