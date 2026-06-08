@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it">
+<!--
+Best practice per creare una bozza di una pagina web?
+1) Contesto | Intervista al cliente - documento tecnico con tutte le specifiche tecniche e gli obiettivi della web app
+o della pagina.
+2) Reference | preferenze -> sito semplice e concorrenziale/competitivo
+3) Creare una bozza delle pagine web a partire dallo smartphone -> desktop
+4) Scelta dei colori sulla base di -> logo, immagini, reference, cliente...
+5) Scelta dei font -> dipende molto dal contesto.
+6) Disposizione degli elementi nella pagina / grafiche (UI - User Interface)
+7) HTML -> CSS -> JavaScript | Validazioni / animazioni / effetti speciali
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figa</title>
+    <link rel="icon" type="image/png" href="figa.png"/>
+
+    <style>
+        .containers {
+            width: 100px;
+            height: 100px;
+        }
+        #box1 {
+            background-color: red;
+        }
+        #box2 {
+            background-color: blue;
+        }
+        #box3 {
+            background-color: green;
+        }
+        @media screen and (max-width:768px) {
+            /*#box1 {
+                background-color: red;
+            }*/
+            #wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+            .containers {
+                width: 100%;
+                height: 100px;
+            }
+        }
+        @media screen and (min-width:768px) {
+            /*#box1 {
+                background-color: blue;
+            }*/
+            #wrapper {
+                display: flex;
+                flex-direction: row;
+            }
+            .containers {
+                width: 33%;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="box1" class="containers"></div>
+        <div id="box2" class="containers"></div>
+        <div id="box3" class="containers"></div>
+    </div>
+</body>
+</html>

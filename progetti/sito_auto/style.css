@@ -1,0 +1,194 @@
+@import url(fonts.css);
+
+#collegamento:link {
+    text-decoration: none;
+    color: inherit;
+}
+
+#collegamento:visited {
+    color: inherit;
+}
+
+body {
+    background-color: #FEFAE0;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #CCD5AE;
+    height: 70px;
+    top: 0;
+    box-shadow: 1px 1px 100px 1px black;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+
+nav li:hover {
+    opacity: 0.3;
+    transition: 0.5s;
+}
+
+nav h3 {
+    font-family: "LouisGeorge", sans-serif;
+    color: #214029;
+    font-size: 30px;
+}
+
+nav ul img {
+    width: 10%;
+    margin-right: auto;
+    display: block;
+}
+
+@media screen and (min-width:768px) {
+    nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 50px;
+}
+
+.container.invertito {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    gap: 50px;
+}
+
+.container img {
+    border-radius: 10px;
+    opacity: 0.5;
+    width: 50%;
+    box-shadow: 5px 3px 10px 5px black;
+    transition: 0.5s ease;
+}
+
+.container img:hover {
+    opacity: 1;
+    transform: scale(1.01);
+}
+
+.title_text {
+    display: flex;
+    flex-direction: column;
+}
+
+#h1_title {
+    font-family: "ModernRomance";
+    font-size: 60px;
+    color: #283618;
+    text-shadow: 1px 2px 1px lightgreen;
+}
+
+#h3_title {
+    font-family: "CreatoDisplay";
+    font-size: 35px;
+    color: #283618;
+}
+
+@media screen and (max-width:768px) {
+    .container {
+        flex-direction: column;
+    }
+    .container img {
+        width: 100%;
+    }
+    .container.invertito {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+.separator {
+    height: 80px;
+}
+
+.container_servizi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_servizi table {
+    border: 3px #CCD5AE solid;
+    border-collapse: collapse;
+    padding: 3px;
+    width: 80%;
+    overflow: scroll;
+}
+
+.container_servizi table, td {
+    font-family: "LouisGeorge", sans-serif;
+    color: #214029;
+    font-size: 25px;
+    text-align: center;
+}
+
+.container_servizi table, ul {
+    list-style-type: none;
+}
+
+.footer {
+    height: 200px;
+    background-color: #CCD5AE;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.footer ul {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#h1_footer {
+    font-family: "CreatoDisplay";
+    font-size: 20px;
+    color: #3D4D09;
+}
+
+#h2_footer {
+    font-family: "CreatoDisplay";
+    font-size: 15px;
+    color: #3D4D09;
+}
+
+h2_footer:hover {
+    opacity: 0.5;
+}
+
+@media screen and (max-width:768px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .footer {
+        flex-direction: row;
+    }
+}

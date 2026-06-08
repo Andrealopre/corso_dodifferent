@@ -51,12 +51,28 @@
             font-family: 'nomeDelFont';
         }
     </style>
+
+    Icona che compare di fianco al nome della scheda
+    <link rel"icon" type="image/png" href="path"/>
+
+    Media-query sono degli strumenti che ci consentono di rendere
+    responsive il sito/pagina-web
+    @media screen and (min-width:valorepx)(max-width:valorepx)
+    i breakpoint sono delle dimensioni specifiche universali da
+    attribuire alle proprietà min/max-width all'interno della 
+    descrizione del media-query.
+    min-width: significa a partire dalla dimensione di questo
+    dispositivo in poi
+    max-width fino a dimensione di questo dispositivo
+    Con i media-query possiamo creare dei sottostili in base
+    alle dimensioni dei dispositivi
     -->
 
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
+    <link rel="icon" type="image/png" href="immagine.avif"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,11 +174,19 @@
 
         #sposta:hover {
             background-color: blue;
-            border-radius: 10px;
+            border-radius: 25px;
+            transform: scale(1.3);
         }
     </style>
 </head>
-
+<!--
+ease transizione smooth
+ease-in comincia rapidamente e finisce lentamente
+ease-out comincia lentamente e finisce velocemente
+ease-in-out curva gaussiano, l'inizio è accelerato
+poi rallenta, di seguito torna veloce   
+transform permette di trasformare l'elemento
+-->
 <body>
     <nav>
         <ul>

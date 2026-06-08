@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'CreatoDisplay';
+    src: url('fonts/CreatoDisplay-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'LouisGeorge';
+    src: url('fonts/Louis\ George\ Cafe.ttf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PerfectGirl';
+    src: url('fonts/PerfectGirl-SansSerif.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Amoria';
+    src: url('fonts/AMORIA.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'SaintCarrell';
+    src: url('fonts/SaintCarell_PERSONAL_USE_ONLY.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'ModernRomance';
+    src: url('fonts/Modern\ Romance.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Qwenty';
+    src: url('fonts/Qwenty.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf') format('opentype');
+}

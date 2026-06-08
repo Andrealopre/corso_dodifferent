@@ -1,0 +1,43 @@
+Creare un sito vetrina dove vengono mostrati i servizi di un’area wellness (un centro SPA). Il sito deve presentare il 
+resort, un riepilogo dei servizi offerti, un banner dei social, le recensioni degli utenti e la possibilità di 
+prenotare un pacchetto di servizi.
+
+Alternativa: creare un sito vetrina dove vengono mostrati i servizi di un concessionario d’auto e moto. 
+Il sito deve presentare il concessionario, un riepilogo dei veicoli più venduti, un banner dei social, le recensioni 
+degli utenti e la possibilità di prenotare un’appuntamento in sede.
+
+Il sito consiste in due pagine distinte: home e contatti.
+Nella home vorrei vedere le seguenti informazioni:
+1) barra di navigazione
+2) Un’immagine a sinistra quadrata e un titolo e una descrizione a destra. Il titolo e la descrizione devono raccontare l’azienda.
+3) Un’immagine a destra e un titolo e una descrizione a sinistra. Il titolo e la descrizione devono raccontare i servizi offerti.
+4) Riepilogo di tutti i servizi offerti. Potete creare una tabella con un listino.
+5) Banner dei social
+6) Recensioni degli utenti
+7) Footer
+
+Nella pagina dei contatti vorrei vedere le seguenti informazioni:
+1) barra di navigazione
+2) Form (prenotazione)
+3) Riferimenti
+4) Mappa
+L’obiettivo di questo sito è farvi apprendere le potenzialità del modello CSS flexbox. 
+Infatti si richiede espressamente di renderlo responsive lato smartphone. Nella home quando allineate 
+tutto (necessariamente) in colonna, vorrei che nella prima parte vengono mostrate (per blocco) prima l’immagine e 
+poi il titolo e la descrizione sotto. Il form dovrà avere i campi che occupino, ciascuno tutta la larghezza dello schermo.
+
+Responsive solo su due breakpoints. Inferiori a i medium e superiori ai medium - 768px
+Nella modalità smartphone, l'immagine deve essere subito dopo la navbar
+
+Best practice per creare una bozza di una pagina web?
+1) Contesto | Intervista al cliente - documento tecnico con tutte le specifiche tecniche e gli obiettivi della web app
+o della pagina.
+2) Reference | preferenze -> sito semplice e concorrenziale/competitivo
+3) Creare una bozza delle pagine web a partire dallo smartphone -> desktop
+4) Scelta dei colori sulla base di -> logo, immagini, reference, cliente...
+5) Scelta dei font -> dipende molto dal contesto.
+6) Disposizione degli elementi nella pagina / grafiche (UI - User Interface)
+7) HTML -> CSS -> JavaScript | Validazioni / animazioni / effetti speciali
+
+E1FFDD
+2E5A3A
