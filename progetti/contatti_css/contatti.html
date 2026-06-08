@@ -9,16 +9,124 @@
 </head>
 <body>
     <nav>
-        <div class="taskbar_container">
-            <a href="home.html">Home</a>
-        </div>
-        <div class="taskbar_container">
-            <a href="#">Contatti</a>
-        </div>
+        <a href="home.html">
+            <div class="taskbar_container">
+                <h4 class="taskbar">Home</h4>
+            </div>
+        </a>
+        <a href="#">
+            <div class="taskbar_container">
+                <h4 class="taskbar">Contatti</h4>
+            </div>
+        </a>
     </nav>
 
+    <div class="container_contatti">
+        <h1 class="social">Contatti:</h1>
+        <h3 class="social">Email: vitoflex@gmail.com</h3>
+        <h3 class="social">Instagram: vito_flex</h3>
+        <h3 class="social">Telefono: +02 5550 4874</h3>
+    </div>
+
+    <div class="container_prodotti">
+        <table>
+            <tr>
+                <th>Prodotto</th>
+                <th>Prezzo</th>
+                <th>Quantità</th>
+                <th>Immagine</th>
+            </tr>
+            <tr>
+                <td>Super Vite</td>
+                <td>200.00€</td>
+                <td>20</td>
+                <td><img src="images/supervite.jpg" alt="non va"></td>
+            </tr>
+            <tr>
+                <td>Vite mid</td>
+                <td>150.00€</td>
+                <td>20</td>
+                <td><img src="images/midvite.jpg" alt="non va"></td>
+            </tr>
+            <tr>
+                <td>Super Bullone</td>
+                <td>300.00€</td>
+                <td>20</td>
+                <td><img src="images/superbullone.jpg" alt="non va"></td>
+            </tr>
+            <tr>
+                <td>Bullone Mid</td>
+                <td>250.00€</td>
+                <td>20</td>
+                <td><img src="images/midbullone.jpg" alt="non va"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="container_form">
+        <h4 class="taskbar">Iscriviti alla newsletter</h4>
+        <form action="#">
+        <label for="input_nome">Inserisci il nome: </label>
+        <input id="input_nome" type="text" placeholder="Nome" name="nome" value="" required><br/><br/>
+        <label for="input_cognome">Inserisci il cognome: </label>
+        <input id="input_cognome" type="text" placeholder="Cognome" name="cognome" value="" required><br/><br/>
+        <label for="data_di_nascita">Inserisci la data di nascita:</label>
+        <input type="date" name="dataDiNascita" id="data_di_nascita" value="" required><br/><br/>
+        <label for="email">Indirizzo email:</label>
+        <input type="email" name="indirizzoMail" id="email" value="" placeholder="example@gmail.com"><br/><br/>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="" placeholder="Username" required minlength="3"><br/><br/>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" value="" required minlength="8"><br/><br/>
+        <input type="radio" name="sessoM" id="sesso_m" value="" checked>
+        <label for="sesso_m">M</label>
+        <input type="radio" name="sessoF" id="sesso_f" value="">
+        <label for="sesso_f">F</label>
+        <input type="radio" name="sessoA" id="sesso_a" value="">
+        <label for="sesso_a">Altro</label><br/><br/>
+        <label for="titolo_studio">Inserisci il titolo di studio</label>
+        <select name="titoloDiStudio" id="titolo_studio" required>
+            <option value="" selected disabled hidden>---Scegli---</option>
+            <option value="licenza_media">Licenza media</option>
+            <option value="diploma">Diploma</option>
+            <option value="laurea">Laurea</option>
+        </select><br/><br/>
+        <input type="checkbox" name="datiPersonali" id="dati_personali" value="" required>
+        <label for="dati_personali">Accetta i termini di utilizzo dei dati personali*</label><br/><br/>
+        <input type="checkbox" name="anima" id="anima" value="">
+        <label for="anima">Vendimi la tua anima per il resto della tua esistenza</label><br/><br/>
+        <input type="checkbox" name="famiglia" id="famiglia" value="">
+        <label for="famiglia">Vendimi l'anima della tua famiglia</label><br/><br/>
+        <br/><br/>
+        <!-- PARTE FINALE DEL FORM-->
+        <button type="submit">Invia</button>
+        <button type="reset">Pulisci tutto</button>
+    </form>
+    </div>
+
     <div class="footer">
-        ciao
+        <div class="footer_container">
+            <div class="footer_logo">
+                <a href="home.html">
+                    <img src="images/vitoflex.png" alt="no">
+                </a>
+            </div>
+        </div>
+        <div class="footer_container">
+            <ul>
+                <li>
+                    <h4 class="footer_title">Informazioni</h4>
+                </li>
+                <li>
+                    <h5 class="footer_content">P. Iva: 98293435293</h5>
+                </li>
+                <li>
+                    <h5 class="footer_content">Via Ghisalba, 13/5, 20021 Ospiate MI</h5>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_container">
+            <h5 class="footer_content">©2026 VitoFlex</h5>
+        </div>
     </div>
 </body>
 </html>

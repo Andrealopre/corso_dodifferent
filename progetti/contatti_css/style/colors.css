@@ -1,7 +1,7 @@
 :root {
     
-    --primary_background: rgb(246, 243, 194);
-    --nav_background: rgb(75, 157, 169);
+    --primary_background: rgb(238, 238, 238);
+    --nav_background: rgb(196, 226, 245);
     --task_background: rgb(145, 198, 188);
-    --footer: rgb(227, 116, 52);
+    --footer: rgb(238, 238, 238);
 }

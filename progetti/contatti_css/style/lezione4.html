@@ -17,6 +17,25 @@
     display inline-block: come inline, ma possono accettare valori di altezza e larghezza
     display none: ci consente di non mostrare un elemento o degli elementi all'interno della
     visibility: show | hidden
+
+    Position
+    ICB (Initial Containing Box)
+    Rappresenta il piano di lavoro nella prima schermata del viewport
+    Ha le stesse dimensione del viewport, però l'icb è mobile.
+    L'icb è il punto di origine di tutti gli elementi che vengono immessi
+    nel documento. Quando posizioniamo gli elementi nel documento con la proprietà
+    position e questi elementi potrebbero rischiare di non agganciarsi a nulla, allora
+    si agganciano all'icb e solitamente alle coordinate (0, 0) del piano.
+    position: static; //l'elemento rimane nella sua posizione di origine
+    position: relative; //l'elemento può scostarsi dal suo punto di origine e muoversi nel piano
+    ma non lascia mai il suo spazio originario.
+    position absolute: //l'elemento si solleva letteralmente dal flusso, lasciando il suo spazio
+    di origine, si aggancierà al primo elemento che ha position:relative (di solito il padre), altrimenti
+    se non trova alcun elemento a cui agganciarsi, si aggancierà all'icb, quindi finirà a coordinate
+    (0, 0)
+    position: fixed //l'elemento resta fisso nella porzione di pagina specificata
+    position: sticky //l'elemento si comporta come static fin quando uno dei margini dello schermo
+    non lo tocca e nel momento in cui il margine tocca l'elemento esso si comporta come fixed;
     -->
 </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #cambiaColore {
+            background-color: red; 
+            width: 100px; 
+            height: 100px;
+        }
+
+        #cambiaColore:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    PSEUDOCLASSI
+
+    Sono dei selettori che permettono di puntare a degli elementi html quando
+    essi si trovano in un determinato stato.
+
+    :hover -> permette di creare uno stile personalizzato soltanto quando il
+    cursore si trova sopra l'elemento o gli che elementi che appartengono ad 
+    una determinata classe o tipo.
+
+    :active -> permette di creare uno stile agli elementi che in questo momento
+    sono sotto il click
+
+    :focus -> dedicato particolarmente agli input. Consente di personalizzare
+    lo stile nei campi quando si itende scrivere al loro interno
+    
+    :link -> lo stato di default dei tag <a></a>
+
+    :visited -> lo stato visitato dei tag a
+
+    :first-child (last child) -> modifica lo stile esclusivamente del primo(ultimo)
+    figlio del container padre
+
+    :nth-child(n) -> permette di modificare lo stile dell'elemento ennesimo
+    del container padre
+        even | odd -> puntare a tutti gli elementi pari o dispari del container padre
+    
+    Quando stiamo modificando lo stato di un elemento con la pseudoclasse
+    assicuriamoci sempre che il suo stato base si trovi nello stesso
+    criterio di implementazione.
+    -->
+    <div id="cambiaColore"></div>
+</body>
+</html>
