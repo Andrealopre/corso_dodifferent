@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <style>
-        #cambiaColore {
-            background-color: red; 
-            width: 100px; 
-            height: 100px;
-        }
-
-        #cambiaColore:hover {
-            background-color: blue;
-        }
-    </style>
-</head>
-<body>
-    <!--
+<!--
     PSEUDOCLASSI
 
     Sono dei selettori che permettono di puntare a degli elementi html quando
@@ -48,7 +28,166 @@
     Quando stiamo modificando lo stato di un elemento con la pseudoclasse
     assicuriamoci sempre che il suo stato base si trovi nello stesso
     criterio di implementazione.
+
+    FLEXBOX - Modello CSS per l'organizzazione degli elementi figli all'interno
+    di un container padre. Dobbiamo tener conto qual è l'asse di riferimento.
+    Il Main-axis e il Cross-axis determinano l'orientamento degli elementi
+    all'interno del container padre.
+    La proprietà che attiva questo modello è display:flex; che deve essere
+    NECESSARIAMENTE assegnata al padre.
+    Una volta assegnata la proprietà display:flex, di default il main-axis
+    è l'asse delle ascisse X, quindi di contro il cross-axis è l'asse delle
+    ordinate Y. Per invertire l'asse di riferimento si usa la proprietà
+    flex-direction.
+    Possiamo attribuire a flex-direction i seguenti valori: row | column | row-reverse | column-reverse
+    Contrasto: più si è vicini a 5 meglio è su adobe colors
+    per i font bisogna creare una cartella e inserire il font scaricato
+    <style>
+        @font-face {
+            font-family: 'nomeDelFont'
+            src: url('fonts/nomefont') format('opentype');
+        }
+        p {
+            font-family: 'nomeDelFont';
+        }
+    </style>
     -->
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #cambiaColore {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            box-shadow: 4px 3px 10px 5px black;
+        }
+
+        #cambiaColore2 {
+            background-color: whitesmoke;
+            width: 100px;
+            height: 100px;
+            box-shadow: 4px 3px 10px 5px black;
+        }
+
+        #cambiaColore3 {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            box-shadow: 4px 3px 10px 5px black;
+        }
+
+        #cambiaColore:hover {
+            background-color: blue;
+        }
+
+        #cambiaColore2:hover {
+            background-color: blue;
+        }
+
+        #cambiaColore3:hover {
+            background-color: blue;
+        }
+
+        #pulsante {
+            background-color: blue;
+            width: 150px;
+            height: 80px;
+        }
+
+        #pulsante:active {
+            background-color: red;
+        }
+
+        #link:link {
+            text-decoration: none;
+            color: green;
+        }
+
+        #link:visited {
+            text-decoration: underline;
+            color: blue;
+        }
+
+        nav {
+            background-color: lightblue;
+            height: 40px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+        }
+
+        #wrapper_nonno {
+            width: 100%;
+            background-color: brown;
+            display: flex;
+            justify-content: center;
+        }
+
+        #wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            height: 300px;
+            width: 500px;
+            align-items: center;
+            background-color: lightgreen;
+        }
+
+        #sposta {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: 0.5s ease;
+        }
+
+        #sposta:hover {
+            background-color: blue;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Link1</a></li>
+            <li><a href="#">Link2</a></li>
+            <li><a href="#">Link3</a></li>
+        </ul>
+    </nav>
+    <br />
     <div id="cambiaColore"></div>
+    <br />
+    <button id="pulsante">Cliccami</button>
+    <a id="link" href="#">Link default</a>
+    <br /><br />
+    <div id="wrapper_nonno">
+        <div id="wrapper">
+            <div id="cambiaColore"></div>
+            <div id="cambiaColore2"></div>
+            <div id="cambiaColore3"></div>
+        </div>
+    </div>
+
+    <br/>
+    <div id="sposta"></div>
+
 </body>
+
 </html>
