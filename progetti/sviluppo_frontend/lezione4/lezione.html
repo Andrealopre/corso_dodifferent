@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<!--
+JavaScript è un linguaggio multiparadigma che si avvale del paradigma procedurale, funzionale e ad oggetti.
+Nella definizione di javascript viene inteso come un linguaggio orientato agli eventi: è in grado di manipolare
+ciò che accade all'interno del DOM. 
+Un evento è un costrutto costituito da due parti:
+    - L'elemento scatenante (trigger): click di pulsante, scorrimento di una pagina o la digitazione di un tasto
+    da tastiera
+    - L'evento scatenato (conseguenza)
+
+Nel momento in cui noi inseriamo in un documento html dello script, stiamo rendendo il nostro documento interattivo.
+Interattivo vuol dire che l'utente interagisce con gli elementi html e riceve un feedback visivo.
+Per poter utilizzare javascript dobbiamo capire bene il concetto di DOM (Document Object Model).
+    - Document: documento html
+    - Object: oggetto gli elementi html non vengono più intesi come tag ma come oggetti
+    - Model: il modello gerarchico con in quale vengono organizzati gli oggetti.
+Javascript si pone l'obiettivo di manipolare il DOM.
+Criteri di implementazione di uno script:
+    1) Documento esterno attraverso il tag <script src="path"></script> (src è un rif. di tipo dinamico)
+       il file deve avere estensione .js; Di solito si inserisce prima della chiusura del body.
+       Qualora volessimo inserire lo script nell'head dobbiamo tenere presente che il DOM in quel punto
+       non è stato ancora caricato da parte del browser e quindi i metodi potrebbero non funzionare.
+       Questo problema si può risolvere in 2 modi:
+       - Vecchia Scuola: Inserire questa riga: document.addEventListener("DOMContentLoaded", function() {//script});
+       Questa riga di codice aspetta che l'evento DOM caricato e poi esegue la funzione rappresentata dallo script
+       - New Gen: nel tag script possiamo inserire l'attributo defer="true".
+    
+    2) Inserire direttamente lo script all'interno del tag script (head o body).
+
+SELETTORI JAVASCRIPT
+
+document.getElementById("id"); Permette di puntare ad un singolo elemento html associato all'id
+document.getElementsByClassName("classe"); Restituisce una HTMLCollection (array-like) senza però possedere metodi
+nativi degli array.
+Possiamo trasformare in array la variabile che conserva questa html collection con:
+    Array.from(nomeCollection).foreach(elemento => {
+        //azioni eseguite
+    });
+In alternativa possiamo utilizzare 
+    for(const elemento of nomeCollection) {
+
+    }
+Un'altra alternativa "spread operator": [...nomeCollection].foreach();
+
+Ancora. document.getElementsByTagName(""); Restituisce di nuovo una HTMLCollection. Uguale al precedente caso.
+ATTENZIONE: HTMLCollection è intesa come live collection, ovvero quando modifichiamo il MOD lei si aggiorna da sola.
+Per risolvere ciò si è passato ai selettori moderni:
+    - document.querySelector("selettore"); (#id, .nomeclasse): restituisce il primo elemento di una classe p di un tipo
+    tag
+    - document.querySelectorAll("selettore"): restituisce una node list, un array like, che però ha tutti i metodi di
+    un array
+
+TRIGGER E FUNZIONI
+- Handlers: hanno una peculiarità possono eseguire una sola funzione per elemento. Vengono applicati all'elemento
+che deve scatenare l'evento sottoforma di attributo html:
+    <button onclick="cliccami()">Cliccami</button>
+Nello script verrà definita la function cliccami, questa eseguita quando il bottone verrà cliccato.
+- Listeners: a differenza degli handlers possiamo generare più eventi per lo stesso elemento.
+    <button id="pulsante">Cliccami</button>
+    <script>
+        const pulsante = document.getElementById("pulsante");
+        pulsante.addEventListener("click", function() {
+            window.alert("ciao");
+        });
+    </script>
+
+PROPRIETA' E METODI
+InnerHTML: permette di modificare nell'html sia del testo ma anche degli elementi html.
+TextContent: permette di modificare il testo di un elemento
+InnerText: permette di modificare il testo di un elemento
+-->
+
+<html lang="it">
+<head>
+    <!-- <script src="scriptini.js" defer="true"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script</title>
+
+    <style>
+        #blocco {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+
+        #blocco2 {
+            width: 500px;
+            height: 500px;
+        }
+
+        .blu {
+            background-color: blue;
+        }
+
+        .rosso {
+            background-color: red;
+        }
+
+        #separatore {
+            height: 80px;
+        }
+    </style>
+</head>
+<!--
+Voglio cliccare su un pulsante e mostrare una finestra di dialogo che mi saluta
+-->
+<body>
+     <button onclick="salutami()">
+        Cliccami per salutare
+     </button>
+     <button onclick="cambiaColore()">
+        Clicca per cambiare colore
+     </button>
+     <button onclick="cambiaBox2()">Cambia box2</button>
+
+     <label for="nome">Inserisci nome</label>
+     <input type="text" id="nome" onfocus="cambiaSfondo()" onfocusout="cambiaSfondoOriginale()">
+
+     <div id="separatore"></div>
+     <div id="blocco"></div>
+     <div id="blocco2" class="rosso"></div>
+     <div id="separatore"></div>
+
+     <button onclick="conta()">Conta</button>
+     <p id="risultato"></p>
+     <div id="separatore"></div>
+
+     <div id="padre" style="width: 100%; height: 300px; background-color: lightblue;"></div>
+     <button onclick="aggiungiFiglio()">Aggiungi figlio</button>
+     <div id="separatore"></div>
+
+     <form action="">
+        <label for="input_nome">Inserisci il nome</label>
+        <input type="text" id="input_nome"/>
+        <label for="input_eta">Inserisci la tua età</label>
+        <input type="number" id="input_eta">
+     </form>
+     <br/><br/>
+     <button onclick="creaRiga()">Aggiungi utente</button>
+     <div id="separatore"></div>
+     <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Età</th>
+            </tr>
+        </thead>
+        <tbody id="corpo_tabella">
+
+        </tbody>
+     </table>
+
+     <script>
+        function salutami() {
+            window.alert("Ciao!");
+            window.alert("Coglione");
+        }
+
+        function cambiaColore() {
+            const box = document.getElementById("blocco");
+            box.style.backgroundColor = "blue";    
+        }
+
+        function cambiaSfondo() {
+            const input = document.querySelector("#nome");
+            input.style.backgroundColor = "yellow";
+        }
+
+        function cambiaSfondoOriginale() {
+            const input = document.querySelector("#nome");
+            input.style.backgroundColor = "white";
+        }
+
+        function conta() {
+            const risultato = document.getElementById("risultato");
+            let i = 1;
+            risultato.innerHTML = "";
+            while(i <= 10) {
+                risultato.innerHTML += i + "<br>";
+                console.log(i);
+                i++;
+            }
+        }
+
+        function cambiaBox2() {
+            const box2 = document.getElementById("blocco2");
+            box2.classList.toggle("blu");
+            box2.classList.toggle("rosso");
+        }
+
+        function aggiungiFiglio() {
+            const padre = document.getElementById("padre");
+            const figlio = document.createElement("div");
+
+            figlio.style.width = "100px";
+            figlio.style.height = "100px";
+            figlio.style.background = "green";
+            padre.appendChild(figlio);
+        }
+
+        function creaRiga() {
+            const nome = document.querySelector("#input_nome").value;
+            const eta = document.querySelector("#input_eta").value;
+            const cellaNome = document.createElement("td");
+            const cellaEta = document.createElement("td");
+            const tBody = document.querySelector("#corpo_tabella");
+
+            cellaNome.innerHTML = nome;
+            cellaEta.innerHTML = eta;
+            const riga = document.createElement("tr");
+            riga.appendChild(cellaNome);
+            riga.appendChild(cellaEta);
+            tBody.appendChild(riga);
+        }
+     </script>
+</body>
+</html>

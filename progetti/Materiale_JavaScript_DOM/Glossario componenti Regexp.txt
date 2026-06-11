@@ -1,0 +1,148 @@
+<p>Glossario componenti Regex</p>
+
+<h2>Tabella Completa dei Componenti Regex</h2>
+
+<table style="background-color:#fff; border-collapse:collapse; box-shadow:0 2px 5px rgba(0,0,0,0.1); margin-top:15px; width:100%">
+	<thead>
+		<tr>
+			<th style="text-align:left">Tipologia</th>
+			<th style="text-align:left">Simbolo / Sintassi</th>
+			<th style="text-align:left">Spiegazione</th>
+			<th style="text-align:left">Esempio Pratico</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align:left">Ancoraggi</td>
+			<td style="text-align:left"><code>^</code></td>
+			<td style="text-align:left">Vincola l&#39;inizio della stringa</td>
+			<td style="text-align:left"><code>/^A/</code> (Inizia con &#39;A&#39;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Ancoraggi</td>
+			<td style="text-align:left"><code>$</code></td>
+			<td style="text-align:left">Vincola la fine della stringa</td>
+			<td style="text-align:left"><code>/Z$/</code> (Finisce con &#39;Z&#39;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Classi di Caratteri</td>
+			<td style="text-align:left"><code>[abc]</code></td>
+			<td style="text-align:left">Un singolo carattere a scelta tra a, b o c</td>
+			<td style="text-align:left"><code>[cr]at</code> (trova &#39;cat&#39; o &#39;rat&#39;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Classi di Caratteri</td>
+			<td style="text-align:left"><code>[a-z]</code></td>
+			<td style="text-align:left">Qualsiasi lettera minuscola nell&#39;intervallo</td>
+			<td style="text-align:left"><code>[a-z]</code> (una lettera da a a z)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Classi di Caratteri</td>
+			<td style="text-align:left"><code>[A-Z]</code></td>
+			<td style="text-align:left">Qualsiasi lettera maiuscola nell&#39;intervallo</td>
+			<td style="text-align:left"><code>[A-Z]</code> (una lettera da A a Z)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Classi di Caratteri</td>
+			<td style="text-align:left"><code>[0-9]</code></td>
+			<td style="text-align:left">Qualsiasi cifra numerica da 0 a 9</td>
+			<td style="text-align:left"><code>[0-9]</code> (un numero da 0 a 9)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Classi di Caratteri</td>
+			<td style="text-align:left"><code>[^0-9]</code></td>
+			<td style="text-align:left"><strong>Negazione:</strong> qualsiasi carattere che NON sia un numero</td>
+			<td style="text-align:left"><code>[^a-z]</code> (tutto tranne lettere minuscole)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Scorciatoie</td>
+			<td style="text-align:left"><code>\d</code></td>
+			<td style="text-align:left">Qualsiasi cifra numerica (pari a [0-9])</td>
+			<td style="text-align:left"><code>\d\d</code> (due numeri vicini)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Scorciatoie</td>
+			<td style="text-align:left"><code>\D</code></td>
+			<td style="text-align:left">Qualsiasi carattere che NON sia un numero</td>
+			<td style="text-align:left"><code>\D</code> (lettere, spazi, simboli)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Scorciatoie</td>
+			<td style="text-align:left"><code>\w</code></td>
+			<td style="text-align:left">Qualsiasi carattere alfanumerico (lettere, numeri, _)</td>
+			<td style="text-align:left"><code>\w{3}</code> (tre caratteri alfanumerici)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Scorciatoie</td>
+			<td style="text-align:left"><code>\s</code></td>
+			<td style="text-align:left">Uno spazio vuoto, tabulazione o invio</td>
+			<td style="text-align:left"><code>\s</code> (individua lo spazio tra due parole)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Scorciatoie</td>
+			<td style="text-align:left"><code>.</code></td>
+			<td style="text-align:left"><strong>Jolly:</strong> qualsiasi carattere esistente (tranne l&#39;invio)</td>
+			<td style="text-align:left"><code>a.c</code> (trova &#39;abc&#39;, &#39;a1c&#39;, &#39;a!c&#39;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Quantificatori</td>
+			<td style="text-align:left"><code>{n}</code></td>
+			<td style="text-align:left">Esattamente n volte</td>
+			<td style="text-align:left"><code>\d{5}</code> (esattamente 5 cifre)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Quantificatori</td>
+			<td style="text-align:left"><code>{min,max}</code></td>
+			<td style="text-align:left">Da un minimo a un massimo di volte</td>
+			<td style="text-align:left"><code>[a-z]{2,4}</code> (da 2 a 4 lettere)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Quantificatori</td>
+			<td style="text-align:left"><code>{min,}</code></td>
+			<td style="text-align:left">Almeno min volte, senza un limite massimo</td>
+			<td style="text-align:left"><code>\w{3,}</code> (almeno 3 caratteri o pi&ugrave;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Quantificatori</td>
+			<td style="text-align:left"><code>+</code></td>
+			<td style="text-align:left">Una o pi&ugrave; volte (obbligatorio almeno una volta)</td>
+			<td style="text-align:left"><code>\d+</code> (un gruppo di numeri)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Quantificatori</td>
+			<td style="text-align:left"><code>*</code></td>
+			<td style="text-align:left">Zero o pi&ugrave; volte (opzionale e ripetibile)</td>
+			<td style="text-align:left"><code>A*</code> (la A pu&ograve; non esserci o ripetersi)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Quantificatori</td>
+			<td style="text-align:left"><code>?</code></td>
+			<td style="text-align:left">Zero o una volta (rende l&#39;elemento precedente opzionale)</td>
+			<td style="text-align:left"><code>colou?r</code> (trova &#39;color&#39; e &#39;colour&#39;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Logici / Gruppi</td>
+			<td style="text-align:left"><code>|</code></td>
+			<td style="text-align:left"><strong>OR logico:</strong> una scelta alternativa</td>
+			<td style="text-align:left"><code>mela|pera</code> (trova &#39;mela&#39; o &#39;pera&#39;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Logici / Gruppi</td>
+			<td style="text-align:left"><code>()</code></td>
+			<td style="text-align:left">Raggruppa elementi (crea una sotto-regola)</td>
+			<td style="text-align:left"><code>(abc){2}</code> (cerca la sequenza &#39;abcabc&#39;)</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Logici / Gruppi</td>
+			<td style="text-align:left"><code>(?=...)</code></td>
+			<td style="text-align:left"><strong>Lookahead:</strong> controlla se dopo c&#39;&egrave; una determinata regola</td>
+			<td style="text-align:left">Utilizzato per i requisiti delle password</td>
+		</tr>
+		<tr>
+			<td style="text-align:left">Escape</td>
+			<td style="text-align:left"><code>\</code></td>
+			<td style="text-align:left">Neutralizza un carattere speciale trasformandolo in testo puro</td>
+			<td style="text-align:left"><code>\.</code> (cerca un punto vero e proprio)</td>
+		</tr>
+	</tbody>
+</table>

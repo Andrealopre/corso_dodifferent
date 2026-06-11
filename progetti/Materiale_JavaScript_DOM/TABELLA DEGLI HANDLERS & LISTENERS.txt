@@ -1,0 +1,162 @@
+TABELLA DEGLI HANDLERS & LISTENERS
+<table>
+	<thead>
+		<tr>
+			<th>Event Handler (HTML)</th>
+			<th>Evento JS (per addEventListener)</th>
+			<th>Descrizione dell&#39;Attivazione</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="3">EVENTI DEL MOUSE</td>
+		</tr>
+		<tr>
+			<td><code>onclick</code></td>
+			<td><code>&quot;click&quot;</code></td>
+			<td>Elemento cliccato (pressione + rilascio).</td>
+		</tr>
+		<tr>
+			<td><code>ondblclick</code></td>
+			<td><code>&quot;dblclick&quot;</code></td>
+			<td>Doppio clic rapido.</td>
+		</tr>
+		<tr>
+			<td><code>onmousedown</code></td>
+			<td><code>&quot;mousedown&quot;</code></td>
+			<td>Tasto del mouse premuto (mentre scende).</td>
+		</tr>
+		<tr>
+			<td><code>onmouseup</code></td>
+			<td><code>&quot;mouseup&quot;</code></td>
+			<td>Tasto del mouse rilasciato (mentre sale).</td>
+		</tr>
+		<tr>
+			<td><code>onmouseenter</code></td>
+			<td><code>&quot;mouseenter&quot;</code></td>
+			<td>Il puntatore entra nell&#39;elemento (pi&ugrave; preciso).</td>
+		</tr>
+		<tr>
+			<td><code>onmouseleave</code></td>
+			<td><code>&quot;mouseleave&quot;</code></td>
+			<td>Il puntatore esce dall&#39;elemento (pi&ugrave; preciso).</td>
+		</tr>
+		<tr>
+			<td><code>onmouseover</code></td>
+			<td><code>&quot;mouseover&quot;</code></td>
+			<td>Il puntatore entra nell&#39;elemento o nei suoi figli.</td>
+		</tr>
+		<tr>
+			<td><code>onmouseout</code></td>
+			<td><code>&quot;mouseout&quot;</code></td>
+			<td>Il puntatore esce dall&#39;elemento o dai suoi figli.</td>
+		</tr>
+		<tr>
+			<td><code>onmousemove</code></td>
+			<td><code>&quot;mousemove&quot;</code></td>
+			<td>Movimento costante sopra l&#39;elemento.</td>
+		</tr>
+		<tr>
+			<td><code>oncontextmenu</code></td>
+			<td><code>&quot;contextmenu&quot;</code></td>
+			<td>Clic con il tasto destro (apertura menu).</td>
+		</tr>
+		<tr>
+			<td><code>onwheel</code></td>
+			<td><code>&quot;wheel&quot;</code></td>
+			<td>Rotazione della rotellina del mouse.</td>
+		</tr>
+		<tr>
+			<td colspan="3">EVENTI DELLA TASTIERA</td>
+		</tr>
+		<tr>
+			<td><code>onkeydown</code></td>
+			<td><code>&quot;keydown&quot;</code></td>
+			<td>Un tasto viene premuto (si ripete se tenuto gi&ugrave;).</td>
+		</tr>
+		<tr>
+			<td><code>onkeyup</code></td>
+			<td><code>&quot;keyup&quot;</code></td>
+			<td>Un tasto viene rilasciato.</td>
+		</tr>
+		<tr>
+			<td><code>onkeypress</code></td>
+			<td><code>&quot;keypress&quot;</code></td>
+			<td>Un tasto (che produce testo) &egrave; premuto (deprecato).</td>
+		</tr>
+		<tr>
+			<td colspan="3">EVENTI DEI FORM / INPUT</td>
+		</tr>
+		<tr>
+			<td><code>onfocus</code></td>
+			<td><code>&quot;focus&quot;</code></td>
+			<td>L&#39;elemento riceve attenzione (es. clic su input).</td>
+		</tr>
+		<tr>
+			<td><code>onblur</code></td>
+			<td><code>&quot;blur&quot;</code></td>
+			<td>L&#39;elemento perde l&#39;attenzione.</td>
+		</tr>
+		<tr>
+			<td><code>oninput</code></td>
+			<td><code>&quot;input&quot;</code></td>
+			<td>Ogni minima modifica al valore (mentre digiti).</td>
+		</tr>
+		<tr>
+			<td><code>onchange</code></td>
+			<td><code>&quot;change&quot;</code></td>
+			<td>Valore modificato (scatta quando esci dal campo).</td>
+		</tr>
+		<tr>
+			<td><code>onsubmit</code></td>
+			<td><code>&quot;submit&quot;</code></td>
+			<td>Invio del modulo (form).</td>
+		</tr>
+		<tr>
+			<td><code>onreset</code></td>
+			<td><code>&quot;reset&quot;</code></td>
+			<td>Svuotamento/Reset del modulo.</td>
+		</tr>
+		<tr>
+			<td colspan="3">EVENTI DELLA FINESTRA (WINDOW)</td>
+		</tr>
+		<tr>
+			<td><code>onload</code></td>
+			<td><code>&quot;load&quot;</code></td>
+			<td>Pagina e risorse esterne caricate completamente.</td>
+		</tr>
+		<tr>
+			<td><code>onresize</code></td>
+			<td><code>&quot;resize&quot;</code></td>
+			<td>Ridimensionamento della finestra del browser.</td>
+		</tr>
+		<tr>
+			<td><code>onscroll</code></td>
+			<td><code>&quot;scroll&quot;</code></td>
+			<td>Scorrimento (scroll) della pagina o elemento.</td>
+		</tr>
+		<tr>
+			<td><code>onunload</code></td>
+			<td><code>&quot;unload&quot;</code></td>
+			<td>Chiusura della pagina o navigazione altrove.</td>
+		</tr>
+		<tr>
+			<td colspan="3">EVENTI DRAG &amp; DROP</td>
+		</tr>
+		<tr>
+			<td><code>ondragstart</code></td>
+			<td><code>&quot;dragstart&quot;</code></td>
+			<td>Inizio del trascinamento.</td>
+		</tr>
+		<tr>
+			<td><code>ondragover</code></td>
+			<td><code>&quot;dragover&quot;</code></td>
+			<td>Elemento trascinato sopra una zona valida.</td>
+		</tr>
+		<tr>
+			<td><code>ondrop</code></td>
+			<td><code>&quot;drop&quot;</code></td>
+			<td>Elemento rilasciato nella zona di destinazione.</td>
+		</tr>
+	</tbody>
+</table>

@@ -1,0 +1,43 @@
+
+1) Cambiare la dimensione del testo
+In un documento HTML inserisci un tag <p></p> e immetti del testo segnaposto con lorem.
+Carica un icona che raffigura una lente di ingrandimento.
+Quando la lente di ingrandimento viene cliccata la dimensione del testo del paragrafo deve aumentare.
+Extra - carica anche un'icona per il rimpicciolimento. fatto
+
+2) Spostiamo il quadrato!
+Hai un quadrato colorato di dimensioni 100px; quando clicchi un pulsante il quadrato deve 
+spostarsi verso destra (scegli tu come! - magari usando margin left) con una
+transition: 0.35s ease-in
+Se clicchi in qualunque altro punto della pagina il div deve ritornare al suo posto.
+
+3) Giochiamo con le classi.
+Un div deve avere un colore di sfondo e delle dimensioni predefinite (scegli tu quali)
+Il div risulta nascosto perché gli è stata attribuita una classe che chiameremo hidden.
+In questa classe, nel css, metterai la proprietà:
+display:none;
+Nel css hai anche un'altra classe che non hai assegnato al div che si chiama show.
+In questa classe, nel css, metterai la proprietà:
+display:block;
+
+Al click di un pulsante devi mostrare il div colorato.
+Suggerimento: in questo caso devi lavorare con le ClassList e con le proprietà remove/add 
+oppure toggle(solo se vuoi un effetto interruttore mostra-nascondi)
+
+4) Esercizio sui Form
+Dati i seguenti campi:
+Nome, Cognome, Età
+Una volta compilato il form, l'utente può cliccare su un pulsante sul test dell'età.
+Mostrare nell'HTML un div colorato con dentro un messaggio che dice espressamente:
+Nome Cognome è maggiorenne/minorenne!
+
+5) Esercizio Extra
+Dati due div con larghezza e altezza 100px e di colore diverso, il click su ognuno cambia il colore dell'altro.
+
+6) Esercizio Extra Supremo
+Crea un div padre di larghezza 100% e altezza 500px;
+crea sotto a questo div 3 cerchi colorati (rosso,blu,verde) della grandezza di 30px ciascuno.
+Se clicchi il cerchio di colore rosso, nel padre deve comparire un div di colore rosso,
+Se clicchi il cerchio di colore blu, nel padre deve comparire un div di colore blu,
+Se clicchi il cerchio di colore verde, nel padre deve comparire un div di colore verde.
+Un pulsante reset può pulire tutti i div presenti al momento nel padre.

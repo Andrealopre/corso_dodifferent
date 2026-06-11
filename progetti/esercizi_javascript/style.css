@@ -1,0 +1,136 @@
+#contenitore {
+    
+    width: 98%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+    flex-wrap: wrap;
+}
+
+#contenitore_grande {
+    width: 98%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 1px black;
+}
+
+#contenitore p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+#contenitore_grande p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+
+#contenitore form {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#contenitore button {
+    height: 50px;
+    width: 100px;
+}
+
+#organizzatore {
+    display: flex;
+    flex-direction: row;
+}
+
+.org_spazio {
+    gap: 20px;
+}
+
+#organizzatore img {
+    width: 80px;
+    height: auto;
+}
+
+#separatore {
+    height: 100px;
+}
+
+#box {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    margin-left: 5px;
+}
+
+#box2 {
+    height: 100px;
+    width: 100px;
+    margin-left: 5px;
+}
+
+.box_blue {
+    background-color: blue;
+}
+
+.box_green {
+    background-color: green;
+}
+
+#scatolo {
+    height: 150px;
+    width: 300px;
+    background-color: yellow;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#div_padre {
+    width: 100%;
+    height: 500px;
+    box-shadow: 1px 1px 10px 1px black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.palla {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.palla_rossa {
+    background-color: red;
+}
+
+.palla_blu {
+    background-color: blue;
+}
+
+.palla_verde {
+    background-color: green;
+}
+
+.palla_rossa:hover {
+    box-shadow: 1px 1px 10px 1px black;
+}
+
+.palla_blu:hover {
+    box-shadow: 1px 1px 10px 1px black;
+}
+
+.palla_verde:hover {
+    box-shadow: 1px 1px 10px 1px black;
+}

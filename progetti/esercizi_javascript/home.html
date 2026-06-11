@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizi js</title>
+</head>
+
+<body>
+    <div id="contenitore">
+        <p id="testo1">
+            Esercizio 1 <br /><br /><br />
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea nam minus molestias saepe perferendis laborum
+            commodi inventore ex aliquam, sint vero odit aperiam explicabo sed sunt possimus! Quidem, officia voluptate.
+            <br /><br /><br />
+        </p>
+        <div id="organizzatore">
+            <img src="images/lente.png" alt="non va" id="lente_ingrandimento" onclick="ingrandisci()">
+            <img src="images/lente_meno.png" alt="non va" id="lente_meno" onclick="diminuisci()">
+        </div>
+    </div>
+
+    <div id="separatore"></div>
+
+    <div id="contenitore" onclick="resettaBlocco()">
+        <p>Esercizio 2</p><br /><br />
+        <button onclick="spostaBlocco(event)">Sposta blocco</button>
+        <div id="box"></div>
+    </div>
+
+    <div id="separatore"></div>
+
+    <div id="contenitore">
+        <p>Esercizio 3</p><br /><br />
+        <button onclick="mostraScatolo()">Mostra Scatolo</button>
+        <div id="scatolo" class="hidden"></div>
+    </div>
+
+    <div id="separatore"></div>
+
+    <div id="contenitore">
+        <p>Esercizio 4</p><br /><br />
+        <form action="">
+            <label for="input_nome">Inserisci il nome:</label>
+            <input type="text" name="nome" id="input_nome" />
+            <label for="input_cognome">Inserisci il cognome:</label>
+            <input type="text" name="cognome" id="input_cognome" />
+            <label for="input_eta">Inserisci l'età:</label>
+            <input type="number" name="eta" id="input_eta" />
+        </form>
+        <button onclick="testEta()">Test età</button>
+        <p id="risultato"></p>
+    </div>
+
+    <div id="separatore"></div>
+
+    <div id="contenitore">
+        <p>Esercizio 5</p><br /><br />
+        <div id="organizzatore">
+            <button onclick="resetta()">Resetta</button>
+            <div id="box2" class="box_blue" onclick="cambiaVerde()"></div>
+            <div id="box2" class="box_green" onclick="cambiaBlu()"></div>
+        </div>
+    </div>
+
+    <div id="separatore"></div>
+
+    <div id="contenitore_grande">
+        <p>Esercizio 6</p><br /><br />
+        <div id="div_padre"></div>
+        <div id="organizzatore" class="org_spazio">
+            <div id="palla1" class="palla palla_rossa" onclick="aggiungi('palla1')"></div>
+            <div id="palla2" class="palla palla_blu" onclick="aggiungi('palla2')"></div>
+            <div id="palla3" class="palla palla_verde" onclick="aggiungi('palla3')"></div>
+            <button id="bottoneResetta" onclick="cancellaPalle()">Resetta</button>
+            <audio id="audioPlayer" src="sounds/nooo.swf.mp3"></audio>
+        </div>
+    </div>
+
+    <script src="effetti.js"></script>
+</body>
+
+</html>

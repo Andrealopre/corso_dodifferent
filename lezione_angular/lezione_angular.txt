@@ -1,0 +1,22 @@
+LIVELLI ARCHITETTURALI
+
+Le parti fondamentali di un'applicazione sono 3:
+    - Parte logica
+    - Interfaccia
+    - Dati
+
+Le applicazioni ad un livello creavano problemi di rete in quanto non potevano essere distribuite. Erano delle strutture
+monolitiche.
+
+Web server
+Apache o internet information server. Gestisce lo scambio delle pagine html e gli utenti ricevono ciascuno la 
+propria pagina hmtl.
+
+TCP/IP - HTTP
+Sono dei protocolli. In particolare il TCP/IP è un protocollo di rete. HTTP invece è il protocollo applicativo, 
+sbaragliando tutti gli altri protocolli esistenti.
+
+Il ruolo del protocollo di rete è quello di garantire che la comunicazione con applicazioni distribuite siano come se
+queste fossero in un unico ambiente, comportandosi come un dispositivo unico.
+
+Il ruolo di un protocollo applicativo

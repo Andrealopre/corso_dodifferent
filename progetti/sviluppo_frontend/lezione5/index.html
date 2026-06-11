@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<!--
+BOOTSTRAP
+
+Bootstrap è un framework frontend che si basa sui linguaggi html, css e javascript. E' open source e serve a sviluppare
+velocemente interfacce lato web/client.
+
+Bootstrap si avvale di un file css molto pesante, dove sono presenti
+tutte le classi preconfigurate e delle variabili css che vengono 
+riutilizzate da classi e componenti dello stesso framework. Ha quindi
+un approccio monolitico.
+
+Bootstrap funziona con un sistema a griglia composto da righe e 
+colonne. Le righe sono potenzialmente infinite mentre sono le colonne
+sono fissate a massimo 12 (il 100% del body corrisponde a 12 colonne
+bootstrap).
+Con la classe "col1", "col2" etc. si possono definire le larghezze
+delle colonne. Solitamente le colonne sono inserite in wrapper che
+rappresentano le singole righe.
+
+Per poter definire la larghezza di un elemento si attribuisce dunque la classe "col-{numero}" che rappresenta il numero
+di colonne occupate.
+Se ci sono più elementi che devono occupare su una stessa riga un determinato spazio, bisogna assicurarsi che la somma
+di tutto lo spazio occupato dagli elementi non super mai le 12 colonne.
+
+Gli elementi che hanno una dimensione definita in larghezza possono essere a loro volta suddivisi in 12 colonne, quindi
+i figli possono occupare un max di 12 colonne relativamente alla dimensione definita dal padre.
+Per poter cambiare la proprietà attribuita all'elemento attraverso una classe di bootstrap per un dispositivo specifico
+si usa la combinazione "{nome_classe}-{suffisso_breakpoint}-{valore_proprietà}" (eg. "col-sm-3") stiamo definendo
+quanto misura ma su quale dispositivo (media query + css)
+-->
+
+<body>
+    <!--<div class="row"  style="display: flex;">
+        <div class="col-1" style="height: 60px; background-color: chocolate;"></div>
+        <div class="col-1" style="height: 60px; background-color: blue;"></div>
+        <div class="col-1" style="height: 60px; background-color: red;"></div>
+        <div class="col-1" style="height: 60px; background-color: green;"></div>
+        <div class="col-1" style="height: 60px; background-color: violet;"></div>
+        <div class="col-1" style="height: 60px; background-color: purple;"></div>
+        <div class="col-1" style="height: 60px; background-color: grey;"></div>
+        <div class="col-1" style="height: 60px; background-color: yellow;"></div>
+        <div class="col-1" style="height: 60px; background-color: black;"></div>
+        <div class="col-1" style="height: 60px; background-color: tomato;"></div>
+        <div class="col-1" style="height: 60px; background-color: cadetblue;"></div>
+        <div class="col-1" style="height: 60px; background-color: lightcoral;"></div>
+    </div>
+
+    <div class="row" style="display: flex;">
+        <div class="col-4" style="height: 60px; background-color: chocolate;"></div>
+        <div class="col-4" style="height: 60px; background-color: blue;"></div>
+        <div class="col-4" style="height: 60px; background-color: red;"></div>
+    </div>
+
+    <div class="row" style="display: flex;">
+        <div class="col-3" style="height: 60px; background-color: chocolate;"></div>
+        <div class="col-3" style="height: 60px; background-color: blue;"></div>
+        <div class="col-2" style="height: 60px; background-color: red;"></div>
+        <div class="col-3" style="height: 60px; background-color: cadetblue;"></div>
+        <div class="col-1" style="height: 60px; background-color: lightcoral;"></div>
+    </div>-->
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="cr7.webp" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="fibra.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="gabibbo.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

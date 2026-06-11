@@ -1,0 +1,5 @@
+Javascript
+
+Prima di Javascript nulla poteva modificare la pagina web a runtime lato client.
+Un linguaggio che potesse dare dei feedback agli utenti.
+
