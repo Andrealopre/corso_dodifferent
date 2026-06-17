@@ -12,7 +12,13 @@ export class Cerchio {
   perimetro: number = 0;
   area: number = 0;
 
+  constructor(raggio: number) {}
+
+  calcolaArea() {
+    this.area = (this.raggio * this.raggio) * Math.PI;
+  }
+
   calcolaPerimetro() {
-    this.perimetro = (this.raggio * this.raggio) * Math.PI;
+    this.perimetro = 2 * Math.PI * this.raggio;
   }
 }

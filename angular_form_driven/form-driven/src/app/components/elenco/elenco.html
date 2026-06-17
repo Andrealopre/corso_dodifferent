@@ -1,0 +1,52 @@
+<div class="divisore"></div>
+<div class="container text-center">
+    <h1 id="titolo">ELENCO UTENTI</h1>
+</div>
+
+<div class="divisore"></div>
+
+<div class="mb-3 gap-3 p-4">
+    <div class="mostra-utenti">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Cognome</th>
+                    <th>Luogo di nascita</th>
+                    <th>Data di nascita</th>
+                    <th>Sesso</th>
+                    <th>Titolo di studio</th>
+                    <th>Codice fiscale</th>
+                    <th>#</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(persona of persone; track persona.id) {
+                <tr>
+                    <td>{{ persona.id }}</td>
+                    <td>{{ persona.nome }}</td>
+                    <td>{{ persona.cognome }} </td>
+                    <td>{{ persona.luogoDiNascita }}</td>
+                    <td>{{ persona.dataDiNascita }}</td>
+                    <td>{{ persona.sesso }}</td>
+                    <td>{{ persona.titoloDiStudio }}</td>
+                    <td>{{ persona.codiceFiscale }}</td>
+                    <td><button (click)="eliminaUtente($index)" type="button" class="btn btn-secondary">Elimina</button></td>
+                    <!-- 
+                    Aggiungere alert modale che chieda conferma elimina utente
+                    Aggiungere pulsanti:
+                        - Dettaglio: si dovrà aprire un form read-only che faccia vedere il contenuto della persona
+                        corrispondente. (Aggiungere pulsante annulla per tornare indietro)
+                        - Modifica: pulsante per la modifica di una persona. (Aggiungere pulsante annulla per tornare 
+                        indietro)
+                        - Elimina: si dovrà aprire un alert con la richiesta di conferma della cancellazione della 
+                        persona.
+                    Da vedere con priorità di bootstrap (dei bottoni)
+                     -->
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

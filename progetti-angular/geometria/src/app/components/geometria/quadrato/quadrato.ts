@@ -12,6 +12,8 @@ export class Quadrato {
   perimetro: number = 0;
   area: number = 0;
 
+  constructor(lato: number) {}
+
   calcolaPerimetro() {
     this.perimetro = this.lato * 4;
   }

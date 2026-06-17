@@ -4,6 +4,308 @@ I forms template driven vengono utilizzati in Angular per creare schede personal
 all'interno della Vista.
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+<input name="nome" ngModel required #nome="ngModel">
+<input name="cognome" ngModel required #cognome="ngModel">
+<input name="eta" ngModel required #eta="ngModel">
+<button>Salva</button>
+</form>
+Nome: {{ nome.value }}
+Cognome: {{ cognome.value }}
+Età: {{ eta.value }}
+Form: {{ f.value | json}} --> posso ottenere la struttura json del form
+Form valid: {{ f.valid }} --> true se i valori inseriti nel form sono validi
 
 #f: riferimento del form
 ngForm: parola chiave template driven
+onSubmit(f): metodo eseguito quando si clicca il bottone
+
+L'interfaccia ha anche l'id. L'id è assegnato automaticamente, deve essere un id crescente non progressivo
+Nome e cognome sono obbligati, così come il luogo di nascita. La data deve essere di tipo data. Il codice fiscale
+
+<hr>
+Nome - Dirty:{{nome.dirty}}, Pristine:{{nome.pristine}}<br> -->Campo modificato
+Codice - Dirty:{{codice.dirty}}, Pristine:{{codice.pristine}}<br> --> Blur
+Nome - Touched:{{nome.touched}}, Untouched:{{nome.untouched}}<br> --> Focus
+Codice - Touched:{{codice.touched}}, Untouched:{{codice.untouched}}<br> --> Focus
+Nome - Valid:{{nome.valid}}, Invalid:{{nome.invalid}}<br> --> Valid
+Codice - Valid:{{codice.valid}}, Invalid:{{codice.invalid}}<br> --> Valid
+<hr>
+Form Valido? {{scheda.valid}}<br>
+Contenuto del Form in formato JSON:{{scheda.value| json}}<br>
+Contenuto Form Nome:{{scheda.value.nome}} Codice Fiscale:{{scheda.value.codice}}<br>
+//QUesto risultato è possibile solo se è presente #nome_campo="ngModel"
+Nome:{{nome.value}} Codice Fiscale:{{codice.value}}<br>
+
+
+
+
+Template-driven form
+Questo metodo è usato per creare form di pochi campi che non richiedono elaborazioni complesse.
+Per creare questo tipo di form gran parte del lavoro viene svolto stesso all'interno del template facendo uso di diversi tipi di direttive,
+usate anche per la validazione dei campi.
+
+Cosa serve per lavorare con gli ftd
+
+import { FormsModule } from '@angular/forms';
+
+imports: [
+BrowserModule,
+FormsModule
+
+Struttura di un ftd
+
+<form #form="ngForm">
+...
+</form>
+
+
+La direttiva ngForm crea in automatico un oggetto di tipo FormGroup che contiene la proprietà value che mantiene il valore dei campi del form.
+
+Per far riferimento ad un campo di input bisogna aggiungere la direttiva NgModel, che crea un oggetto di tipo FormControl che contiene
+le informazioni relative a ciascun elemento di <input> a cui viene associata.
+
+<input type="text"
+class="form-control"
+id="nome"
+name="nome"
+placeholder="Inserisci il tuo nome"
+ngModel>
+
+<div class="col-md-4 mb-2">
+<label for="name">Nome</label>
+<input type="text"
+class="form-control"
+id="nome"
+name="nome"
+placeholder="Inserisci il tuo nome"
+[(ngModel)]="model.nome">
+</div>
+
+Interfaccia da associare al modello per leggere o inizializzare i campi:
+model: Registrazione = {
+nome: '',
+cognome: '',
+luogodinascita: '',
+...
+};
+
+export interface Registrazione {
+nome: string;
+cognome: string;
+luogodinascita: string;
+...
+
+Le proprietà dirty e pristine
+Le proprietà dirty e pristine permettono di capire se il campo di input a cui sono associate è stato modificato rispetto al valore iniziale.
+In tal caso dirty sarà pari a true e pristine sarà uguale a false.
+Quando una delle due proprietà è pari a true, Angular applica all'elemento una delle classi CSS ng-dirty o ng-pristine per variare l'aspetto
+del campo di input.
+
+Le proprietà touched e untouched
+La proprietà touched è pari a true quando si è verificato l'evento blur dell'elemento di input almeno una volta, cioè quando si
+abbandona un campo per passare a quello successivo, altrimenti touched rimane uguale a false.
+Quando si clicca su un campo di input si genera un focus, quando si abbandona il campo touched diventa true.
+Qando la proprietà touched diventa false, untouched diventa true.
+Angular permette di modificare l'aspetto visivo di un campo attraverso le due classi ng-touched e ng-untouched che vengono applicate
+quando rispettive proprietà assumono un valore uguale a true.
+
+Le proprietà valid e invalid
+Le proprietà valid e invalid permettono di verificare la validità di un campo. Angular attiva la classe ng-valid, quando la proprietà
+valid è pari a true e ng-invalid quando è false.
+
+NM
+Nicolò Marra
+11:09
+vado un attimo in bagno
+
+GV
+Gino Visciano
+11:10
+<div class="col-md-4 mb-2">
+<label for="nome">Nome</label>
+<input type="text"
+class="form-control"
+id="nome"
+name="nome"
+placeholder="Inserisci il tuo nome"
+[(ngModel)]="model.nome"
+required
+minlength="2">
+</div>
+<div class="col-md-4 mb-2">
+<label for="mail">E-mail</label>
+<input type="email"
+class="form-control"
+id="mail"
+name="mail"
+placeholder="Inserisci la tua e-mail"
+[(ngModel)]="model.mail"
+required
+pattern="[a-z0-9._%+-]+@[a-z0-9-.]+\.[a-z]{2,}$">
+</div>
+
+<!-- Proprietà del campo di input -->
+<!-- identificato dall'attributo name="nome" -->
+dirty? {{ form.form.controls.nome.dirty }}
+pristine? {{ form.form.controls.name.pristine }}
+touched? {{ form.form.controls.name.touched }}
+untouched? {{ form.form.controls.name.untouched }}
+valid? {{ form.form.controls.name.valid }}
+invalid? {{ form.form.controls.name.invalid }}
+}
+
+
+GV
+Gino Visciano
+11:12
+ngModel=Crea un controllo nel form e non richiede la creazione di un attributo
+per gestirlo serve: rifForm.value.nome
+---
+[ngModel]="nome" crea un collegamento tra il tag input e l'attributo indicato,
+in questo caso l'attributo deve essere dichiarato nel componente.ts
+Unidirezionale di tipo input.
+
+[(ngModel)]="nome" crea un collegamento tra il tag input e l'attributo indicato,
+in questo caso l'attributo deve essere dichiarato nel componente.ts
+Biderezionale input/output
+
+Quando lavorate con gli attributi dichiarati nel componente conviene creare una
+interfaccia come segue:
+
+ng g i Model
+
+export interface Model{
+id:number;
+nome:string;
+cognome:string;
+luogoDiNascita:string;
+dataDiNascita:Date;
+}
+
+Importare l'interfaccia nel componente
+import {Model} from '...'
+model:Model;
+
+[(ngModel)]="model.id"
+
+GV
+Gino Visciano
+11:15
+<p>prima works!</p>
+{{replica()}}
+<form #scheda="ngForm" (ngSubmit)="onSubmit(scheda)">
+<input [ngStyle]="{'color': 'red','background-color': colore}" type="text" ngModel name="nome" required #nome="ngModel"/><br/>
+<p style="color:red" [hidden]="nome.valid || nome.untouched">Il nome é obbligatorio!</p>
+<input [ngStyle]="{'background-color': colore}" type="text" ngModel name="cognome" required #cognome="ngModel"/><br/>
+<!--<p style="color:red" [hidden]="cognome.valid || cognome.untouched">Il cognome é obbligatorio!</p>-->
+<p style="color:red" [hidden]="cognome.valid || cognome.pristine">Il cognome é obbligatorio!</p>
+<button [disabled]="!scheda.valid" type="submit">Salva</button><button type="reset">Reset</button>
+<button (click)="cambiaColore()" type="button">Colore</button>
+</form>
+
+export class PrimaComponent implements OnInit {
+colore:string="pink"
+constructor(private servizio:ServizioService){
+}
+replica():String{
+return this.servizio.test("Ciao");
+}
+onSubmit(scheda:NgForm){
+alert(scheda.value.nome); //Input
+scheda.form.controls['nome'].setValue("Marco"); //Output
+}
+cambiaColore(){
+if(this.colore=="pink"){
+this.colore="white";
+}else{
+this.colore="pink";
+}
+}
+
+GV
+Gino Visciano
+11:21
+<body>
+<div class="container">
+<div class="row">
+<div class="col-sm-2">
+</div>
+<div class="col-sm-10">
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+</div>
+</div>
+<div class="row">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-8">
+</div>
+</div>
+<div class="row">
+<div class="col-sm-8">
+</div>
+<div class="col-sm-4">
+</div>
+</div>
+<div class="row">
+<div class="col-sm-6">
+</div>
+<div class="col-sm-6">
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+</div>
+</div>
+</div>
+</body>
+
+
+{{scheda.controls.nome.value}}
+
+GO
+Gabriele Orlando
+12:27
+{{ scheda.controls['nome'].value }}
+
+{{scheda.controls.nome.value}}
+
+GO
+Gabriele Orlando
+12:27
+{{ scheda.controls['nome'].value }}
+
+DC
+Daniele Chiarazzo
+12:34
+"noPropertyAccessFromIndexSignature": true,
+"strictTemplates": true
+
+GV
+Gino Visciano
+12:34
+{
+"compileOnSave": false,
+"compilerOptions": {
+"baseUrl": "./",
+"outDir": "./dist/out-tsc",
+"sourceMap": true,
+"declaration": false,
+"downlevelIteration": true,
+"experimentalDecorators": true,
+"module": "esnext",
+"moduleResolution": "node",
+"importHelpers": true,
+"target": "es2015",
+"lib": [
+"es2018",
+"dom"
+]
+},
+"angularCompilerOptions": {
+"fullTemplateTypeCheck": true,
+"strictInjectionParameters": true
+}
+}

@@ -13,6 +13,8 @@ export class Rettangolo {
   perimetro: number = 0;
   area: number = 0;
 
+  constructor(base: number, altezza: number) {}
+
   calcolaPerimetro() {
     this.perimetro = (this.base + this.altezza) * 2;
   }

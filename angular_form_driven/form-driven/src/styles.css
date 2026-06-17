@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar-brand {
+    color: #E0E1DD;
+    font-size: 30px;
+}
+
+.navbar-brand[aria-current="page"] {
+  color: var(--bs-navbar-active-color);
+}
+
+.navbar-brand, .navbar-brand[aria-current="page"] {
+    color: #E0E1DD !important;
+}
+
+.nav-link {
+    color: #E0E1DD;
+    font-size: 20px;
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--bs-navbar-active-color);
+}
+
+.nav-link, .nav-link[aria-current="page"] {
+    color: #E0E1DD !important;
+}
+
+.nav-link:hover {
+    opacity: 0.90;
+}
+
+nav.navbar {
+    background-color: #0D1B2A !important;
+    box-shadow: 5px 5px 10px 2px black;
+    padding: 5px;
+}
+
+body {
+    background-color: #E0E1DD;
+}
+
+.navbar-toggler {
+    border-color: #CED4DA;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}

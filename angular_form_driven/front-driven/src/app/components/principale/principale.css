@@ -1,0 +1,12 @@
+.navbar-brand {
+    color: black;
+}
+
+.nav-link {
+    color: black;
+}
+
+.navbar {
+    background-color: blanchedalmond;
+    box-shadow: 1px 1px 30px 2px black;
+}

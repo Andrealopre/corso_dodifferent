@@ -14,6 +14,8 @@ export class Triangolo {
   perimetro: number = 0;
   area: number = 0;
 
+  constructor(latoA: number, latoB: number, latoC: number) {}
+
   calcolaPerimetro() {
     this.perimetro = this.latoA + this.latoB + this.latoC;
   }
