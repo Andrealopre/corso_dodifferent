@@ -1,0 +1,6 @@
+<!-- Carrello -->
+<p style="color:blue;font-size:25px">Carello</p>
+<div *ngFor="let prodotto of carrello">
+    <span>{{prodotto.prodotto}} {{prodotto.categoria}} {{prodotto.marca}} {{prodotto.prezzo}} {{prodotto.quantita}}
+        {{prodotto.prezzo*prodotto.quantita}}</span> <button (click)="eliminaUnProdotto(prodotto.id)">-</button>
+</div>

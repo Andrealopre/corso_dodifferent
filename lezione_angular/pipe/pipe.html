@@ -1,0 +1,60 @@
+<h3>Decimal Pipe</h3>
+<div>
+    <p> {{num1 | number:'3.2-5'}}</p>
+    <p> {{num2 | number:'3.2-5'}}</p>
+    <p> {{num1 * num2 | number:'1.3-6'}}</p>
+</div>
+<hr>
+
+<h3>Percent Pipe</h3>
+<div>
+    <p>{{num3 | percent}}</p>
+    <p>{{num3 | percent:'2.2-5'}}</p>
+    <p>{{num4 | percent:'1.2-5'}}</p>
+    <p>{{num3*num4 | percent:'1.2-3'}}</p>
+    <hr>
+
+    <h3>Gestione Stringhe</h3>
+    {{myStr | slice:3:7}} <br>
+    {{myStr | slice:6:-2}} <br>
+    {{myStr | slice:6}} <br>
+    {{myStr | slice:-6}} <br>
+</div>
+<hr>
+
+Output di <b> objDate | date:'fullDate'</b> <br /> <br />
+{{objDate | date:'fullDate'}}
+<br><br>
+<hr>
+
+Output di <b>numDate | date:'short'</b><br><br>
+
+{{numDate | date:'short'}}
+<br> <br>
+
+Output di <b> strDate | date:'mediumTime'</b> <br><br>
+
+{{strDate | date:'mediumTime'}}
+<br> <br>
+
+
+Output di <b> strDate | date:'dd:MMMM:yyyy hh-mm-ss z'</b><br><br>
+
+{{strDate | date:'dd:MMMM:yyyy hh-mm-ss z'}}
+
+<br>
+<hr>
+
+<b>Esempio di pipe upperCase</b><br><br>
+{{villaggio.citta | uppercase}}
+<p [textContent]="villaggio.citta | uppercase"></p>
+<input (input)="setData($event.target.value)">
+{{infoData | uppercase}}
+<br>
+<hr>
+
+<b>Esempio di pipe lowerCase</b><br><br>
+{{villaggio2.citta2 | lowercase}}
+<p [textContent]="villaggio2.citta2 | lowercase"></p>
+<input (input)="setData2($event.target.value)">
+{{infoData2 | lowercase}}

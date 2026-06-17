@@ -1,0 +1,12 @@
+<p id="titolo">Geometria</p>
+<p id="sottotitolo">Rettangolo</p>
+<label for="base" id="testo">Base</label><br/>
+<input type="number" id="base" [(ngModel)]="base"><br/>
+<label for="altezza" id="testo">Altezza</label><br/>
+<input type="number" id="altezza" [(ngModel)]="altezza"><br/>
+<button (click)="calcolaArea(); calcolaPerimetro()">Calcola</button>
+<br/><br/><br/>
+<div class="linea"></div>
+
+<p id="testo">Perimetro {{ perimetro }}:</p>
+<p id="testo">Area: {{ area }}</p>

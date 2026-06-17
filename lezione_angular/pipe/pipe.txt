@@ -1,0 +1,142 @@
+Con pipe si possono gestire i numeri, le stringhe (tagliarle in funzione delle esigenze), gestire le date in tutti i 
+formati possibili. Gestire upper e lower case automatico nella pagina web.
+
+<p [textContent]="villaggio.citta | uppercase"></p>
+Questa proprietà inserisce in p il contenuto villaggio.citta e modifica il testo con la funzione impostata.
+
+.mio-menu {
+display: flex;
+justify-content: flex-start; /* Allinea logo e menu a sinistra */
+gap: 40px; /* Spazio tra logo e inizio del menu */
+align-items: center;
+background-color: #333;
+padding: 10px 20px;
+width: 100%;
+box-sizing: border-box;
+}
+
+/* Forziamo il testo del logo a essere bianco e visibile */
+.logo-testo {
+color: white !important;
+font-weight: bold;
+font-size: 24px;
+}
+
+
+/* MODIFICATO: Applica il flex solo alla lista principale (Home, Prodotti, Contatti) */
+.mio-menu > ul {
+display: flex;
+list-style: none;
+gap: 20px;
+margin: 0;
+padding: 0;
+}
+
+.mio-menu a {
+color: white;
+text-decoration: none;
+font-size: 18px;
+}
+
+/* Effetto quando passi il mouse sopra i link principali */
+.mio-menu a:hover {
+color: #0ea5e9;
+}
+
+/* ==========================================
+AGGIUNTI: Stili per il comando Dropdown
+========================================== */
+
+/* Rende la voce "Prodotti" il punto di ancoraggio per la tendina */
+.dropdown {
+position: relative;
+}
+
+/* Stile del sottomenu (Nascosto di default) */
+.dropdown-menu {
+display: none !important; /* Forza la sparizione iniziale */
+position: absolute;
+top: 100%; /* Appare esattamente sotto la voce Prodotti */
+left: 0;
+background-color: #333; /* Stesso sfondo scuro della navbar */
+list-style: none;
+margin: 0;
+padding: 10px 0;
+min-width: 160px; /* Larghezza minima del rettangolo */
+box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+z-index: 1000; /* Rimane sopra gli altri elementi della pagina */
+flex-direction: column; /* Inserimento ed Elenco andranno in verticale */
+}
+
+/* Rimuove i margini dai punti elenco interni */
+.dropdown-menu li {
+margin: 0;
+width: 100%;
+}
+.dropdown-divider {
+height: 1px;
+margin: 6px 0;
+overflow: hidden;
+
+
+/* MODIFICA IL COLORE QUI: */
+background-color: rgba(255, 255, 255, 0.2); /* Bianco semitrasparente (molto moderno) */
+}
+
+/* Stile per i link interni alla tendina (Inserimento ed Elenco) */
+.dropdown-menu a {
+display: block;
+padding: 10px 20px;
+font-size: 16px; /* Leggermente più piccolo */
+white-space: nowrap; /* Evita che il testo vada a capo */
+}
+
+/* Effetto hover specifico per le voci dentro la tendina */
+.dropdown-menu a:hover {
+background-color: #444; /* Sfondo leggermente più chiaro */
+color: #0ea5e9;
+}
+
+/* Mostra la tendina in verticale solo quando passi il mouse sopra "Prodotti" */
+.dropdown:hover .dropdown-menu {
+display: flex !important;
+}
+
+
+
+
+
+<nav class="mio-menu">
+<div class="logo-testo">MioLogo</div>
+
+<ul>
+<li><a routerLink="/home">Home</a></li>
+<li class="dropdown">
+<a href="javascript:void(0)" class="dropdown-toggle">Prodotti ▾</a>
+<ul class="dropdown-menu">
+<li><a routerLink="/prodotti/inserimento">Inserimento</a></li>
+<li class="dropdown-divider"></li>
+<li><a routerLink="/prodotti/elenco">Elenco</a></li>
+</ul>
+</li>
+
+<li><a routerLink="/contatti">Contatti</a></li>
+</ul>
+</nav>
+
+
+const routes: Routes = [
+{ path: 'home', component: HomeComponent },
+{path: 'prodotti',
+children: [
+{ path: 'inserimento', component: InserimentoProdottiComponent },
+{ path: 'elenco', component: ElencoProdottiComponent },
+{ path: '', redirectTo: 'elenco', pathMatch: 'full' }
+]
+},
+
+{ path: 'contatti', component: ContattiComponent },
+
+{ path: '', redirectTo: 'home', pathMatch: 'full' },
+{ path: '**', redirectTo: 'home' }
+];

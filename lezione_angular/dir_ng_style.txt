@@ -1,0 +1,75 @@
+<div [ngStyle]="{ 'color': colore, 'font-size': fontsize.value, 'background-color': background_color, 'width': larghezza}">Colore</div><br>
+<button class="btn btn-success margine-sinistro" (click)="getColoreCasuale()">Cambia colore</button>
+<button class="btn btn-warning margine-sinistro" (click)="getBCK()">Cambia background</button>
+<button class="btn btn-info margine-sinistro" (click)="getSize(1)"> + </button>
+<button class="btn btn-danger margine-sinistro" (click)="getSize(-1)"> - </button>
+<input type="text" #fontsize Style="width:50px" class="margine-sinistro" (change)="getValore()">
+<hr>
+
+<ul>
+<li [ngClass]="'uno'">Testo stilizzato 1</li>
+<li [ngClass]="'uno due'">Testo stilizzato 2</li>
+<li [ngClass]="['uno','due','tre']">Testo stilizzato 3</li>
+<li [ngClass]="mioStileArray">Testo stilizzato 4</li>
+<li [ngClass]="{uno:true,due:false,tre:true,quattro:false}">Testo stilizzato 5</li>
+<li [ngClass]="mioStileOggetto">Testo stilizzato 6</li>
+<li [ngClass]="{uno:!flag,due:!flag,tre:flag,quattro:flag}">Testo stilizzato 7</li>
+</ul>
+<button class="btn btn-danger" (click)="flag=!flag">{{!flag ? "Attiva classe" : "Disattiva classe"}}</button>
+
+
+export enum BCK {black, white, red, green, blue, pink, yellow, orange};
+
+import { BCK } from './colori';
+
+
+public getColoreCasuale():void{
+let cifraEsa = '0123456789ABCDEF'.split('')
+let colore_app:string = '#'
+for (var i = 0; i < 6; i++){
+colore_app += cifraEsa[Math.floor(Math.random() * 16)]
+}
+this.colore=colore_app
+}
+
+
+public getBCK(){
+let font_dim=Number(this.fontsize.nativeElement.value.substr(0,2))
+font_dim=font_dim*3
+this.larghezza=String(font_dim)+"px"
+this.background_color=BCK[1+(Math.floor(Math.random() * 8))]
+}
+
+
+public getSize(inc:number):void{
+let font_dim:number=parseInt(this.fontsize.nativeElement.value)
+if(inc>0){
+if(font_dim<65)
+font_dim+=inc;
+} else{
+if(font_dim>12){
+font_dim+=inc;
+}
+}
+this.fontsize.nativeElement.value=font_dim+"px"
+font_dim=font_dim*3
+this.larghezza=String(font_dim)+"px"
+}
+
+
+@ViewChild('fontsize') fontsize!:ElementRef
+
+
+let font_dim=Number(this.fontsize.nativeElement.value.substr(0,2))
+
+
+ngAfterViewInit(){
+this.fontsize.nativeElement.value="18px"
+}
+
+
+public getValore():void{
+let font_dim:number=parseInt(this.fontsize.nativeElement.value)
+font_dim=font_dim*3
+this.larghezza=String(font_dim)+"px"
+}

@@ -1,0 +1,9 @@
+FORM TEMPLATE DRIVEN
+
+I forms template driven vengono utilizzati in Angular per creare schede personalizzate gestite con controlli
+all'interno della Vista.
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
+#f: riferimento del form
+ngForm: parola chiave template driven

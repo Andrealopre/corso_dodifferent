@@ -1,0 +1,70 @@
+Databinding bidirezionale
+Se la modifica avviene nella view, avviene in tempo reale in typescript e viceversa.
+
+<div style="margin-bottom: 15px;">
+<label style="display: block; font-weight: bold; margin-bottom: 5px; color: #475569;">Nome:</label>
+<input
+type="text"
+name="nomeUtente"
+[(ngModel)]="utente.nome"
+placeholder="Inserisci il nome"
+style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;"
+/>
+<small style="color: #64748b;">Digitazione live: {{ utente.nome }}</small>
+</div>
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms'; // <-- OBBLIGATORIO per usare ngModel
+
+export interface Utente {
+nome: string;
+cognome: string;
+}
+
+@Component({
+selector: 'app-root',
+standalone: true,
+imports: [FormsModule], // <-- Lo registriamo qui
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css']
+})
+
+<button
+(click)="inviaDati()"
+style="flex: 2; background-color: #22c55e; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;"
+>
+Invia Form
+</button>
+
+<button
+(click)="pulisciCampi()"
+style="flex: 1; background-color: #ef4444; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;"
+>
+Pulisci
+</button>
+
+
+inviaDati(): void {
+if (!this.utente.nome.trim() || !this.utente.cognome.trim()) {
+alert('Compila tutti i campi prima di inviare!');
+return;
+}
+
+console.log('Dati pronti nel TS grazie a ngModel:', this.utente);
+this.messaggioInviato = `Inviato: ${this.utente.nome} ${this.utente.cognome}`;
+}
+
+/**
+* Per svuotare i campi, ci basta azzerare le proprietà dell'oggetto nel TS.
+* La View si adeguerà da sola all'istante.
+*/
+pulisciCampi(): void {
+this.utente.nome = '';
+this.utente.cognome = '';
+this.messaggioInviato = '';
+}
+
+
+this.messaggioInviato = `Inviato: ${this.utente.nome} ${this.utente.cognome}`;
+
+ALT + 96

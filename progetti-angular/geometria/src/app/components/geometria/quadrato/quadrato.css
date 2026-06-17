@@ -1,0 +1,21 @@
+#titolo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: blue;
+}
+
+#sottotitolo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color: red;
+}
+
+#testo {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.linea {
+    background-color: grey;
+    height: 2px;
+}

@@ -1,0 +1,17 @@
+<h3>Elenco prodotti</h3>
+
+<table style="border: 1px solid black;">
+    <tbody>
+        @for (prodotto of prodotti; track prodotto.id) {
+            <tr>
+                <td>-</td>
+                <td>{{ prodotto.id }}</td>
+                <td>{{ prodotto.prodotto }}</td>
+                <td>{{ prodotto.prezzo}} €</td>
+                <td>
+                    <button (click)="aggiungiCarrello(prodotto.id-1)">+</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+<!-- Listino --->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <p style="color:blue;font-size:25px">Listino Prodotti</p>
+            <div *ngFor="let prodotto of listino">
+                <span>{{prodotto.prodotto}} {{prodotto.categoria.categoria}} {{prodotto.marca.marca}}
+                    {{prodotto.prezzo}} {{prodotto.quantita}}</span><button
+                    (click)="aggiungiAlCarrello(prodotto.id)">+</button>
+            </div>
+        </div>
+        <div class="col-sm-6" style="background-color:rgb(202, 202, 202);height:500px">
+            <app-carrello [prodotto]="prodotto" (eliminaprodotto)="eliminaProdotto($event)"></app-carrello>

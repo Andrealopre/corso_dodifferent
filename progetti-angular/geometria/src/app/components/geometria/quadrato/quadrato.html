@@ -1,0 +1,10 @@
+<p id="titolo">Geometria</p>
+<p id="sottotitolo">Raggio</p>
+<label for="raggio" id="testo">Raggio</label><br/>
+<input type="number" id="raggio" [(ngModel)]="raggio"><br/>
+<button (click)="calcolaArea(); calcolaPerimetro()">Calcola</button>
+<br/><br/><br/>
+<div class="linea"></div>
+
+<p id="testo">Perimetro {{ perimetro }}:</p>
+<p id="testo">Area: {{ area }}</p>

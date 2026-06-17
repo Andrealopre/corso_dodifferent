@@ -1,0 +1,24 @@
+<div
+    [ngStyle]="{ 'color': colore, 'font-size': size, 'background-color': background_color, 'width': larghezza}">
+    Colore</div><br>
+<button class="btn btn-success margine-sinistro" (click)="getColoreCasuale()">Cambia colore</button>
+<button class="btn btn-warning margine-sinistro" (click)="getBCK()">Cambia background</button>
+<button class="btn btn-info margine-sinistro" (click)="getSize(1)"> + </button>
+<button class="btn btn-danger margine-sinistro" (click)="getSize(-1)"> - </button>
+<input type="text" #fontsize Style="width:50px" class="margine-sinistro" (change)="getValore()">
+<hr>
+
+
+<!--
+<ul>
+    <li [ngClass]="'uno'">Testo stilizzato 1</li>
+    <li [ngClass]="'uno due'">Testo stilizzato 2</li>
+    <li [ngClass]="['uno','due','tre']">Testo stilizzato 3</li>
+    <li [ngClass]="mioStileArray">Testo stilizzato 4</li>
+    <li [ngClass]="{uno:true,due:false,tre:true,quattro:false}">Testo stilizzato 5</li>
+    <li [ngClass]="mioStileOggetto">Testo stilizzato 6</li>
+    <li [ngClass]="{uno:!flag,due:!flag,tre:flag,quattro:flag}">Testo stilizzato 7</li>
+    
+</ul>
+<button class="btn btn-danger" (click)="flag=!flag">{{!flag ? "Attiva classe" : "Disattiva classe"}}</button>
+-->

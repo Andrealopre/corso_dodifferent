@@ -19,4 +19,147 @@ sbaragliando tutti gli altri protocolli esistenti.
 Il ruolo del protocollo di rete è quello di garantire che la comunicazione con applicazioni distribuite siano come se
 queste fossero in un unico ambiente, comportandosi come un dispositivo unico.
 
-Il ruolo di un protocollo applicativo
+ARCHITETTURA WEB/HTTP
+Gli attori principali di questa architettura sono:
+                        
+    Il browser-->request-->Server web              DBMS
+              <--request<--Logica                  Database               
+                           Presentazione   
+
+La request è il componente che porta le comunicazioni del browser verso il server. E' lo strumento usato dall'HTTP
+client per trasmettere dati al server. Nelle request ci sono le query string. La response è invece in forma 
+html/javascript. HTTP non sa a chi sta rispondendo. Riceve le request e risponde. Tutto ciò che avviene lato server
+funziona solo una volta, ovvero quando viene chiamata, ma poi non ricorda di aver fatto tale azione.
+
+Le applicazioni web sono applicazioni non connesse e senza stato, ovvero che loro non ricordano. Le applicazioni web
+sono degli automi che elaborano processi e basta. Il DBMS si occupa di mantere i dati.
+
+Il precedente è il ciclo di vita della richiesta, che descrive il ciclo di vita dell'http.
+
+Content type: il tipo classico è di tipo text/html. Tutto il comportamento dell'http sono determinati dal content type.
+Il browser è il punto debole dell'architettura perché non elabora: interpreta ma non è intelligente.
+
+QUERYSTRING
+Il formato di come la request trasmette le informazioni e le indirizza ad un componente applicativo del server web.
+In genere la querystring ha questa struttura:
+    - https://indirizzoserver/risorsa
+Il browser non fa parte dei livelli dell'architettura web, è solo uno strumento.
+
+ANGULAR
+
+Quando si lavora in java, si sta lavorando lato backend. Quando si lavora con angular è frontend. Le applicazioni
+angular sono applicazioni web (frontend). Quando si usa angular si sta sviluppando un sito web.
+Vantaggi: un sito web scritto con angular permette di usare il linguaggio typescript, quindi, anzichè usare html e
+javascript, si può usare un linguaggio ad oggetti, molto più vicino alla logica di java. Angular gestice il DOM in un
+modo semplice, avanzato e professionale.
+
+Angular gira su una sola pagina html (index.html) anche detta single page.
+Tutta la logica si basa sui componenti e view. Definita la single page, il resto diventa un puzzle, in base alle 
+interazioni vengono avviate view e componenti. Ogni componente ha una parte di codice ed una parte html.
+La parte html si chiama view, la parte di codice è typescript, che viene associato a una view. Il codice associato
+alla view è il componente. Tutto il meccanismo da imparare consinste nel far comunicare la view e il componente.
+Questa tecnina di comunicazione si chiama binding.
+Il binding è unidirezionale se la comunicazione avviene dalla classe
+verso la view o viceversa.
+Quindi gli elementi e i comportamenti della view possono essere gestiti tramite la loro classe associata.
+
+ng g c user-c
+
+serve per evitare la creazione delle classi di test
+ng g c user-profile --skip-tests
+
+Componente inline html e css direttamente inseriti nel file .ts
+ng g c mini-button --inline-template --inline-style
+
+Genera il componente all'interno della cartella indicata
+ng g c components/header
+
+@ è il simbolo che indica il decoratore
+standalone
+
+creare un componente chiamato figlio. La view di questo componente deve visualizzare in grassetto corsivo il 
+messaggio sono il componente figlio
+
+Componente app-giorno
+Di default visualizza lunedì
+Sotto c'è un button che si chiama cambia che al click (click) cambia giorno della settimana in modo ricorsivo
+
+sotto il pulsante cambia creare una scheda solo con i tag input. Deve contenere:
+il nome
+il cognome
+il luogo di nascita
+il sesso di una persona
+
+Quando si clicca sul pulsante salva, sotto alla scheda dovrà apparire il conenuto inserito nella scheda.
+Quando si clicca su cancella la mascherà si dovrà pulire così come la riga che visualizza il conenuto della maschera.
+
+Creare un altro esempio e usare
+
+Quando clicchiamo per confermare l'utente, vorremo popolare un array di tipo utente.
+Ogni volta che si clicca su button, i dati letti dalla maschera devono essere aggiunti in un array e voglio
+vederli stampati con console.log().
+
+Creare gestione utente avanzata. Introdurre elimina e visualizza.
+
+Si chiama dipendence injection il passaggio di un servizio/riferimento di un oggetto ad un costruttore componente
+
+Il nuovo control flow
+
+Direttive strutturali
+Vanno inserite nelle view
+
+@if: gestisce la visualizzazione condizionale nel DOM supportando nativanemte i blocchi @else if e @else senza ausilio
+di tag contenitori esterni.
+
+utenteAutenticato = true;
+ruoloUtente = 'editor'
+
+@if(utenteAutenticato) {
+    ...
+} @else {
+    ...
+}
+
+@for: il blocco @for esegue l'iterazione sulle collezioni. Introduce l'obbligatorietà del parametro track e integra il
+costrutto nativo @empty.
+
+@for (task of task; track task.id) {
+    {{ task.titolo }}
+} @empty {
+    Non ci sono task da visualizzare!
+}
+
+const numeri: number[] = [10, 20, 30, 40];
+numeri.splice(2, 1); // Rimuove 1 elemento a partire dall'indice 2 (il numero 30)
+console.log(numeri); // Output: [10, 20, 40]
+
+.pop(): rimuove l'ultimo elemento dall'array.
+
+.shift(): rimuove il primo elemento dall'array.
+
+
+const colori: string[] = ["rosso", "verde", "blu"];
+const nuoviColori = colori.filter(colore => colore !== "verde");
+console.log(nuoviColori); // Output: ["rosso", "blu"]
+
+
+const array = [5, 12, 8, 130, 44];
+
+const found = array.find((element) => element > 10);
+
+console.log(found);
+// Expected output: 12
+
+Creare una sezione della pagina con un contatore che appartiene al padre, con un button con scritto: 
+"aggiungi uno al figlio e nel figlio c'è un scritta contatore che dovrà incrementare.
+
+1) versione
+voglio creare un acquisto prodotti. Nella view del figlio deve visualizzare 5 prodotti con:
+id progressivo
+nome prodotto
+prezzo del prodotto
+pulsante con segno + per aggiungere il prodotto al carrello
+Il carrello rappresenta il padre, voglio vedere i prodotti aggiunti man mano, con il relativo prezzo
+Voglio vedere il totale speso (nel padre)
+
+2) versione

@@ -1,0 +1,45 @@
+<h1>Gestione Utente avanzata</h1>
+
+<label for="input_nome">Inserisci il nome:</label>
+<input type="text" name="nome" [(ngModel)]="utenteRegistrato.nome"><br />
+<label for="input_nome">Inserisci il cognome:</label>
+<input type="text" name="cognome" [(ngModel)]="utenteRegistrato.cognome"><br />
+<label for="input_nome">Inserisci il luogo di nascita:</label>
+<input type="text" name="luogo_nascita" [(ngModel)]="utenteRegistrato.luogoDiNascita"><br />
+<label for="input_sesso">Inserisci il sesso:</label>
+<input type="text" name="sesso" [(ngModel)]="utenteRegistrato.sesso">
+<p>
+    <button
+        (click)="salvaUtente();cancellaCampi()">Inserisci</button>
+    <button
+        (click)="cancellaCampi()">Svuota campi</button>
+</p>
+
+<p>
+    Utente inserito <br/>
+    Nome: {{utenteRegistrato.nome}} <br/>
+    Cognome: {{utenteRegistrato.cognome}} <br/>
+    Luogo di nascita: {{utenteRegistrato.luogoDiNascita}} <br/>
+    Sesso: {{utenteRegistrato.sesso}} <br/>
+</p>
+
+<p>
+    <button (click)="stampaUtenti()">Stampa utenti in console</button><br/>
+    @if (!mostraListaUtenti) {
+        <button (click)="mostraUtenti()">Mostra gli utenti</button>
+    } @else {
+        <button (click)="mostraUtenti()">Nascondi gli utenti</button>
+        @for (utente of repo; track utente) {
+            <p>{{ $index+1 }}) Utente</p>
+            <p>{{ utente.nome }}</p>
+            <p>{{ utente.cognome }}</p>
+            <p>{{ utente.luogoDiNascita }}</p>
+            <p>{{ utente.sesso }}</p><br/>
+            <button (click)="eliminaUtente($index)">Elimina Utente</button> <br/>
+            <button (click)="mostraUtenteInput($index)">Mostra utente nell'input</button>
+            <p>-----------------------------------------------------</p>
+        } @empty {
+            <p>Lista vuota</p>
+        }   
+    }
+</p>

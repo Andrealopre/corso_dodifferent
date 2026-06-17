@@ -1,0 +1,53 @@
+<p id="titolo">Gestore attività</p>
+
+<div class="divisore"></div>
+
+<p id="testo">Inserimento Attività:</p>
+<div class="inserimento-attivita">
+    <input type="text" [(ngModel)]="nomeAttivita">
+    <div class="bottoni">
+        <button (click)="aggiungiAttivita()">ADD</button>
+        <input type="radio" name="priorita" id="prioritaBassa" [value]=1 [(ngModel)]="priorita">
+        <label for="prioritaBassa">Bassa</label>
+        <input type="radio" name="priorita" id="prioritaMedia" [value]=2 [(ngModel)]="priorita">
+        <label for="prioritaMedia">Media</label>
+        <input type="radio" name="priorita" id="prioritaAlta" [value]=3 [(ngModel)]="priorita">
+        <label for="prioritaAlta">Alta</label>
+    </div>
+</div>
+
+<div class="divisore"></div>
+
+<div class="inserimento-attivita">
+    <div class="bottoni">
+        <button (click)="ordinaPerNome()">ORDINA PER NOME</button>
+        <button (click)="ordinaPerId()">ORDINA PER ID</button>
+        <button (click)="ordinaPiuRecente()">ORDINA PIU' RECENTE</button>
+        <button (click)="ordinaPriorita()">ORDINA PER PRIORITA'</button>
+    </div>
+    <h3>ELENCO ATTIVITA' <button (click)="pulisciLista()">Pulisci elenco</button></h3>
+    @for(attivita of listaAttivita; track attivita.id) {
+    <li>
+        {{ $index + 1}} -
+        @if(attivita.completed) {
+        <s>
+            {{ attivita.id }}
+            {{ attivita.nomeAttivita }}
+            {{ attivita.giorno | date:'short' }}
+            {{ attivita.priorita }}
+        </s>
+        } @else {
+            {{ attivita.id }}
+            {{ attivita.nomeAttivita }}
+            {{ attivita.giorno | date:'short' }}
+            {{ attivita.priorita }}
+        }
+        <button (click)="attivitaCompletata($index)">Completata</button>
+        <button (click)="eliminaAttivita($index)">Canc</button>
+        <button (click)="spostaSu($index)">Su</button>
+        <button (click)="spostaGiu($index)">Giù</button>
+    </li>
+
+    }
+</div>
+

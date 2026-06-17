@@ -1,0 +1,31 @@
+#titolo {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
+#testo {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.divisore {
+    height: 60px;
+}
+
+.inserimento-attività {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.lista-attività {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.bottoni {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

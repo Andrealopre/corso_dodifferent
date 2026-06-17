@@ -1,0 +1,15 @@
+<h3>{{ title }} <button (click)="azzeraCarrello()">Pulisci carrello</button></h3>
+<table>
+    @for (prodotto of prodotti; track prodotto.id) {
+    <tr>
+        <td>{{ prodotto.prodotto }}</td>
+        <td>{{ prodotto.prezzo }} €</td>
+    </tr>
+    }
+</table>
+<p>--------------------------------------------------</p>
+Totale: {{ totalePrezzo }} €
+<p>--------------------------------------------------</p>
+
+
+<app-listino (aggiungi)="aggiungiProdotto($event)"></app-listino>

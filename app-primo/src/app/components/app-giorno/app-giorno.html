@@ -1,0 +1,64 @@
+<p>{{giorno}}</p>
+<button (click)="cambiaGiorno()">Cambia Giorno</button>
+
+<br /><br /><br /><br />
+
+<label for="input_nome">Inserisci il nome:</label>
+<input type="text" name="nome" #ref_nome><br />
+<label for="input_nome">Inserisci il cognome:</label>
+<input type="text" name="cognome" #ref_cognome><br />
+<label for="input_nome">Inserisci il luogo di nascita:</label>
+<input type="text" name="luogo_nascita" #ref_luogoDiNascita><br />
+<label for="input_sesso">Inserisci il sesso:</label>
+<input type="text" name="sesso" #ref_sesso>
+<p>
+    <button
+        (click)="salva(ref_nome.value, ref_cognome.value, ref_luogoDiNascita.value, ref_sesso.value)">Inserisci</button>
+    <button
+        (click)="ref_nome.value='';ref_cognome.value='';ref_luogoDiNascita.value='';ref_sesso.value='';cancella(ref_nome.value, ref_cognome.value, ref_luogoDiNascita.value, ref_sesso.value)">Cancella</button>
+</p>
+
+<h3>{{nome}}</h3>
+<h3>{{cognome}}</h3>
+<h3>{{luogoDiNascita}}</h3>
+<h3>{{sesso}}</h3><br />
+
+<label for="input_nome">Inserisci il nome:</label>
+<input type="text" name="nome" #ref_nome_utente><br />
+<label for="input_nome">Inserisci il cognome:</label>
+<input type="text" name="cognome" #ref_cognome_utente><br />
+<label for="input_nome">Inserisci il luogo di nascita:</label>
+<input type="text" name="luogo_nascita" #ref_luogoDiNascita_utente><br />
+<label for="input_sesso">Inserisci il sesso:</label>
+<input type="text" name="sesso" #ref_sesso_utente>
+<p>
+    <button
+        (click)="salvaUtente({ nome: ref_nome_utente.value, cognome: ref_cognome_utente.value, luogoDiNascita: ref_luogoDiNascita_utente.value, sesso: ref_sesso_utente.value })">Inserisci</button>
+    <button
+        (click)="ref_nome_utente.value='';ref_cognome_utente.value='';ref_luogoDiNascita_utente.value='';ref_sesso_utente.value='';cancellaUtente()">Cancella</button>
+</p>
+
+<p>
+    Utente inserito <br/>
+    Nome: {{utenteRegistrato?.nome}} <br/>
+    Cognome: {{utenteRegistrato?.cognome}} <br/>
+    Luogo di nascita: {{utenteRegistrato?.luogoDiNascita}} <br/>
+    Sesso: {{utenteRegistrato?.sesso}} <br/>
+</p>
+
+@if (!mostraListaUtenti) {
+    <button (click)="mostraUtenti()">Mostra gli utenti</button>
+} @else {
+    <button (click)="mostraUtenti()">Nascondi gli utenti</button>
+    @for (utente of repo; track utente) {
+        <p>{{ $index+1 }}) Utente</p>
+        <p>{{ utente.nome }}</p>
+        <p>{{ utente.cognome }}</p>
+        <p>{{ utente.luogoDiNascita }}</p>
+        <p>{{ utente.sesso }}</p>
+    } @empty {
+        <p>Lista vuota</p>
+    }   
+}
+
+<p>----------------------------------</p>

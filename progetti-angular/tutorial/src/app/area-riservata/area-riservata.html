@@ -1,0 +1,13 @@
+<div style="display: flex; min-height: 80vh; padding: 20px; gap: 20px;">
+
+    <aside style="width: 200px; background-color: #f4f4f4; padding: 15px; border-radius: 8px;">
+        <h3>Menu Area</h3>
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+            <li><a routerLink="/area-riservata/profilo" style="color: #333; text-decoration: none;">👤 Il mio Profilo</a></li>
+            <li><a routerLink="/area-riservata/impostazioni" style="color: #333; text-decoration: none;">⚙️ Impostazioni</a></li>
+        </ul>
+    </aside>
+    <main style="flex: 1; background-color: #fff; padding: 15px; border: 1px solid #ddd; border-radius: 8px;">
+        <router-outlet></router-outlet>
+    </main>
+</div>

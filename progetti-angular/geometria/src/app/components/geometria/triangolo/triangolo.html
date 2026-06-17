@@ -1,0 +1,14 @@
+<p id="titolo">Geometria</p>
+<p id="sottotitolo">Triangolo</p>
+<label for="latoA" id="testo">Lato A</label><br/>
+<input type="number" id="latoA" [(ngModel)]="latoA"><br/>
+<label for="latoB" id="testo">Lato B</label><br/>
+<input type="number" id="latoB" [(ngModel)]="latoB"><br/>
+<label for="latoC" id="testo">Lato A</label><br/>
+<input type="number" id="latoC" [(ngModel)]="latoC"><br/>
+<button (click)="calcolaArea(); calcolaPerimetro()">Calcola</button>
+<br/><br/><br/>
+<div class="linea"></div>
+
+<p id="testo">Perimetro {{ perimetro }}:</p>
+<p id="testo">Area: {{ area }}</p>
