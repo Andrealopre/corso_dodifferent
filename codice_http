@@ -1,0 +1,86 @@
+Esegui questo codice…
+
+sessionStorage.setItem('test', 1);
+…Poi ricarica la pagina. Pra potrai comunque ottenere i dati:
+
+alert( sessionStorage.getItem('test') ); // dopo il refresh: 1
+…Ma se apri la stessa pagina in un’altra tab, e provi di nuovo, dal codice otterrai null, ovvero “non è stato trovato nulla”.
+
+Questo perché sessionStorage è legato non solo all’origine, ma anche alla tab del browser. Per questo motivo, sessionStorage è usato sporadicamente.
+
+Evento di storage
+Quando i dati vengono aggiornati in localStorage o sessionStorage, un evento di storage viene emesso, con le seguenti proprietà:
+
+key: La key che è stata modificata (null se è stato invocato .clear()).
+oldValue: Il vecchio valore (null se la chiave è nuova).
+newValue: il nuovo valore (null se la chiave è sta rimossa).
+URL: L’URL del documento in cui è avvenuto l’aggiornamento.
+storageArea: se l’aggiornamento è avvenuto in localStorage o sessionStorage.
+La cosa importante è: l’evento si attiva in tutti gli oggetti window dove l’archivio è accessibile, ad eccezione per quello in cui è stato causato.
+
+
+GV
+Gino Visciano
+14:23
+// attiva un aggiornamento fatto dallo stesso archivio degli altri documenti
+window.onstorage = event => { // identico a window.addEventListener('storage', event => {
+=======
+// triggers on updates made to the same storage from other documents
+window.onstorage = event => { // can also use window.addEventListener('storage', event => {
+>>>>>>> 8d04d0d2db97276dbb2b451c30a7bd3e05d65831
+if (event.key != 'now') return;
+alert(event.key + ':' + event.newValue + " at " + event.URL);
+};
+
+localStorage.setItem('now', Date.now());
+Notare che l’evento contiene: event.URL – l’URL del documento in cui i dati sono stati aggiornati. Inoltre, event.storageArea contiene lo storage object – l’evento è lo stesso per entrambi sessionStorage e localStorage, quindi event.storageArea si rivolge a quello che è stato modificato. Potremmo anche impostare qualcosa all’interno, per “rispondere” al cambiamento.
+
+That allows different windows from the same origin to exchange messages.
+
+I browser moderni supportano Broadcast channel API, un API speciale per comunicazione inter-finestra provenienti dalla stessa sorgente, possiede molte più funzionalità ma è meno supportata. Esistono librerie che sostituiscono quella API, basate su localStorage, che lo rendono disponibile ovunque.
+
+SC
+Simone Cicero
+14:50
+logInVolatile(username:string){
+console.log('[AuthService] Login volatile → salvo token in sessionStorage:', 'user_token', 'JWT_TOKEN_SIMULATO_' + username);
+sessionStorage.setItem('user_token', 'JWT_TOKEN_SIMULATO_' + username);
+}
+
+logInPersistente(username:string){
+console.log('[AuthService] Login volatile → salvo token in localStorage:', 'user_token', 'JWT_TOKEN_SIMULATO_' + username);
+window.localStorage.setItem('user_token', 'JWT_TOKEN_SIMULATO_' + username);
+}
+
+getUser():string | null{
+let token = localStorage.getItem('user_token');
+return token;
+}
+
+logOut(){
+window.localStorage.removeItem('user_token');
+}
+
+private authService=inject(AuthService);
+username = '';
+loggato = false;
+
+
+ngOnInit(): void {
+this.loggato = this.authService.getUser() !== null;
+}
+
+persistente(username:string){
+this.authService.logInPersistente(username)
+this.loggato=true;
+}
+
+volatile(username:string){
+this.authService.logInVolatile(username)
+this.loggato=true;
+}
+
+logout(){
+this.authService.logOut();
+this.loggato=false;
+}
